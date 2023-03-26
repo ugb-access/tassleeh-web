@@ -1,0 +1,579 @@
+.main-div-header {
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1%;
+}
+
+.heading {
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+
+.header-flex {
+	margin-top: 10px;
+}
+
+.header-para {
+	font-size: 14px;
+	margin-top: 0px;
+	color: #aeaeae;
+}
+
+.search-header input {
+	width: 22rem;
+	height: 3rem;
+	border-radius: 20px;
+	border: 1px solid #f1f1f1;
+	outline: none;
+	padding-left: 28px;
+	color: #8e8e8e;
+}
+
+.search-header input::placeholder {
+	color: #8e8e8e;
+	font-size: 13px;
+}
+
+.search-header {
+	position: relative;
+}
+
+.search-icon {
+	font-size: 2rem;
+	color: #6e6e6e;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	display: inline-block;
+}
+
+.profile {
+	display: flex;
+	align-items: center !important;
+}
+
+.profile-text {
+	margin-left: 15px;
+}
+
+.header-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.person-name {
+	font-size: 13px;
+	color: #404040;
+	font-weight: 600;
+}
+
+.person-admin {
+	font-size: 13px;
+	color: #aeaeae;
+}
+
+/* --------------------- Media Queries ------------------ */
+
+@media only screen and (max-width: 1140px) {
+	.heading {
+		font-size: 2.5rem;
+		font-weight: 600;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 12px;
+		margin-top: 10px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 20rem;
+		height: 2.8rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 28px;
+		color: #8e8e8e;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 13px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 1.8rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 45px;
+		height: 45px;
+		border-radius: 100%;
+		display: inline-block;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+	.person-name {
+		font-size: 12px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 12px;
+		color: #aeaeae;
+	}
+}
+
+@media only screen and (max-width: 998px) {
+	.heading {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 12px;
+		margin-top: 10px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 18rem;
+		height: 2.5rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 28px;
+		color: #8e8e8e;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 12px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 1.5rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 35px;
+		height: 35px;
+		border-radius: 100%;
+		display: inline-block;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 5px;
+	}
+	.person-name {
+		font-size: 11px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 11px;
+		color: #aeaeae;
+	}
+}
+
+@media only screen and (max-width: 887px) {
+	.heading {
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 11px;
+		margin-top: 5px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 15rem;
+		height: 2.1rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 28px;
+		color: #8e8e8e;
+		font-size: 11px;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 11px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 1.3rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 25px;
+		height: 25px;
+		border-radius: 100%;
+		display: inline-block;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 5px;
+	}
+	.person-name {
+		font-size: 8px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 8px;
+		color: #aeaeae;
+	}
+}
+
+@media only screen and (max-width: 781px) {
+	.heading {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 9px;
+		margin-top: 5px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 10rem;
+		height: 1.6rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 18px;
+		color: #8e8e8e;
+		font-size: 8px;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 8px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 0.9rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 3px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 25px !important;
+		height: 25px !important;
+		border-radius: 100%;
+		display: inline-block;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	.person-name {
+		font-size: 6px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 6px;
+		color: #aeaeae;
+	}
+}
+
+/* @media only screen and (max-width:612px) and (min-width:560px){
+    .search-header input {
+        width: 9rem;
+        height: 1.6rem;
+        border-radius: 20px;
+        border: 1px solid #f1f1f1;
+        outline: none;
+        padding-left: 18px;
+        color: #8E8E8E;
+        font-size: 8px;
+    }
+
+    .search-header input::placeholder {
+        color: #8E8E8E;
+        font-size: 8px;
+    }
+} */
+
+@media only screen and (max-width: 780px) {
+	.search-header input {
+		width: 10rem;
+		height: 1.6rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 18px;
+		color: #8e8e8e;
+		font-size: 8px;
+	}
+	.profile img {
+		width: 40px !important;
+		height: 40px !important;
+		border-radius: 100%;
+		display: inline-block;
+	}
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 8px;
+	}
+
+	.search-icon {
+		font-size: 0.9rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 3px;
+		left: 5px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.search-header input {
+		width: 8rem;
+		height: 1.5rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 12px;
+		color: #8e8e8e;
+		font-size: 5px;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 5px;
+	}
+
+	.search-icon {
+		font-size: 0.6rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+	}
+}
+
+@media only screen and (max-width: 569px) {
+	.heading {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 6px;
+		margin-top: 3px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 5rem;
+		height: 1rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 12px;
+		color: #8e8e8e;
+		font-size: 4.5px;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: 4px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 0.6rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 30px !important;
+		height: 30px !important;
+		border-radius: 100%;
+		display: inline-block;
+	}
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 2px;
+		margin-left: 5px;
+	}
+	.person-name {
+		font-size: 4px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 4px;
+		color: #aeaeae;
+	}
+}
+
+@media only screen and (max-width: 424px) {
+	.heading {
+		white-space: nowrap;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.header-flex {
+		margin-top: 33px;
+	}
+
+	.header-para {
+		font-size: 4px;
+		margin-top: 3px;
+		color: #aeaeae;
+	}
+
+	.search-header input {
+		width: 5rem;
+		height: 0.8rem;
+		border-radius: 20px;
+		border: 1px solid #f1f1f1;
+		outline: none;
+		padding-left: 12px;
+		color: #8e8e8e;
+		font-size: 4px;
+	}
+
+	.search-header input::placeholder {
+		color: #8e8e8e;
+		font-size: px;
+	}
+
+	.search-header {
+		position: relative;
+	}
+
+	.search-icon {
+		font-size: 0.5rem;
+		color: #6e6e6e;
+		position: absolute;
+		top: 6px;
+		left: 5px;
+	}
+
+	.profile img {
+		width: 30px !important;
+		height: 30px !important;
+		border-radius: 100%;
+		display: inline-block;
+	}
+
+	.profile {
+		display: flex;
+	}
+
+	.profile-text {
+		margin-top: 2px;
+		margin-left: 5px;
+	}
+	.person-name {
+		font-size: 4px;
+		color: #404040;
+		font-weight: 600;
+	}
+
+	.person-admin {
+		font-size: 4px;
+		color: #aeaeae;
+	}
+}

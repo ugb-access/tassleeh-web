@@ -1,0 +1,477 @@
+.profit-para {
+	color: #67748e;
+	font-size: 13px;
+	font-weight: 600;
+}
+.profit-num {
+	color: black;
+	font-size: 19px;
+	font-weight: bold;
+	margin-top: 1%;
+}
+.profit-num span {
+	font-size: 13px;
+}
+.card-icon {
+	background-color: #803434;
+	width: 48px;
+	height: 47px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.12),
+		0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+	border-radius: 8px;
+}
+.card {
+	background-color: #000;
+	width: 28.2rem;
+	background: #ffffff;
+	box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+		rgba(17, 17, 26, 0.1) 0px 0px 8px;
+	border-radius: 16px;
+	padding: 20px;
+	margin-bottom: 2%;
+}
+.dashboard-top {
+	margin-bottom: 2%;
+}
+.card-flex {
+	display: flex;
+	justify-content: space-between;
+}
+.dashboard-top {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.area-para {
+	color: #004264;
+	font-size: 2.1rem;
+	font-weight: 600;
+	margin-bottom: 1%;
+}
+.up-down-arrow {
+	color: #82d616;
+	font-size: 1.6rem;
+}
+p.area-progress {
+	color: #67748e;
+	font-size: 13px;
+	font-weight: 600;
+	margin-left: 3px;
+}
+.sale-flex {
+	display: flex;
+}
+.dashboard-area {
+	background-color: #ffffff;
+	background: #ffffff;
+	box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	padding: 2.5%;
+	margin-top: 2%;
+}
+.area-graph {
+	width: 100%;
+	height: 30rem;
+	margin-top: 2%;
+}
+.dashboard-footer {
+	width: 55%;
+	/* height: 40rem; */
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
+.bar-graph {
+	background: linear-gradient(135deg, #004264 0%, #004264 100%);
+	border-radius: 12px;
+	height: 30rem;
+	width: 100%;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	display: block;
+}
+.active {
+	color: #004264;
+	font-size: 2.1rem;
+	font-weight: 600;
+}
+.active-percent {
+	color: #004264;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.bar-progress {
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+.dashboard-footer-bottom {
+	width: 40%;
+	/* height: 40rem; */
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 3%;
+	box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
+.pie-para {
+	color: #004264;
+	font-size: 2.1rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.with {
+	font-size: 13px;
+	position: relative;
+}
+.total {
+	font-size: 13px;
+	position: relative;
+}
+.total::before {
+	position: absolute;
+	left: -15px;
+	content: "";
+	height: 10px;
+	width: 10px;
+	margin-top: 2px;
+	border-radius: 100%;
+	background-color: #fb7c66;
+}
+.with::before {
+	position: absolute;
+	left: -15px;
+	content: "";
+	height: 10px;
+	width: 10px;
+	margin-top: 2px;
+	border-radius: 100%;
+	background-color: #004264;
+}
+.withdraw {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 4%;
+}
+.pie-donut {
+	height: 30rem;
+	width: 100%;
+}
+.pie-flex {
+	height: 80%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bottom-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.area-graph .recharts-cartesian-axis-tick {
+	font-size: 13px;
+}
+.area-graph .recharts-layer {
+	stroke-width: 5px;
+}
+.bar-graph {
+	width: 100%;
+	height: 30rem;
+}
+.bar-graph .recharts-cartesian-axis-tick {
+	font-size: 13px;
+}
+.slideHide{
+	left: -68px;
+	transition: all .5s;
+}
+.slideShow{
+	left: 0px;
+	transition: all .5s;
+}
+/* ---------------------- Media Query ---------------------------- */
+@media only screen and (min-width: 1200px) {
+	.card {
+		background-color: #000;
+		width: 240px;
+		background: #ffffff;
+		box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+		border-radius: 16px;
+		padding: 20px;
+		margin-bottom: 2%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.dashboard-top {
+		justify-content: center;
+	}
+	.card {
+		width: 45%;
+	}
+	.bottom-flex {
+		display: block;
+	}
+	.triaden2022 {
+		font-size: 8px !important;
+	}
+	.select2022 {
+		font-size: 8px !important;
+	}
+	.england-img1 {
+		width: 20px;
+		height: 20px;
+	}
+}
+@media only screen and (max-width: 950px) {
+	.bottom-flex {
+		display: block;
+	}
+	.dashboard-footer-bottom {
+		width: 100%;
+	}
+	.dashboard-footer {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 405px) {
+	.withdraw {
+		display: block;
+		margin-left: 20px;
+	}
+	.with {
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 1140px) {
+	.profit-para {
+		color: #67748e;
+		font-size: 11px;
+		font-weight: 600;
+	}
+	.profit-num {
+		color: black;
+		font-size: 17px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	.profit-num span {
+		font-size: 11px;
+	}
+	.card-icon {
+		background-color: #803434;
+		width: 45px;
+		height: 44px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.12),
+			0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+		border-radius: 8px;
+	}
+}
+@media only screen and (max-width: 742px) {
+	.profit-para {
+		color: #67748e;
+		font-size: 10px;
+		font-weight: 600;
+	}
+	.profit-num {
+		color: black;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	.profit-num span {
+		font-size: 10px;
+	}
+	.card-icon {
+		background-color: #803434;
+		width: 44px;
+		height: 43px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.12),
+			0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+		border-radius: 8px;
+	}
+}
+@media only screen and (max-width: 742px) {
+	.card {
+		padding: 10px;
+	}
+}
+@media only screen and (max-width: 400px) and (min-width: 279px) {
+	.profit-para {
+		color: #67748e;
+		font-size: 6px;
+		font-weight: 600;
+	}
+	.profit-num {
+		color: black;
+		font-size: 8px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	.profit-num span {
+		font-size: 6px;
+	}
+	.card-icon {
+		background-color: #803434;
+		width: 21px !important;
+		height: 20px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.12),
+			0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+		border-radius: 4px;
+	}
+	.card-icon img {
+		width: 10px;
+		height: 10px;
+	}
+	.card {
+		padding: 5px;
+		border-radius: 8px;
+	}
+	.area-para {
+		color: #004264;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 1%;
+	}
+	.up-down-arrow {
+		color: #82d616;
+		font-size: 0.8rem;
+	}
+	p.area-progress {
+		color: #67748e;
+		font-size: 7px;
+		font-weight: 600;
+		margin-left: 3px;
+	}
+	.active {
+		color: #004264;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.active-percent {
+		color: #004264;
+		font-size: 8px;
+		margin-top: 5px;
+	}
+	.pie-para {
+		color: #004264;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	.with {
+		font-size: 7px;
+		position: relative;
+	}
+	.total {
+		font-size: 7px;
+		position: relative;
+	}
+	.total::before {
+		position: absolute;
+		left: -7px;
+		content: "";
+		height: 4px;
+		width: 4px;
+		margin-top: 2px;
+		border-radius: 100%;
+		background-color: #326565;
+	}
+	.with::before {
+		position: absolute;
+		left: -7px;
+		content: "";
+		height: 4px;
+		width: 4px;
+		margin-top: 2px;
+		border-radius: 100%;
+		background-color: #fb7c66;
+	}
+	.area-graph {
+		width: 100%;
+		height: 10rem;
+		margin-top: 2%;
+	}
+	.area-graph .recharts-cartesian-axis-tick {
+		font-size: 5px;
+	}
+	.area-graph .recharts-layer {
+		stroke-width: 1px;
+	}
+	.bar-graph {
+		width: 100%;
+		height: 15rem;
+	}
+	.bar-graph .recharts-cartesian-axis-tick {
+		font-size: 5px;
+	}
+	.withdraw {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+.store-text {
+	color: #aeaeae;
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+}
+.dollar-text {
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+}
+.purple-div {
+	background-color: #fae7f5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3%;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	max-width: 65px;
+	min-width: 35px;
+	margin: 0;
+}
+.johen {
+	font-size: 8px;
+	color: #dd5ecb;
+}
+.yellow-div {
+	background-color: #fffbd9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5%;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	max-width: 65px;
+	min-width: 35px;
+	margin: 0;
+}
+.johen2 {
+	font-size: 8px;
+	color: #fddf6d;
+}
+.footer-color {
+	display: flex;
+}
