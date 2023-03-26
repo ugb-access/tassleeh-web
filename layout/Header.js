@@ -28,7 +28,7 @@ const Header = () => {
 							<a href="">
 								<img
 									className="lg:h-11 sm:h-8 h-6"
-									src="/images/logo.png"
+									src="/images/logo-main.png"
 									alt="Logo"
 								/>
 							</a>
@@ -40,7 +40,7 @@ const Header = () => {
 												router.asPath == "/" && "!text-primary"
 											} text-[#110229] text-sm font-semibold mx-4 hover:text-primary`}
 										>
-											HOME
+											Home
 										</p>
 									</Link>
 
@@ -50,7 +50,7 @@ const Header = () => {
 												router.asPath.startsWith("/about") && "!text-primary"
 											}`}
 										>
-											ABOUT
+											Services
 										</p>
 									</Link>
 									<Link href={"/contact"}>
@@ -59,7 +59,7 @@ const Header = () => {
 												router.asPath.startsWith("/contact") && "!text-primary"
 											}`}
 										>
-											CONTACT
+											Contact Us
 										</p>
 									</Link>
 									<Link href={"/faq"}>
@@ -68,10 +68,10 @@ const Header = () => {
 												router.asPath.startsWith("/faq") && "!text-primary"
 											}`}
 										>
-											FAQ
+											Login
 										</p>
 									</Link>
-									<Link href={"/blogs"}>
+									{/* <Link href={"/blogs"}>
 										<p
 											className={`text-[#110229] text-sm font-semibold mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/blogs") && "!text-primary"
@@ -79,7 +79,7 @@ const Header = () => {
 										>
 											BLOGS
 										</p>
-									</Link>
+									</Link> */}
 									{!validToken && (
 										<Link href={"/signin"}>
 											<p
