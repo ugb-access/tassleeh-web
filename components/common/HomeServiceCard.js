@@ -13,6 +13,7 @@ const HomeServiceCard = ({
 				<div className="h-72"><div className="flex justify-between items-center">
 					<div className="flex flex-col">
 						<div>{item?.title}</div>
+						
 						<div className="pt-4">{item?.description}</div>
 					</div>
 
