@@ -104,7 +104,7 @@ const Home = () => {
 			});
 	};
 	const getWebsiteStas = () => {
-		setSpinner(true);
+		setSpinner(false);
 		getWebStat()
 			.then((res) => {
 				console.log(res, "webstats");
@@ -142,7 +142,7 @@ const Home = () => {
 				lat: searchLatLong.lat,
 				long: searchLatLong.lng,
 			};
-			setSpinner(true);
+			setSpinner(false);
 			getJobsByLatLng(body)
 				.then((res) => {
 					setFilterData(res?.data);
@@ -158,7 +158,7 @@ const Home = () => {
 				lat: searchLatLong.lat,
 				long: searchLatLong.lng,
 			};
-			setSpinner(true);
+			setSpinner(false);
 			getJobsByLatLng(body)
 				.then((res) => {
 					let resp = res?.data;
@@ -382,268 +382,36 @@ const Home = () => {
 				</div>
 			</section>
 			{/* ---------------------------Jobs-in 60 miles------------------------ */}
-			<section id="jobSection" className="bg-[#FAFAFA] py-10">
-				<div>
-					<h3 className="uppercase line w-max m-auto text-[#110229] text-3xl font-semibold text-center pb-28">
-						Jobs in <span className="text-primary">6O MILES</span>
-					</h3>
-				</div>
-				<div className="container sm:mx-auto ">
-					<div className="flex  flex-wrap justify-center gap-7">
-						{filterData?.length > 0 ? (
-							filterData?.slice(0, 4).map((item, index) => {
-								// console.log(item);
-								const cardPic = "/images/card.png";
-								return (
-									<Card
-										key={index}
-										item={item}
-										onclick={() => {
-											let stData = localStorage.getItem("user");
-											let userData = JSON.parse(stData);
-											if (userData) {
-												let cBy = item?.createdBy?._id;
-												let jobId = item?._id;
-												localStorage.setItem("cby", JSON.stringify(cBy));
-												localStorage.setItem("jobId", JSON.stringify(jobId));
-												setTimeout(() => {
-													router.push("/employee/apply-form");
-												}, [500]);
-											} else {
-												router.push("/signin");
-											}
-										}}
-									/>
-								);
-							})
-						) : (
-							<div className="text-red-500 flex justify-center  w-full h-[100px]">
-								<p className="">No Jobs Found</p>
-							</div>
-						)}
-						{/* {filterData?.length === 0 && (
-							
-						)} */}
-					</div>
-				</div>
-				{filterData?.length > 0 && (
-					<Link href={"/employee/locate-job"}>
-						<div className="flex justify-center mt-16">
-							<Button
-								text="VIEW ALL"
-								customClass="bg-primary rounded-md p-2 text-base font-semibold text-white w-32 !h-12"
-							/>
-						</div>
-					</Link>
-				)}
-			</section>
+
 			{/* ----------------------------Popular------------------------------- */}
-			<section className="py-24">
-				<div className="px-16 wrapper flex flex-wrap lg:flex-nowrap justify-center">
-					<div className="col-1">
-						<div className="w-[90%]">
-							<img src="/images/section-5img.png" alt="" />
-						</div>
-					</div>
-					<div className="col-2 items-center mt-8 lg:mt-0  lg:w-[40%]">
-						<div className="head">
-							<h3 className="pb-5 uppercase line w-max m-auto lg:m-0 lg:!text-left text-center text-[#110229] text-3xl font-semibold">
-								WHY WE ARE MOST <span className="text-primary">POPULAR?</span>
-							</h3>
-							<p className="text-[#3A3A3A] text-base text-center leading-7 lg:text-justify">
-								At Job locator, we pride ourselves on being the most popular
-								choice for job seekers and employers alike. We believe that our
-								success is driven by making it easy for job seekers to find and
-								apply for jobs that match their skills and experience. Our
-								application process is quick, easy, and efficient, so that job
-								seekers can apply for jobs in just a few minutes. We are
-								committed to providing the best experience possible for job
-								seekers and employers and are dedicated to helping people find
-								their dream job.
-							</p>
-						</div>
-						<div className=" flex items-center justify-center sm:gap-32 gap-10 lg:justify-between lg:gap-4 sm:flex-nowrap flex-wrap w-full py-8">
-							<div className="col-1">
-								<div className="flex gap-2 items-center py-2">
-									<Button
-										img={
-											<img
-												className="h-10"
-												src="/images/bx-check-shield.png"
-											></img>
-										}
-										customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className="text-base font-semibold whitespace-nowrap">
-										Trusted & Quality Job
-									</p>
-								</div>
-								<div className="flex gap-2 items-center py-6">
-									<Button
-										img={
-											<img className="h-5" src="/images/Vector (4).png"></img>
-										}
-										customClass="bg-primary flex justify-center items-center  rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className=" text-base font-semibold">No Extra Charge</p>
-								</div>
-								<div className="flex gap-2 items-center pt-4">
-									<Button
-										img={
-											<img className="h-7" src="/images/Vector (5).png"></img>
-										}
-										customClass="bg-primary flex justify-center items-center  rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className="text-base font-semibold whitespace-nowrap">
-										Right Candidates
-									</p>
-								</div>
-							</div>
-							<div className="pop-1 col-2">
-								<div className="flex gap-2 items-center py-1">
-									<Button
-										img={
-											<img
-												className="h-9"
-												src="/images/bx-buildings (1).png"
-											></img>
-										}
-										customClass="bg-primary flex justify-center items-center  rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className=" text-base font-semibold whitespace-nowrap">
-										Top Companies
-									</p>
-								</div>
-								<div className="flex gap-2 items-center py-6">
-									<Button
-										img={<img className="h-9" src="/images/bx-globe.png"></img>}
-										customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className="text-base font-semibold whitespace-nowrap">
-										International Job
-									</p>
-								</div>
-								<div className="flex gap-2 items-center pt-4">
-									<Button
-										img={
-											<img
-												className="h-9"
-												src="/images/bx-check-circle.png"
-											></img>
-										}
-										customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-									/>
-									<p className=" text-base font-semibold whitespace-nowrap">
-										Handy Process
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+
 			{/* -----------------------------Get started today------------------- */}
-			<section className="py-24 bg-[#FAFAFA]">
-				<div className="text-center">
-					<h1 className="text-[#110229] text-3xl font-semibold line w-max m-auto">
-						Get <span className="text-primary">Started</span> today?
-					</h1>
-				</div>
-				<div className=" pt-16 flex flex-wrap lg:flex-nowrap justify-center gap-12 xl:gap-32 lg:gap-16">
-					<CardTwo
-						cardtwopic={
-							<img className="h-14" src="/images/bx-briefcase (1).png" alt="" />
-						}
-						cardtwoH={
-							webStatics?.totalJobs + "+" ? webStatics?.totalJobs + "+" : "0"
-						}
-						cardtwopara="Jobs Available"
-					/>
-					<CardTwo
-						cardtwopic={
-							<img className="h-14" src="/images/bx-file.png" alt="" />
-						}
-						cardtwoH={
-							webStatics?.totalResumes + "+"
-								? webStatics?.totalResumes + "+"
-								: "0"
-						}
-						cardtwopara="Resumes"
-					/>
-					<CardTwo
-						cardtwopic={
-							<img className="h-14" src="/images/bx-buildings.png" alt="" />
-						}
-						cardtwoH={
-							webStatics?.totalCompanies + "+"
-								? webStatics?.totalCompanies + "+"
-								: "0"
-						}
-						cardtwopara="Companies"
-					/>
-					<CardTwo
-						cardtwopic={
-							<img className="h-14" src="/images/bx-user.png" alt="" />
-						}
-						cardtwoH={
-							webStatics?.totalEmployees + "+"
-								? webStatics?.totalEmployees + "+"
-								: "0"
-						}
-						cardtwopara="Employees"
-					/>
-				</div>
-			</section>
+
 			{/* --------------------------Popular-companies----------------------------- */}
-			<section className="p-28">
-				<div className="text-center">
-					<h1 className="text-[#110229] md:text-3xl text-xl font-semibold line w-max m-auto">
-						POPULAR <span className="text-primary">COMPANIES</span>
-					</h1>
-				</div>
-				<div className="pt-14">
-					<HomeSlider />
-				</div>
-			</section>
+
 			{/* ---------------------------Dowload-APP--------------------------- */}
-			<section className="bg-[#FAFAFA] py-16">
-				<div className="flex flex-wrap justify-center md:flex-nowrap lg:justify-around items-center lg:gap-10 lg:px-32">
-					<div className="lg:relative md:w-[800px] z-[1]">
-						<img className="h-96 md:h-full" src="/images/mobile.png" alt="" />
-						<div className="lg:block hidden absolute z-[-1] top-0 right-16">
-							<img src="/images/Badge.png" alt="" />
-						</div>
-					</div>
-					<div className="lg:mx-0 mx-20">
-						<h1 className=" text-primary md:text-4xl text-xl font-semibold">
-							Download The Job Locator App
-						</h1>
-						<p className=" text-[#3A3A3A] md:text-lg py-6">
-							Why wait for your dream career opportunity? Download the Job
-							Locator app and bring yourself to a world flooded with huge career
-							possibilities.
+			<section className="flex justify-around items-center bg-[#f4f9ff] mt-20">
+				<div className="">
+					<div className="pl-6">
+						<p className="text-lg text-primary font-semibold ">
+							Download Our Mobile Application
 						</p>
-						<div className="relative flex gap-5">
-							<Link
-								target="_blank"
-								href="https://apps.apple.com/us/app/job-locator/id6444742645"
-							>
-								<div className="lg:w-32 w-28">
-									<img src="/images/Group 477.png" alt="" />
-								</div>
-							</Link>
-							<Link
-								href="https://play.google.com/store/apps/details?id=com.job_locator"
-								target="_blank"
-							>
-								<div className="lg:w-32 w-28">
-									<img src="/images/image 2.png" alt="" />
-								</div>
-							</Link>
-							<div className="lg:block hidden absolute right-[-110px] bottom-[-226px]">
-								<img src="/images/Badge (1).png" alt="" />
-							</div>
-						</div>
+						<h2 className="text-[#0a093d] text-4xl font-bold w-96 my-3">
+							You Can Easily Find Our Mobile App…!
+						</h2>
+						<p className="w-96 text-[#656464]">
+							Make your life easier by downloading TASSLEEH Mobile Application.
+							We provide best services. Start your with us now...
+						</p>
+					</div>
+					<div className="flex items-center">
+						<img src="/images/app.png" alt="android store" />
+						<img src="/images/android.png" alt="app store" />
+					</div>
+				</div>
+				<div>
+					<div>
+						<img className="h-[500px]" src="/images/mobile muckup.png" alt="" />
 					</div>
 				</div>
 			</section>

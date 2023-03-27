@@ -235,7 +235,7 @@ const Footer = () => {
 					</div>
 					<img
 						onClick={goToBtn}
-						className="sm:h-4.5 h-3.5"
+						className="sm:h-5 h-3.5"
 						src="/images/Vector.png"
 						alt=""
 					/>
