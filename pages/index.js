@@ -216,7 +216,8 @@ const Home = () => {
 		},
 		{
 			title: "Electronics",
-			description: "Stress no further because TASSLEEH in-house expert electrician here to serve.",
+			description:
+				"Stress no further because TASSLEEH in-house expert electrician here to serve.",
 			icon: "/images/Group (1).png",
 			services: [
 				"Laptop",
@@ -228,30 +229,23 @@ const Home = () => {
 			],
 		},
 		{
-			title: "Cars",
+			title: "Home",
 			description: "Get best mechanic services for your cars right away.",
-			icon: "/images/Group.png",
+			icon: "/images/Group (2).png",
 			services: [
-				"Electricity",
-				"Mechanics",
-				"Dyeing/Black Smith",
-				"Oil",
-				"Recorders",
-				"Tire",
+				"Electricity/Home Appliance",
+				"Plumbing",
+				"Door/Window",
+				"Carpenter/Paint",
+				"AC",
+				"Furniture/Ceramic/Marble",
 			],
 		},
 		{
-			title: "Cars",
+			title: "Accessories",
 			description: "Get best mechanic services for your cars right away.",
-			icon: "/images/Group.png",
-			services: [
-				"Electricity",
-				"Mechanics",
-				"Dyeing/Black Smith",
-				"Oil",
-				"Recorders",
-				"Tire",
-			],
+			icon: "/images/Group3.png",
+			services: ["Bags", "Shoes", "Jewelry", "Watches", "Clothes", "Suit Case"],
 		},
 	];
 	return (
@@ -269,226 +263,121 @@ const Home = () => {
 			<Head>
 				<title> Home - Tassleeh </title>
 			</Head>
-			<section>
-				<div className="flex flex-col justify-center items-center gap-y-5 mt-24">
-					<div>
-						<h1 className="text-5xl text-[#0A093D] font-bold">
-							We Provide <span className="text-[#03A0CB]">Best</span> Services
-						</h1>
-						<p className="text-[#656464] text-sm text-center pt-4">
-							TASSLEEH provides best services for your cars, electronics, home,
-							and accessories.
-						</p>
+			<div className="back">
+				<section className="">
+					<div className="flex flex-col justify-center items-center gap-y-5 ">
+						<div className="mt-24">
+							<h1 className="text-6xl text-[#0A093D] font-bold">
+								We Provide <span className="text-[#03A0CB]">Best</span> Services
+							</h1>
+							<p className="text-[#656464] text-lg text-center pt-4">
+								TASSLEEH provides best services for your cars, electronics,
+								home, and accessories.
+							</p>
+						</div>
+						<div className="flex border px-4 py-1.5 rounded-lg items-center">
+							<div className="flex gap-4">
+								<img src="/images/search.png" alt="" />
+								<input
+									type="text"
+									className="w-[350px]"
+									placeholder="search here"
+								/>
+							</div>
+							<div>
+								<Button
+									text="Search"
+									customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
+								/>
+							</div>
+						</div>
 					</div>
-					<div className="flex border px-4 py-1.5 rounded-lg items-center">
-						<div className="flex gap-4">
-							<img src="/images/search.png" alt="" />
-							<input
-								type="text"
-								className="w-[350px]"
-								placeholder="search here"
-							/>
+				</section>
+				{/* ---------------------Services------------------------- */}
+				<section className="flex flex-wrap justify-center gap-12 mt-20  px-48 ">
+					{HomeServicesData.map((item, index) => {
+						return (
+							<div className="mb-16">
+								<HomeServiceCard key={index} item={item} />
+							</div>
+						);
+					})}
+				</section>
+			</div>
+			{/* -------------------Availaible-jobs----------------------- */}
+			<section className="flex justify-center mt-24">
+				<div className=" pt-2 px-5 w-2/5">
+					<p className=" text-primary font-medium text-base my-4">
+						Whats TASSLEEH?
+					</p>
+					<h1 className="text-2xl font-bold text-[#0a093d] my-4">
+						Why Choose TASSLEEH Platform?
+					</h1>
+					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] w-[460px]">
+						We are a value addition which covers all 360 services under one
+						platform. Our motive is to provide best services to our corporate,
+						commercial, and residential customers.
+					</p>
+					<div className="my-4">
+						<div className="flex items-center mb-4">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+								Vetted and background-checked in house staff
+							</p>
 						</div>
-						<div>
-							<Button
-								text="Search"
-								customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
-							/>
+						<div className="flex items-center mb-4">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+								High-Tech and Most Advanced Equipment
+							</p>
 						</div>
+						<div className="flex items-center mb-4">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+								Quality Control and Safety
+							</p>
+						</div>
+						<div className="flex items-center mb-4">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+								Affordable and Upfront Pricing
+							</p>
+						</div>
+						<div className="flex items-center mb-4">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+								Timely and Convenient Services
+							</p>
+						</div>
+						<div className="flex items-center mb-2">
+							<div className="">
+								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+							</div>
+							<p className="px-3 text-lg font-normal leading-8 w opacity-70">
+								Experienced, Trained and Certified
+							</p>
+						</div>
+					</div>
+					<div>
+						<Button
+							text="Get Started"
+							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+						/>
 					</div>
 				</div>
-			</section>
-			{/* ---------------------Services------------------------- */}
-			<section className="flex flex-wrap gap-6 justify-center mt-20">
-				{HomeServicesData.map((item, index) => {
-					return <HomeServiceCard key={index} item={item} />;
-				})}
-			</section>
-			{/* -------------------Availaible-jobs----------------------- */}
-			<section>
-				<div className="py-24" id="jobSection">
-					<h3 className="head uppercase text-[#110229] text-2xl text-center font-bold line w-max m-auto">
-						Available <span className="text-primary">jobs</span> nearby you
-					</h3>
-					<div className="relative flex justify-center pt-12 mx-5 sm:mx-20">
-						{/* <img className="w-full" src="/images/map.png" alt="" /> */}
-						{isLoaded && (
-							<GoogleMap
-								ref={mapRef}
-								style={{}}
-								// onCenterChanged={()=> mapRef.current.panTo(center)}
-								center={center}
-								zoom={11}
-								mapContainerStyle={{
-									width: "100%",
-									height: "60vh",
-								}}
-								onClick={() => setToggleInfoWindow("")}
-							>
-								{filterData?.map((item, index) => {
-									// console.log(item, "item");
-									return (
-										<div key={index}>
-											<Marker
-												icon={{
-													url: "/images/liveicon.png",
-												}}
-												position={{
-													lat: mapCenter?.lat,
-													lng: mapCenter?.long,
-												}}
-											/>
-											<Marker
-												onMouseOver={() => {
-													handleMarkerSize(item?._id);
-												}}
-												onMouseOut={() => {
-													handleMarkerSize("");
-												}}
-												key={item?._id}
-												icon={{
-													url: "/images/pointer.png",
-													scaledSize: new google.maps.Size(
-														toggleMarkerSize === item?._id ? 32 : 30,
-														toggleMarkerSize === item?._id ? 32 : 30
-													),
-												}}
-												position={{
-													lat: item?.lat,
-													lng: item?.long,
-												}}
-												animation="drop"
-												onClick={() => {
-													openInfoWindow(item?._id);
-												}}
-											/>
-											{toggleInfoWindow === item?._id && (
-												<InfoWindow
-													onCloseClick={() => setToggleInfoWindow("")}
-													position={{
-														lat: item?.lat,
-														lng: item?.long,
-													}}
-												>
-													<div
-														className="relative"
-														onClick={() => {
-															let lcUser = localStorage.getItem("user");
-															if (lcUser) {
-																let cBy = item?.createdBy?._id;
-																let jobId = item?._id;
-																localStorage.setItem(
-																	"cby",
-																	JSON.stringify(cBy)
-																);
-																localStorage.setItem(
-																	"jobId",
-																	JSON.stringify(jobId)
-																);
-																setTimeout(() => {
-																	router.push("/employee/apply-form");
-																}, [500]);
-															} else {
-																router.push("/signin");
-															}
-														}}
-													>
-														{/* <button className="absolute right-0">x</button> */}
-														<div className="max-w-[250px]">
-															<h1 className="md:text-sm text-xs font-medium text-[#6F748C]">
-																{item?.createdBy?.businessName}
-															</h1>
-															<div className="flex gap-2 items-center pt-2">
-																<div>
-																	<img src="/images/brief.png" alt="" />
-																</div>
-																<p className="text-[#6F748C] md:text-sm text-xs">
-																	{item?.jobTitle}
-																</p>
-															</div>
-															<div className="flex gap-2 items-center">
-																<div className="pl-1">
-																	<img src="/images/loc.png" alt="" />
-																</div>
-																<p className="text-[#6F748C] md:text-sm text-xs">
-																	{item?.address}
-																</p>
-															</div>
-															<div className="flex gap-2 items-center">
-																<div className="pl-1">
-																	<img src="/images/phone.png" alt="" />
-																</div>
-																<p className="text-[#6F748C] md:text-sm text-xs">
-																	{item?.createdBy?.businessMobileNumber}
-																</p>
-															</div>
-															{/* <div className="flex gap-2 items-center md:text-sm text-xs">
-																<div className="pl-1">
-																	<img src="/images/web.png" alt="" />
-																</div>
-																<p className="text-[#6F748C] md:text-sm text-xs">
-																	www.farleytech.com
-																</p>
-															</div> */}
-														</div>
-													</div>
-												</InfoWindow>
-											)}
-										</div>
-									);
-								})}
-							</GoogleMap>
-						)}
-
-						{/* <div
-              className="absolute left-10 top-32 border-white md:h-40 md:w-72 py-3 px-2 !bg-[#fff]"
-              style={{
-                boxShadow: "0px 2px 20px rgba(000, 000, 000, 0.1)",
-              }}
-            >
-              <h1 className="md:text-sm text-xs font-medium text-[#6F748C]">
-                Farley Technology
-              </h1>
-              <div className="flex gap-2 items-center pt-2">
-                <div>
-                  <img src="/images/brief.png" alt="" />
-                </div>
-                <p className="text-[#6F748C] md:text-sm text-xs">
-                  Software Engineer
-                </p>
-              </div>
-              <div className="flex gap-2 items-center">
-                <div className="pl-1">
-                  <img src="/images/loc.png" alt="" />
-                </div>
-                <p className="text-[#6F748C] md:text-sm text-xs">
-                  8032 Parker StreetAttleboro, MA 02703
-                </p>
-              </div>
-              <div className="flex gap-2 items-center">
-                <div className="pl-1">
-                  <img src="/images/phone.png" alt="" />
-                </div>
-                <p className="text-[#6F748C] md:text-sm text-xs">
-                  +1 650-253-0000
-                </p>
-              </div>
-              <div className="flex gap-2 items-center md:text-sm text-xs">
-                <div className="pl-1">
-                  <img src="/images/web.png" alt="" />
-                </div>
-                <p className="text-[#6F748C] md:text-sm text-xs">
-                  www.farleytech.com
-                </p>
-              </div>
-              <div className="absolute left-[104px] top-32 md:top-[170px]">
-                <img
-                  className="md:h-20 h-12"
-                  src="/images/pointer.png"
-                  alt=""
-                />
-              </div>
-            </div> */}
+				<div>
+					<div>
+						<img src="/images/group-0.png" alt="" />
 					</div>
 				</div>
 			</section>

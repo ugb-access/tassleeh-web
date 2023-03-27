@@ -9,32 +9,38 @@ const HomeServiceCard = ({
 }) => {
 	return (
 		<>
-			<div className="shadow-lg p-10 w-[500px] h-[380px] ">
-				<div className="h-72">
-					<div className="flex justify-between items-center">
-						<div className="flex flex-col">
-							<div>{item?.title}</div>
+			<div className="service-card rounded-2xl p-10 w-[450px] h-[400px] bg-white">
+				<div className="flex justify-between">
+					<div className="h-72">
+						<div className="flex items-center">
+							<div className="flex flex-col">
+								<div className="text-[#2f2c4a] text-xl font-semibold">{item?.title}</div>
 
-
-							<div className="pt-4">{item?.description}</div>
+								<div className="pt-4 w-80 text-[#656464]">{item?.description}</div>
+							</div>
 						</div>
-
-						<div className="border py-2 px-1.5 rounded-lg bg-primary">
-							<img src={item?.icon}></img>
-						</div>
+						<ul className="pt-4 px-5">
+							{item?.services.map((service, index) => {
+								return (
+									<li className="list-disc text-primary py-1" key={index}>
+										<p className="text-[#171648] font-semibold text-base">{service}</p>
+									</li>
+								);
+							})}
+						</ul>
 					</div>
-					<div className="pt-4 ">
-						{item?.services.map((service, index) => {
-							return <div key={index}>{service}</div>;
-						})}
+					<div className="border flex justify-center items-center h-16 w-16 rounded-3xl bg-primary">
+						<div className="">
+							<img className="" src={item?.icon}></img>
+						</div>
 					</div>
 				</div>
-				<div className="flex justify-center items-center">
+				<div className="flex justify-center items-center mt-10">
 					<Button
 						customClass={
-							"border border-primary text-primary !w-[100px] !h-[30px] rounded-lg"
+							"border border-primary text-secondary !w-[100px] !h-[35px] rounded-lg"
 						}
-						text={"Try Now q"}
+						text={"Try Now"}
 					/>
 				</div>
 			</div>

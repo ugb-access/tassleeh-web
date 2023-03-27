@@ -13,6 +13,12 @@ span {
 }
 
 /* ----------------hover menu--------------- */
+.service-card {
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.back{
+	background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
+}
 
 /* -----------------line--------------------------- */
 .line::after {

@@ -29,7 +29,7 @@ const Header = () => {
 							<div className="w-1/2 flex justify-between items-center">
 								<a href="">
 									<img
-										className="lg:h-11 sm:h-8 h-6"
+										className="lg:h-12 sm:h-8 h-6"
 										src="/images/logo-main.png"
 										alt="Logo"
 									/>
@@ -39,7 +39,7 @@ const Header = () => {
 										<p
 											className={` ${
 												router.asPath == "/" && "!text-primary"
-											} text-[#110229] text-sm font-semibold mx-4 hover:text-primary`}
+											} text-[#110229] text-lg font-semibold mx-4 hover:text-primary`}
 										>
 											Home
 										</p>
@@ -47,7 +47,7 @@ const Header = () => {
 
 									<Link href={"/about"}>
 										<p
-											className={`text-[#110229] text-sm font-semibold mx-6 hover:text-primary  ${
+											className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/about") && "!text-primary"
 											}`}
 										>
@@ -56,7 +56,7 @@ const Header = () => {
 									</Link>
 									<Link href={"/contact"}>
 										<p
-											className={` text-[#110229] text-sm font-semibold mx-6 hover:text-primary  ${
+											className={` text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/contact") && "!text-primary"
 											}`}
 										>
@@ -65,7 +65,7 @@ const Header = () => {
 									</Link>
 									<Link href={"/faq"}>
 										<p
-											className={`text-[#110229] text-sm font-semibold mx-6 hover:text-primary  ${
+											className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/faq") && "!text-primary"
 											}`}
 										>
@@ -104,7 +104,7 @@ const Header = () => {
 									<div>
 										<Button
 											text="Get Started"
-											customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
+											customClass="bg-primary rounded-full p-2 text-sm font-semibold text-white !w-28 !h-12"
 										/>
 									</div>
 								</div>
