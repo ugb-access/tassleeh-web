@@ -93,14 +93,14 @@ const NewsLetter = () => {
 						</div>
 					</div>
 					<div className="hidden lg:block -z-10 absolute bottom top-32 left-[-38px] pt-5">
-						<img src="/images/newsletter (1).png" alt="" />
+						<img src="/images/Rectangle 32.png" alt="" />
 					</div>
 				</div>
 
 				<div className="w-[450px]  relative bg-[#FAFAFA] rounded-r-[75px] ">
 					<img
 						className="h-72  hidden lg:block"
-						src="/images/newsletter.png"
+						src="/images/Rectangle 31.png"
 						alt=""
 					/>
 					{/* style=
@@ -124,11 +124,11 @@ const NewsLetter = () => {
 						<Button
 							text="Subscribe"
 							onClick={handleSubmit}
-							customClass="font-normal text-base !w-28 !h-10 py-2 rounded-full bg-[#803434] whitespace-nowrap text-white"
+							customClass="font-normal text-base !w-28 !h-10 py-2 rounded-full bg-primary whitespace-nowrap text-white"
 						/>
 					</div>
 					<div className="hidden lg:block -z-10 absolute bottom top-[-80px] right-[-35px] pt-5">
-						<img src="/images/newsletter (3).png" alt="" />
+						<img src="/images/Group 73.png" alt="" />
 					</div>
 				</div>
 			</div>

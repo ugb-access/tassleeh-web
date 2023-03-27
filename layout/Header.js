@@ -2,6 +2,7 @@ import Link from "next/link";
 import Button from "../components/Button";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+// import TextInput from "../components/TextInput";
 import { HiMenu } from "react-icons/hi";
 
 const Header = () => {
@@ -21,18 +22,18 @@ const Header = () => {
 	const [open, setOpen] = useState(false);
 	return (
 		<div className="py-4  bg-white z-[100] sticky top-0 left-0 right-0 ">
-			<nav className="wrapper px-5 md:px-10">
+			<nav className="wrapper px-5 md:px-16">
 				<div className="navbar">
 					<div className="">
-						<span className="flex  items-center">
-							<a href="">
-								<img
-									className="lg:h-11 sm:h-8 h-6"
-									src="/images/logo-main.png"
-									alt="Logo"
-								/>
-							</a>
-							<span className="flex basis-11/12 justify-end ml-[0px] items-center">
+						<div className="flex justify-between items-center">
+							<div className="w-1/2 flex justify-between items-center">
+								<a href="">
+									<img
+										className="lg:h-11 sm:h-8 h-6"
+										src="/images/logo-main.png"
+										alt="Logo"
+									/>
+								</a>
 								<div className="lg:flex hidden">
 									<Link href={"/"}>
 										<p
@@ -91,6 +92,21 @@ const Header = () => {
 											</p>
 										</Link>
 									)}
+								</div>
+							</div>
+
+							<div className="flex ml-[0px] items-center">
+								<div className="gap-8 flex items-center">
+									<input
+										placeholder="Search here..."
+										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "
+									/>
+									<div>
+										<Button
+											text="Get Started"
+											customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
+										/>
+									</div>
 								</div>
 								{!validToken && (
 									<Link href={"/signup"}>
@@ -188,9 +204,7 @@ const Header = () => {
 																: "/business/dashboard"
 														}
 													>
-														<p
-															className="text-[#0000004D] text-md font-bold border-t-2"
-														>
+														<p className="text-[#0000004D] text-md font-bold border-t-2">
 															DASHBOARD
 														</p>
 													</Link>
@@ -204,9 +218,7 @@ const Header = () => {
 														}}
 														href={""}
 													>
-														<p
-															className="text-[#0000004D] text-md font-bold border-t-2"
-														>
+														<p className="text-[#0000004D] text-md font-bold border-t-2">
 															LOG OUT
 														</p>
 													</Link>
@@ -219,8 +231,8 @@ const Header = () => {
 										></div>
 									</>
 								) : null}
-							</span>
-						</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</nav>

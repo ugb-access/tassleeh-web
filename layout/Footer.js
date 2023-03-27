@@ -47,13 +47,12 @@ const Footer = () => {
 					<div className="col-1">
 						<img
 							className="mb-3 lg:h-[42px] h-8 cursor-pointer hover:opacity-90"
-							src="/images/logo.png"
+							src="/images/logo-main.png"
 							alt="Logo"
 						/>
-						<p className="mb-3 md:w-[500px] leading-9 hover:opacity-70">
-							The first step into your next career. We are the link to helping
-							you find a job with our unique geolocation software we open you up
-							to a whole new world of job openings within your vicinity.
+						<p className="mb-3 md:w-[300px] leading-9 hover:opacity-70">
+							The little concerns of independence are resolved by VEMA. Let go,
+							we genuinely have everything under control!cinity.
 						</p>
 						<div className="social-media-icons flex items-center mb-3">
 							<Link
@@ -62,7 +61,7 @@ const Footer = () => {
 							>
 								<img
 									className="cursor-pointer hover:opacity-80"
-									src="/images/fb.png"
+									src="/images/fb 1.png"
 									alt="fb"
 								/>
 							</Link>
@@ -73,7 +72,7 @@ const Footer = () => {
 							>
 								<img
 									className="mx-1 cursor-pointer hover:opacity-80"
-									src="/images/insta.png"
+									src="/images/Vector (2).png"
 									alt="insta"
 								/>
 							</Link>
@@ -89,18 +88,57 @@ const Footer = () => {
 							>
 								<img
 									className="mx-1 cursor-pointer hover:opacity-80"
-									src="/images/Group (7).png"
+									src="/images/Vector (1).png"
 									alt="linkdein"
 								/>
 							</Link>
 						</div>
 					</div>
 					{/* <hr className="mt-6 mb-6" /> */}
+					<div className="col-2">
+						<p
+							className="hover:opacity-70 cursor-pointer text-[#000000] opacity-80 text-base font-semibold mb-3"
+						>
+							Get in Touch
+						</p>
+						<div className="">
+							<div className="flex items-center mt-3">
+								<img
+									className="cursor-pointer hover:opacity-80 h-5"
+									src="/images/location 1.png"
+									alt=""
+								/>
+								<p className="mx-2 cursor-pointer hover:opacity-70">
+									91 Saggers Road, Australia
+								</p>
+							</div>
+							<div className="flex items-center mt-3">
+								<img
+									className="h-5 cursor-pointer hover:opacity-80"
+									src="/images/Mail.png"
+									alt=""
+								/>
+								<p className="mx-2 cursor-pointer hover:opacity-70">
+									tassleeh@gmail.com
+								</p>
+							</div>
+							<div className="flex items-center mt-3">
+								<img
+									className="h-5 cursor-pointer hover:opacity-80"
+									src="/images/phone.png"
+									alt=""
+								/>
+								<p className="mx-2 cursor-pointer hover:opacity-70">
+									+61 (08) 9060 9249
+								</p>
+							</div>
+						</div>
+					</div>
 
 					<hr className="mt-6 mb-6" />
 					<div className="col-3">
-						<p className="text-primary text-lg font-semibold cursor-pointer hover:opacity-70">
-							Quick Links
+						<p className="text-[#000000] opacity-80 text-lg font-semibold cursor-pointer hover:opacity-70">
+							Company
 						</p>
 						<ul>
 							{/* <Link href={"/"}>
@@ -112,98 +150,87 @@ const Footer = () => {
 								</li>
 							</Link> */}
 							<Link href={"/about"}>
-								<li className="mt-6 cursor-pointer hover:opacity-70">
-									About Us
-								</li>
+								<li className="mt-3 cursor-pointer hover:opacity-70">Home</li>
 							</Link>
 							<Link href={"/contact"}>
-								<li className="mt-6 cursor-pointer hover:opacity-70">
-									Contact
+								<li className="mt-3 cursor-pointer hover:opacity-70">
+									Services?
 								</li>
 							</Link>
 							{/* <Link href={"/blogs"}>
 								<li className="mt-6 cursor-pointer hover:opacity-70">Blogs</li>
 							</Link> */}
 							<Link href={"/terms-&-conditions"}>
-								<li className="mt-6 cursor-pointer hover:opacity-70">
-									Terms and Conditions
+								<li className="mt-3 cursor-pointer hover:opacity-70">
+									About Us
 								</li>
 							</Link>
 							<Link href={"/privacy-policy"}>
-								<li className="mt-6 cursor-pointer hover:opacity-70">
-									Privacy Policy
-								</li>
-							</Link>
-							{/* <Link href={"/contact-us"}>
-								<li className="mt-2 cursor-pointer hover:opacity-70">
+								<li className="mt-3 cursor-pointer hover:opacity-70">
 									Contact Us
 								</li>
-							</Link> */}
+							</Link>
+							<Link href={"/contact-us"}>
+								<li className="mt-3 cursor-pointer hover:opacity-70">Login</li>
+							</Link>
+							<Link href={"/contact-us"}>
+								<li className="mt-3 cursor-pointer hover:opacity-70">
+									Register
+								</li>
+							</Link>
 						</ul>
 					</div>
 					<hr className="mt-6 mb-6" />
 					<div className="col-4">
-						<p className="text-primary text-lg font-semibold cursor-pointer hover:opacity-70">
-							Why Us
+						<p className="text-[#000000] opacity-80 text-lg font-semibold cursor-pointer hover:opacity-70">
+							Legal
 						</p>
 						<ul>
-							<li className="mt-6 cursor-pointer hover:opacity-70">
-								Trusted & Quality Job
+							<li className="mt-3 cursor-pointer hover:opacity-70">
+								Terms of Service
 							</li>
-							<li className="mt-6 cursor-pointer hover:opacity-70">
-								Top Companies
+							<li className="mt-3 cursor-pointer hover:opacity-70">FAQ</li>
+							<li className="mt-3 cursor-pointer hover:opacity-70">
+								Privacy Policy
 							</li>
-							<li className="mt-6 cursor-pointer hover:opacity-70">
-								No Extra Charge
-							</li>
-							<li className="mt-6 cursor-pointer hover:opacity-70">
-								International Job
+							<li className="mt-3 cursor-pointer hover:opacity-70">
+								Acceptional Use
 							</li>
 						</ul>
 					</div>
 					<hr className="mt-6 mb-6" />
 					<div className="flex flex-col justify-end lg:block">
-						<p className="text-primary text-lg font-semibold mb-3 cursor-pointer hover:opacity-70">
-							Subscribe
+						<p className="text-[#000000] opacity-80 text-lg font-semibold mb-3 cursor-pointer hover:opacity-70">
+							Newsletter
 						</p>
-						<p className="w-64 leading-8">
-							Subscribe to get latest property, blog news from us.
-						</p>
-						<div className="relative pt-8 ">
-							<input
-								className="border-2 border-gray-400 px-2 py-6 h-[50px] sm:w-72 w-72 rounded-xl outline-none"
-								type="text"
-								value={dataEmail?.email}
-								onChange={(e) =>
-									setDataEmail({ ...dataEmail, email: e.target.value })
-								}
-								placeholder="Email Address"
-							/>
-							<div onClick={() => handleSubmit()} className="cursor-pointer">
-								<img
-									className="absolute md:top-[35px] top-[35px] md:right-[16px] left-[215px]"
-									src="/images/Ellipse 1.png"
-									alt=""
+						<div className="flex flex-col justify-end lg:block">
+							<div className="flex">
+								<input
+									className="border p-2 h-[50px]  outline-none"
+									type="text"
+									placeholder="info@gmail.com"
 								/>
-								<img
-									className="absolute md:top-[47px] top-[46px] md:right-[28px] left-[225px]"
-									src="/images/arrow.png"
-									alt=""
-								/>
+								<div className="h-[50px] w-16 bg-primary border-2 p-2">
+									<img
+										className="m-auto p-1 cursor-pointer hover:opacity-70"
+										src="/images/send-plane-fill.svg"
+										alt="plane"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</footer>
 			<section className="bg-primary lg:w-full">
-				<div className="copyright py-4 sm:px-6 flex !items-center px-2 justify-between">
+				<div className="copyright py-4 sm:px-14 flex !items-center px-2 justify-between">
 					<div>
 						<a
 							className=" text-white text-center sm:text-sm text-xs whitespace-nowrap"
 							href="https://www.afssquare.com/"
 							target={"_blank"}
 						>
-							The Job Locator © 2021 Developed by AFS Square
+							TASSLEEH developed by AFS Square © 2023
 						</a>
 					</div>
 					<img
