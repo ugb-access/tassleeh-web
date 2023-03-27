@@ -15,6 +15,7 @@ const HomeServiceCard = ({
 						<div className="flex flex-col">
 							<div>{item?.title}</div>
 
+
 							<div className="pt-4">{item?.description}</div>
 						</div>
 
