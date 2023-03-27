@@ -8,6 +8,7 @@ import { ImSpinner9 } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
 import CardThree from "../components/common/Card Three";
 import TextInput from "../components/TextInput";
+
 import {
 	useJsApiLoader,
 	GoogleMap,
@@ -31,6 +32,7 @@ import {
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { useRef } from "react";
+import HomeServiceCard from "../components/common/HomeServiceCard";
 
 const Home = () => {
 	const [spinner, setSpinner] = useState(false);
@@ -89,7 +91,7 @@ const Home = () => {
 	};
 	const searchByCordinates = (body) => {
 		console.log(body, "body");
-		setSpinner(true);
+		setSpinner(false);
 		getJobsByLatLng(body)
 			.then((res) => {
 				setCardData(res?.data);
@@ -180,8 +182,11 @@ const Home = () => {
 		}
 	};
 	//
-	const center = { lat: mapCenter?.lat, lng: mapCenter?.long|| mapCenter?.lng };
-	console.log('mapCenter: ', mapCenter);
+	const center = {
+		lat: mapCenter?.lat,
+		lng: mapCenter?.long || mapCenter?.lng,
+	};
+	console.log("mapCenter: ", mapCenter);
 	console.log(center, "mapCenter");
 	const divStyle = {
 		width: "330px",
@@ -195,6 +200,60 @@ const Home = () => {
 	};
 
 	const mapRef = useRef();
+	const HomeServicesData = [
+		{
+			title: "Cars",
+			description: "Get best mechanic services for your cars right away.",
+			icon: "/images/Group.png",
+			services: [
+				"Electricity",
+				"Mechanics",
+				"Dyeing/Black Smith",
+				"Oil",
+				"Recorders",
+				"Tire",
+			],
+		},
+		{
+			title: "Electronics",
+			description: "Stress no further because TASSLEEH in-house expert electrician here to serve.",
+			icon: "/images/Group (1).png",
+			services: [
+				"Laptop",
+				"Computer",
+				"Smart Watches",
+				"Tablet",
+				"Satellite",
+				"CCTV Cameras",
+			],
+		},
+		{
+			title: "Cars",
+			description: "Get best mechanic services for your cars right away.",
+			icon: "/images/Group.png",
+			services: [
+				"Electricity",
+				"Mechanics",
+				"Dyeing/Black Smith",
+				"Oil",
+				"Recorders",
+				"Tire",
+			],
+		},
+		{
+			title: "Cars",
+			description: "Get best mechanic services for your cars right away.",
+			icon: "/images/Group.png",
+			services: [
+				"Electricity",
+				"Mechanics",
+				"Dyeing/Black Smith",
+				"Oil",
+				"Recorders",
+				"Tire",
+			],
+		},
+	];
 	return (
 		<div>
 			{spinner && (
@@ -208,285 +267,42 @@ const Home = () => {
 				</div>
 			)}
 			<Head>
-				<title> Home - Job-Locator </title>
+				<title> Home - Tassleeh </title>
 			</Head>
-			<section className="pt-10 mx-10 flex lg:flex-nowrap flex-wrap  lg:justify-between">
-				<div className="col-1 !sm:px-10 sm:pt-14 lg:max-w-[40%]">
-					<h3 className="py-8 lg:text-justify sm:text-center sm:text-5xl text-4xl text-center font-semibold">
-						Find Your <span className="text-primary">Dream</span> Job
-					</h3>
-					<p className="pb-8 sm:text-lg lg:text-justify sm:text-center text-base font-normal text-center text-[#000000] text-opacity-70">
-						Welcome to Job Locator where you can easily find and apply for jobs
-						in your local area. Our job listings are constantly updated, so
-						you'll always find the latest opportunities. Whether you're looking
-						for entry-level positions or experienced roles, we have something
-						for everyone. Browse through our list of nearby jobs and apply today
-						to take the next step in your career!
-					</p>
-					<div className="hidden relative sm:flex items-center sm:flex-nowrap sm:justify-between flex-wrap sm:px-2 px-3 input-field py-2 border-2 rounded-lg">
-						<div className="search-inp absolute z-10 right-[8px] top-[1.25rem] sm:hidden">
-							<HiSearch className="text-lg text-primary" />
-						</div>
-						<div className=" flex items-center">
-							<img
-								className="sm:block hidden h-4 sm:h-5 pl-3 pr-3"
-								src="/images/search.png"
-								alt=""
-							/>
+			<section>
+				<div className="flex flex-col justify-center items-center gap-y-5 mt-24">
+					<div>
+						<h1 className="text-5xl text-[#0A093D] font-bold">
+							We Provide <span className="text-[#03A0CB]">Best</span> Services
+						</h1>
+						<p className="text-[#656464] text-sm text-center pt-4">
+							TASSLEEH provides best services for your cars, electronics, home,
+							and accessories.
+						</p>
+					</div>
+					<div className="flex border px-4 py-1.5 rounded-lg items-center">
+						<div className="flex gap-4">
+							<img src="/images/search.png" alt="" />
 							<input
-								placeholder="Job title"
-								className="sm:block hidden outline-none"
 								type="text"
-								value={searchValue}
-								onChange={(e) => setSearchValue(e.target.value)}
+								className="w-[350px]"
+								placeholder="search here"
 							/>
 						</div>
-						{/* <br />
-						<hr className="sm:hidden block"/> */}
-						<div className="flex items-center sm:border-l-2">
-							<img
-								className="sm:block hidden h-4 mr-2 sm:h-5 ml-4"
-								src="/images/location icon.png"
-								alt=""
-							/>
-
-							<PlacesAutocomplete
-								value={address}
-								onChange={setAddress}
-								onSelect={handleSelect}
-							>
-								{({
-									getInputProps,
-									suggestions,
-									getSuggestionItemProps,
-									loading,
-								}) => {
-									return (
-										<div className="relative">
-											<input
-												placeholder="Search by location..."
-												className="sm:px-2 outline-none"
-												type="text"
-												{...getInputProps({
-													placeholder: "Job Location",
-													className:
-														"location-search-input pr-2 !bg-transparent",
-												})}
-											/>
-											<div className="autocomplete-dropdown-container absolute">
-												{loading && <div>Loading...</div>}
-												{suggestions.map((suggestion) => {
-													const className = suggestion.active
-														? "suggestion-item--active"
-														: "suggestion-item";
-													// inline style for demonstration purpose
-													const style = suggestion.active
-														? {
-																backgroundColor: "#fafafa",
-																cursor: "pointer",
-																padding: "10px 0px",
-														  }
-														: {
-																backgroundColor: "#ffffff",
-																cursor: "pointer",
-																padding: "10px 0px",
-														  };
-													return (
-														<div
-															{...getSuggestionItemProps(suggestion, {
-																className,
-																style,
-															})}
-														>
-															<span>{suggestion.description}</span>
-														</div>
-													);
-												})}
-											</div>
-										</div>
-									);
-								}}
-							</PlacesAutocomplete>
-						</div>
-						<div className="sm:block hidden z-10">
-							<Link href="#jobSection">
-								<Button
-									text="Search"
-									onClick={handleSearch}
-									customClass="bg-primary rounded-md text-sm font-semibold text-white w-20 !h-10 sm:w-28 sm:!h-12"
-								/>
-							</Link>
-						</div>
-					</div>
-				</div>
-				{/* ------------------------mobile-view-index-input------------------- */}
-				<div className="block sm:hidden w-[90%]">
-					<div className="relative block sm:hidden border w-full py-1.5 pl-1.5">
-						<input
-							placeholder="Job title"
-							className="outline-none w-11/12"
-							type="text"
-							value={searchValue}
-							onChange={(e) => setSearchValue(e.target.value)}
-						/>
-						<div className="search-inp absolute z-10 right-0 !top-2 sm:hidden">
-							<Link href="#jobSection">
-								<HiSearch
-									onClick={handleSearch}
-									className="text-lg text-primary"
-								/>
-							</Link>
-						</div>
-					</div>
-					<div className="relative border py-1.5 mt-2 pl-1.5">
-						<img
-							className="sm:block hidden h-4 mr-2 sm:h-5 ml-4"
-							src="/images/location icon.png"
-							alt=""
-						/>
-						<PlacesAutocomplete
-							value={address}
-							onChange={setAddress}
-							onSelect={handleSelect}
-						>
-							{({
-								getInputProps,
-								suggestions,
-								getSuggestionItemProps,
-								loading,
-							}) => {
-								// console.log(address, suggestions, loading, "loading");
-								// console.log(address, "full address");
-								return (
-									<div className="relative">
-										<input
-											placeholder="Search by location..."
-											className=""
-											type="text"
-											{...getInputProps({
-												placeholder: "Job Location",
-												className: "w-11/12 location-search-input",
-											})}
-										/>
-										<div className=" autocomplete-dropdown-container absolute">
-											{loading && <div>Loading...</div>}
-											{suggestions.map((suggestion) => {
-												const className = suggestion.active
-													? "suggestion-item--active"
-													: "suggestion-item";
-												// inline style for demonstration purpose
-												const style = suggestion.active
-													? {
-															backgroundColor: "#fafafa",
-															cursor: "pointer",
-															padding: "10px 0px",
-													  }
-													: {
-															backgroundColor: "#ffffff",
-															cursor: "pointer",
-															padding: "10px 0px",
-													  };
-												return (
-													<div
-														{...getSuggestionItemProps(suggestion, {
-															className,
-															style,
-														})}
-													>
-														<span>{suggestion.description}</span>
-													</div>
-												);
-											})}
-										</div>
-										<div className="search-inp absolute z-10 right-0 !top-1.5 sm:hidden">
-											<Link href="#jobSection">
-												<HiSearch
-													onClick={handleSearch}
-													className="text-lg text-primary"
-												/>
-											</Link>
-										</div>
-									</div>
-								);
-							}}
-						</PlacesAutocomplete>
-					</div>
-				</div>
-				{/* <div className="pr-5 sm:hidden block">
+						<div>
 							<Button
 								text="Search"
-								customClass="bg-primary rounded-md text-sm font-semibold text-white w-20 !h-10 sm:w-28 sm:!h-12"
+								customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
 							/>
-						</div> */}
-				<div className="col-2 image-1 lg:mt-0 mt-8">
-					<img src="/images/Home pic.png" alt="" />
-				</div>
-			</section>
-			{/* ---------------------get-started------------------------- */}
-			<section className="py-20">
-				<div className="sm:h-96 py-12 bg-[#FAFAFA]">
-					<h1 className="text-[#110229] md:text-3xl text-xl font-semibold text-center line w-max m-auto">
-						Get <span className="text-primary">Started</span> today?
-						{/* <div class="line"></div> */}
-					</h1>
-					<div className="wrapper pt-20 flex sm:flex-nowrap flex-wrap px-36 justify-center">
-						<div className="flex flex-col items-center">
-							<div className="flex items-center lg:pl-12">
-								<Button
-									img={<img className="h-10" src="/images/bx-task.png"></img>}
-									customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-								/>
-								<div>
-									<img
-										className="lg:block hidden w-16 relative top-0 left-10"
-										src="/images/Group 19.png"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div className="pt-4">
-								<span className="text-base font-semibold whitespace-nowrap">
-									Register Your Account
-								</span>
-							</div>
-						</div>
-						<div className="flex flex-col items-center px-8 sm:pt-0 pt-8">
-							<div className="flex items-center lg:pl-14">
-								<Button
-									img={<img className="h-10" src="/images/bx-upload.png"></img>}
-									customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-								/>
-								<div>
-									<img
-										className="lg:block hidden w-16 relative top-0 left-10"
-										src="/images/Group 19.png"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div className="pt-4">
-								<span className="text-base font-semibold whitespace-nowrap">
-									Upload Your Resume
-								</span>
-							</div>
-						</div>
-						<div className="flex flex-col items-center sm:pt-0 pt-8">
-							<div className="flex items-center">
-								<Button
-									img={
-										<img className="h-10" src="/images/bx-briefcase.png"></img>
-									}
-									customClass="bg-primary flex justify-center items-center rounded-xl text-sm font-semibold text-white !w-16 !h-16"
-								/>
-							</div>
-							<div className="pt-4">
-								<span className=" text-base font-semibold whitespace-nowrap">
-									Apply For Dream Job
-								</span>
-							</div>
 						</div>
 					</div>
 				</div>
+			</section>
+			{/* ---------------------Services------------------------- */}
+			<section className="flex flex-wrap gap-6 justify-center mt-20">
+				{HomeServicesData.map((item, index) => {
+					return <HomeServiceCard key={index} item={item} />;
+				})}
 			</section>
 			{/* -------------------Availaible-jobs----------------------- */}
 			<section>

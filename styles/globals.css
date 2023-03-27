@@ -1,9 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
 	box-sizing: border-box;
 }
+	
+
 span {
 	text-decoration: blue;
 	text-underline-offset: 15px !important;

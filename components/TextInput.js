@@ -16,6 +16,7 @@ const TextInput = ({
 	disabled,
 	readOnly,
 	onKeyDown,
+	image,
 }) => {
 	return (
 		<div className="">
@@ -36,6 +37,7 @@ const TextInput = ({
 							onChange={onChange}
 							value={value}
 							className={`bg-gray-50 border border-gray-100 text-gray-900 text-sm h-12   placeholder:text-gray-500 placeholder:font-base  placeholder:text-sm w-full p-2.5 !mb-5 outline-none  ${customClass} ${inputStyle}`}
+							image={image}
 							placeholder={placeholder}
 							readOnly={readOnly}
 						/>
