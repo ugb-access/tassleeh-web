@@ -20,6 +20,7 @@ span {
 	background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
 }
 
+
 /* -----------------line--------------------------- */
 .line::after {
 	content: "";

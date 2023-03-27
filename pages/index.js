@@ -8,6 +8,7 @@ import { ImSpinner9 } from "react-icons/im";
 import { HiSearch } from "react-icons/hi";
 import CardThree from "../components/common/Card Three";
 import TextInput from "../components/TextInput";
+import ReviewCard from "../components/common/ReviewCard";
 
 import {
 	useJsApiLoader,
@@ -248,6 +249,14 @@ const Home = () => {
 			services: ["Bags", "Shoes", "Jewelry", "Watches", "Clothes", "Suit Case"],
 		},
 	];
+	const ReviewCardData = [
+		{
+			icon: "/images/Ellipse 17.png",
+			title: "Tom Davis",
+			description:
+				'I received support from TASSLEEH in ways that are beyond words. One of the key drivers of our hyper growth was their very competent workforce. These people truly embody the phrase "worth for money."',
+		},
+	];
 	return (
 		<div>
 			{spinner && (
@@ -381,12 +390,67 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			{/* ---------------------------Jobs-in 60 miles------------------------ */}
+			{/* ---------------------------Our Achievement------------------------ */}
+			<section>
+				<div>
+					<div className="mt-32">
+						<img className="w-full" src="/images/Our Achievement.png" alt="" />
+					</div>
+				</div>
+			</section>
 
 			{/* ----------------------------Popular------------------------------- */}
+			<section className="flex justify-center  mt-24">
+				<div className=" pt-2 px-5 w-2/5 mt-12">
+					<p className=" text-primary font-medium text-lg my-4">About Us</p>
+					<h1 className="text-4xl font-bold text-[#0a093d] my-5 w-80">
+						About TASSLEEH Platform?
+					</h1>
+					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] w-[460px]">
+						TASSLEEH is a leading multiple service provider platform catering to
+						your 360 needs with quality guaranteed. Our aim and priority is to
+						add value to our consumers' lives by providing smart solutions to
+						all their problems.
+					</p>
 
-			{/* -----------------------------Get started today------------------- */}
-
+					<div className="flex gap-4 mt-10">
+						<Button
+							text="Get Started"
+							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+						/>
+						<Button
+							text="Invite Friend"
+							customClass="text-primary rounded-2xl p-2 text-sm font-semibold border border-primary !w-32 !h-14"
+						/>
+					</div>
+				</div>
+				<div>
+					<img src="/images/about.png" alt="" />
+				</div>
+			</section>
+			{/* -----------------------------Customer reviews------------------- */}
+			<section>
+				<div className="flex flex-col justify-center items-center mt-20">
+					<p className="text-primary text-lg mb-2">Customer Reviews</p>
+					<h1 className="text-4xl font-bold text-[#0a093d]">
+						Valuable Customers Sharing Their Reviews{" "}
+					</h1>
+				</div>
+				<div>
+					{ReviewCardData.map((item, index) => {
+						return (
+							<div className="mb-16 px-16 relative">
+								<div className="absolute top-[-17px] left-9">
+									<img className="h-12" src="/images/semicolon.png" alt="" />
+								</div>
+								<div>
+									<ReviewCard key={index} item={item} />
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</section>
 			{/* --------------------------Popular-companies----------------------------- */}
 
 			{/* ---------------------------Dowload-APP--------------------------- */}
