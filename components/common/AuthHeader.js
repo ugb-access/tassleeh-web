@@ -1,7 +1,7 @@
 import Link from "next/link";
 const AuthHeader = ({ text }) => {
 	return (
-		<div className="flex justify-between items-center p-4">
+		<div className="flex justify-between items-center px-14 pt-8">
 			<div>
 				<h1 className="text-[#0a093d] text-2xl font-bold">{text}</h1>
 			</div>

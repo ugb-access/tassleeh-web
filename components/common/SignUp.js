@@ -1,5 +1,6 @@
 import Button from "../Button";
 import Link from "next/link";
+import TextInput from "../TextInput";
 import React, { useState } from "react";
 // import { signupUser } from "../../services/auth-service";
 import Slider from "../slider/slider";
@@ -33,6 +34,7 @@ const SignUp = ({
 	const [setCheck, isSetCheck] = useState(false);
 	const [spinner, setSpinner] = useState(false);
 	const [showPass, setShowPass] = useState(false);
+	const [show, setShow] = useState(1);
 	const [data, setData] = useState({
 		email: "",
 		phone: "",
@@ -263,73 +265,116 @@ const SignUp = ({
 			)}
 			<div className="">
 				<div className="col-2 flex flex-col">
-					<div className="py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12  border-2 border-solid rounded-lg md:rounded-none mt-4  mx-3">
-						
-						<div className="pb-7">
-							<img
-								className="mx-auto h-10 sm:h-12 md:h-14"
-								src="/images/logo.png"
-								alt=""
-							/>
+					<div className="py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12 border-solid rounded-lg md:rounded-none  mx-3">
+						<div className="flex !justify-center  md:!justify-start">
+							<div className="flex items-center py-5">
+								<input
+									id="default-radio-1"
+									type="radio"
+									onClick={() => setShow(1)}
+									defaultChecked
+									value="tag1"
+									name="data"
+									className="w-4 h-4 text-primary bg-gray-100 border-gray-300  "
+								/>
+								<label
+									for="default-radio-1"
+									className="ml-2 mr-5  text-sm whitespace-nowrap  font-medium text-gray-900 dark:text-gray-300"
+								>
+									Normal User
+								</label>
+							</div>
+							<div className="flex items-center">
+								<input
+									onClick={() => setShow(2)}
+									id="default-radio-2"
+									type="radio"
+									value="tag2"
+									name="data"
+									className="w-4 h-4 text-primary bg-gray-100 border-gray-300"
+								/>
+								<label
+									for="default-radio-2"
+									className="ml-2 text-sm whitespace-nowrap font-medium text-gray-900 dark:text-gray-300"
+								>
+									Service Provider
+								</label>
+							</div>
 						</div>
 						<form onSubmit={(e) => handleSubmit(e)}>
-							<div className="py-2 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="email"
-									className="outline-none px-2 w-full bg-[#F1F1F1] placeholder:text-xs lg:placeholder:text-sm"
-									type="text"
-									placeholder={placeholdert3}
-								/>
-							</div>
-							<div className="my-6 py-2 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="phone"
-									className="placeholder:text-xs lg:placeholder:text-sm outline-none px-2 w-full bg-[#F1F1F1]"
-									type="text"
-									placeholder="Enter Your Phone Number"
-								/>
-							</div>
-							<div className="my-6 py-2 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="fullName"
-									className="placeholder:text-xs lg:placeholder:text-sm outline-none px-2 w-full bg-[#F1F1F1]"
-									type="text"
-									placeholder={placeholdert4}
-								/>
-							</div>
-							<div className="my-6 py-2 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="userName"
-									className="placeholder:text-xs lg:placeholder:text-sm outline-none px-2 w-full bg-[#F1F1F1]"
-									type="text"
-									placeholder={placeholdert1}
-								/>
-							</div>
-							<div className="relative my-6 py-2 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="password"
-									className="bg-[#F1F1F1] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-									type={showPass ? "text" : "password"}
-									placeholder={placeholdert2}
-								/>
-								{showPass ? (
-									<AiOutlineEye
-										onClick={() => setShowPass(false)}
-										className="absolute right-2 top-4"
-									/>
-								) : (
-									<AiOutlineEyeInvisible
-										onClick={() => setShowPass(true)}
-										className="absolute right-2 top-4"
-									/>
-								)}
-							</div>
-							<div className="flex items-center mb-4">
+							{show === 1 && (
+								<div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="email"
+											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Name"
+											labelText={"Name"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="phone"
+											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Mobile Number"
+											labelText={"Mobile Number"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Email"
+											labelText={"Email"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="userName"
+											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="password"
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="password"
+											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
+											placeholder="Confirm Password"
+											labelText={"Confirm Password"}
+											labelStyle={"mt-8"}
+										/>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute right-2 top-4"
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute right-2 top-4"
+											/>
+										)}
+									</div>
+								</div>
+							)}
+							{show === 2 && <div>
+								ali
+								</div>}
+							<div className="flex items-center mb-4 mt-7">
 								<input
 									onChange={(e) => isSetCheck(e.target.checked)}
 									id="isActive"
@@ -337,12 +382,12 @@ const SignUp = ({
 									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
 								/>
 								<label className=" text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
-									By creating an account you agree to our{" "}
+									I agree to TASSLEEH {""}
 									<Link target={"_blank"} href={"/terms-&-conditions"}>
 										<span className="text-primary">terms</span> and{" "}
 									</Link>
 									<Link target={"_blank"} href={"/privacy-policy"}>
-										<span className="text-primary">privacy policy.</span>
+										<span className="text-primary">conditions.</span>
 									</Link>
 								</label>
 							</div>

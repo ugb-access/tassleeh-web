@@ -272,14 +272,14 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 					<Slider />
 				</div>
 				<div className="col-2 flex flex-col justify-between max-h-screen basis-full md:basis-[50%]">
-					<div className="lg:py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12  border-2 border-solid rounded-lg md:rounded-none mt-4  mx-3">
-						<div className="lg:pb-8">
+					<div className="lg:py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12 md:rounded-none mt-4  mx-3">
+						{/* <div className="lg:pb-8">
 							<img
 								className="mx-auto h-10 sm:h-12 md:h-14"
 								src="/images/logo.png"
 								alt=""
 							/>
-						</div>
+						</div> */}
 						<form onSubmit={(e) => handleSubmit(e)}>
 							<div className="my-6 py-3 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
 								<input

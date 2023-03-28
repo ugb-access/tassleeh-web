@@ -67,7 +67,7 @@ const EmblaCarousel = ({ slides, options }) => {
 									</Link>
 								</div>
 								<img
-									className="embla__slide__img"
+									className="embla__slide__img border-t-2 rounded-tr-[80px]"
 									src={item.img}
 									alt="Your alt text"
 								/>
