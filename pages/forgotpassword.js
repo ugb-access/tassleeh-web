@@ -181,7 +181,7 @@ const ForgotPassword = () => {
 
 			<div className="">
 				<Head>
-					<title> SignUp - Job Locator </title>
+					<title> Forgot - Tassleeh </title>
 				</Head>
 
 				{/* forgotpassword */}

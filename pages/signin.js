@@ -7,7 +7,7 @@ const Signin = () => {
 	return (
 		<div>
 			<Head>
-				<title> SignIn - Job Locator </title>
+				<title> SignIn - Tassleeh </title>
 			</Head>
 			<AuthLayout text={"Login to your account as:"}>
 			<SignIn
