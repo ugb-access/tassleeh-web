@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../config/firebaseConfig";
 import dynamic from "next/dynamic";
+import AuthHeader from "./AuthHeader";
 
 const LoginSocialFacebook = dynamic(
 	() =>
@@ -260,12 +261,10 @@ const SignUp = ({
 					</div>
 				</div>
 			)}
-			<div className="flex justify-between ">
-				<div className="basis-2/4 hidden md:block h-fit sticky top-0">
-					<Slider />
-				</div>
-				<div className="col-2 flex flex-col basis-full md:basis-[50%]">
+			<div className="">
+				<div className="col-2 flex flex-col">
 					<div className="py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12  border-2 border-solid rounded-lg md:rounded-none mt-4  mx-3">
+						
 						<div className="pb-7">
 							<img
 								className="mx-auto h-10 sm:h-12 md:h-14"

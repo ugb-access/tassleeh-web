@@ -4,28 +4,28 @@ const OPTIONS = {};
 const SLIDE_COUNT = 3;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-const image1 = "/images/signin.png";
-const image2 = "/images/signup.png";
-const image3 = "/images/signin.png";
+const image1 = "/images/BG.png";
+const image2 = "/images/BG.png";
+const image3 = "/images/BG.png";
 const images = [
 	{
 		img: image1,
 		title: "Find Your",
-		description: "Jobs, Employment & Future Career Opportunities...",
+		description: "Our motive is to provide best services to our customers under one platform.",
 		orange: "Dream",
 		black: "job",
 	},
 	{
 		img: image2,
 		title: "Hire ",
-		description: "Jobs, Employment & Future Career Opportunities...",
+		description: "Our motive is to provide best services to our customers under one platform.",
 		orange: "Right",
 		black: "Candidate",
 	},
 	{
 		img: image3,
 		title: "Hassle Free",
-		description: "Jobs, Employment & Future Career Opportunities...",
+		description: "Our motive is to provide best services to our customers under one platform.",
 		orange: "Job",
 		black: "Search",
 	},

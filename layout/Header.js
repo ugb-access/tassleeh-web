@@ -45,10 +45,10 @@ const Header = () => {
 										</p>
 									</Link>
 
-									<Link href={"/about"}>
+									<Link href={"/services"}>
 										<p
 											className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
-												router.asPath.startsWith("/about") && "!text-primary"
+												router.asPath.startsWith("/services") && "!text-primary"
 											}`}
 										>
 											Services
@@ -63,7 +63,7 @@ const Header = () => {
 											Contact Us
 										</p>
 									</Link>
-									<Link href={"/faq"}>
+									{/* <Link href={"/faq"}>
 										<p
 											className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/faq") && "!text-primary"
@@ -71,7 +71,7 @@ const Header = () => {
 										>
 											Login
 										</p>
-									</Link>
+									</Link> */}
 									{/* <Link href={"/blogs"}>
 										<p
 											className={`text-[#110229] text-sm font-semibold mx-6 hover:text-primary  ${
@@ -84,11 +84,11 @@ const Header = () => {
 									{!validToken && (
 										<Link href={"/signin"}>
 											<p
-												className={`text-[#110229] text-sm font-semibold mr-16 ml-6 hover:text-primary  ${
+												className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
 													router.asPath.startsWith("/signin") && "!text-primary"
 												}`}
 											>
-												LOGIN
+												Login
 											</p>
 										</Link>
 									)}
@@ -101,21 +101,23 @@ const Header = () => {
 										placeholder="Search here..."
 										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "
 									/>
-									<div>
-										<Button
-											text="Get Started"
-											customClass="bg-primary rounded-full p-2 text-sm font-semibold text-white !w-28 !h-12"
-										/>
-									</div>
+									<Link href={"/signup"}>
+										<div>
+											<Button
+												text="Get Started"
+												customClass="bg-primary rounded-full p-2 text-sm font-semibold text-white !w-28 !h-12"
+											/>
+										</div>
+									</Link>
 								</div>
-								{!validToken && (
+								{/* {!validToken && (
 									<Link href={"/signup"}>
 										<Button
 											text="SIGN UP"
 											customClass={`hidden font-bold md:block text-white md:text-sm border-solid bg-primary rounded-md w-[100px] h-[30px] md:h-[30px] md:mr-4`}
 										/>
 									</Link>
-								)}
+								)} */}
 								{/* {validToken && (
                   <Link href={""}>
                     <Button

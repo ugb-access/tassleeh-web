@@ -19,7 +19,12 @@ span {
 .back{
 	background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
 }
-
+.poster {
+	background-image: url("../public/images/base1.png");
+	height: 500px;
+	width: 100%;
+	background-size: cover;
+}
 
 /* -----------------line--------------------------- */
 .line::after {
@@ -177,7 +182,7 @@ span {
 .embla__dot,
 .embla__button {
 	background-color: transparent;
-	color: #803434 !important;
+	color: #03A0CB !important;
 	touch-action: manipulation;
 	display: inline-flex;
 	text-decoration: none;
@@ -197,8 +202,8 @@ span {
 	align-items: center;
 }
 .embla__dot {
-	width: 1rem;
-	height: 1rem;
+	width: 0.5rem;
+	height: 0.5rem;
 	display: flex;
 	align-items: center;
 	margin-right: 0.5rem;
@@ -206,16 +211,16 @@ span {
 	margin-bottom: 30px;
 }
 .embla__dot:after {
-	background: white !important;
+	background: #c6d0dc !important;
 	border-radius: 50%;
 	width: 100%;
 	height: 100%;
 	content: "";
 }
 .embla__dot--selected:after {
-	background: #803434 !important;
-	min-width: 22px;
-	height: 1.5rem;
+	background: #03A0CB !important;
+	min-width: 14px;
+	height: 1rem;
 }
 .embla__button {
 	z-index: 1;

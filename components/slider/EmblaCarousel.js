@@ -61,18 +61,9 @@ const EmblaCarousel = ({ slides, options }) => {
 					<div className="embla__container">
 						{slides.map((item, index) => (
 							<div className="embla__slide" key={index}>
-								<div className="absolute top-2 right-2">
+								<div className="absolute top-16 left-32">
 									<Link href="/">
-										<div className="cursor-pointer z-50 flex items-center">
-											<img
-												className="h-5"
-												src="/images/bx-arrow-back.png"
-												alt=""
-											/>
-											<span className="text-white whitespace-nowrap text-sm">
-												Go Back
-											</span>
-										</div>
+										<img src="/images/logo-main.png" alt="" />
 									</Link>
 								</div>
 								<img
@@ -80,15 +71,18 @@ const EmblaCarousel = ({ slides, options }) => {
 									src={item.img}
 									alt="Your alt text"
 								/>
-								<div className="absolute left-[50%] right-[50%] bottom-28 justify-center flex flex-col items-center mx-auto">
+								<div className="absolute left-32 top-36 justify-center flex flex-col items-center mx-auto">
 									<h2 className="text-white py-2 text-4xl font-semibold whitespace-nowrap">
-										{item.title}{" "}
-										<span className="text-[#FC6045]">{item?.orange}</span>
-										<span className="ml-1">{item?.black}</span>
+										{/* {item.title}{" "} */}
+										{/* <span className="ml-1">{item?.black}</span> */}
 									</h2>
-									<p className="text-white text-center text-xl  lg:text-lg font-medium py-2 w-[400px]">
-										{item.description}
+									<p className="text-[#0a093d] text-justify text-xl  lg:text-3xl font-bold py-2 w-[600px]">
+										{/* {item.description} */}
+										<p>Our motive is to provide <span className="text-primary">best services</span> to our customers under one platform.</p>
 									</p>
+									<div className="flex justify-center items-center">
+									<img src="/images/vec.png" alt="" />
+									</div>
 								</div>
 							</div>
 						))}

@@ -256,6 +256,19 @@ const Home = () => {
 			description:
 				'I received support from TASSLEEH in ways that are beyond words. One of the key drivers of our hyper growth was their very competent workforce. These people truly embody the phrase "worth for money."',
 		},
+		{
+			icon: "/images/Ellipse 17 (1).png",
+			title: "Paul Adam",
+			description:
+				'I received support from TASSLEEH in ways that are beyond words. One of the key drivers of our hyper growth was their very competent workforce. These people truly embody the phrase "worth for money."',
+		},
+		{
+			icon: "/images/Ellipse 18.png",
+			title: "Alex Hales",
+			description:
+				'I received support from TASSLEEH in ways that are beyond words. One of the key drivers of our hyper growth was their very competent workforce. These people truly embody the phrase "worth for money."',
+		}
+
 	];
 	return (
 		<div>
@@ -330,7 +343,7 @@ const Home = () => {
 					<div className="my-4">
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Vetted and background-checked in house staff
@@ -338,7 +351,7 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								High-Tech and Most Advanced Equipment
@@ -346,7 +359,7 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Quality Control and Safety
@@ -354,7 +367,7 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Affordable and Upfront Pricing
@@ -362,7 +375,7 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Timely and Convenient Services
@@ -370,7 +383,7 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-2">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/dot-1.png" alt="" />
+								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 w opacity-70">
 								Experienced, Trained and Certified
@@ -428,29 +441,6 @@ const Home = () => {
 					<img src="/images/about.png" alt="" />
 				</div>
 			</section>
-			{/* -----------------------------Customer reviews------------------- */}
-			<section>
-				<div className="flex flex-col justify-center items-center mt-20">
-					<p className="text-primary text-lg mb-2">Customer Reviews</p>
-					<h1 className="text-4xl font-bold text-[#0a093d]">
-						Valuable Customers Sharing Their Reviews{" "}
-					</h1>
-				</div>
-				<div>
-					{ReviewCardData.map((item, index) => {
-						return (
-							<div className="mb-16 px-16 relative">
-								<div className="absolute top-[-17px] left-9">
-									<img className="h-12" src="/images/semicolon.png" alt="" />
-								</div>
-								<div>
-									<ReviewCard key={index} item={item} />
-								</div>
-							</div>
-						);
-					})}
-				</div>
-			</section>
 			{/* --------------------------Popular-companies----------------------------- */}
 
 			{/* ---------------------------Dowload-APP--------------------------- */}
@@ -477,6 +467,29 @@ const Home = () => {
 					<div>
 						<img className="h-[500px]" src="/images/mobile muckup.png" alt="" />
 					</div>
+				</div>
+			</section>
+			{/* -----------------------------Customer reviews------------------- */}
+			<section>
+				<div className="flex flex-col justify-center items-center mt-24">
+					<p className="text-primary text-lg mb-2">Customer Reviews</p>
+					<h1 className="text-4xl font-bold text-[#0a093d]">
+						Valuable Customers Sharing Their Reviews{" "}
+					</h1>
+				</div>
+				<div className="flex justify-center mt-16">
+					{ReviewCardData.map((item, index) => {
+						return (
+							<div className="mb-16 px-16 relative">
+								<div className="absolute top-[-17px] left-9">
+									<img className="h-12" src="/images/semicolon.png" alt="" />
+								</div>
+								<div>
+									<ReviewCard key={index} item={item} />
+								</div>
+							</div>
+						);
+					})}
 				</div>
 			</section>
 			{/* -------------------------------------Newsletter--------------------------- */}
