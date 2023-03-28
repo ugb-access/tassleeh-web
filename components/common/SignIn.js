@@ -6,6 +6,7 @@ import Slider from "../slider/slider";
 import { useRouter } from "next/router";
 import jwt_decode from "jwt-decode";
 import { IoIosEye } from "react-icons/io";
+import TextInput from "../TextInput";
 import { ImSpinner9 } from "react-icons/im";
 import { toast } from "react-toastify";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -25,6 +26,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 	const router = useRouter();
 	const [showPass, setShowPass] = useState(false);
 	const [spinner, setSpinner] = useState(false);
+	const [show, setShow] = useState(1);
 	const [isError, setIsError] = useState("");
 	const [data, setData] = useState({
 		email: "",
@@ -267,93 +269,257 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 					</div>
 				</div>
 			)}
-			<div className="flex justify-between ">
-				<div className="basis-2/4 hidden md:block h-fit sticky top-0">
-					<Slider />
-				</div>
-				<div className="col-2 flex flex-col justify-between max-h-screen basis-full md:basis-[50%]">
-					<div className="lg:py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12 md:rounded-none mt-4  mx-3">
-						{/* <div className="lg:pb-8">
-							<img
-								className="mx-auto h-10 sm:h-12 md:h-14"
-								src="/images/logo.png"
-								alt=""
-							/>
-						</div> */}
+			<div className="">
+				<div className="col-2 flex flex-col">
+					<div className="py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12 border-solid rounded-lg md:rounded-none  mx-3">
+						<div className="flex !justify-center  md:!justify-start">
+							<div className="flex items-center py-5">
+								<input
+									id="default-radio-1"
+									type="radio"
+									onClick={() => setShow(1)}
+									defaultChecked
+									value="tag1"
+									name="data"
+									className="w-4 h-4 text-primary bg-gray-100 border-gray-300  "
+								/>
+								<label
+									for="default-radio-1"
+									className="ml-2 mr-5  text-sm whitespace-nowrap  font-medium text-gray-900 dark:text-gray-300"
+								>
+									Normal User
+								</label>
+							</div>
+							<div className="flex items-center">
+								<input
+									onClick={() => setShow(2)}
+									id="default-radio-2"
+									type="radio"
+									value="tag2"
+									name="data"
+									className="w-4 h-4 text-primary bg-gray-100 border-gray-300"
+								/>
+								<label
+									for="default-radio-2"
+									className="ml-2 text-sm whitespace-nowrap font-medium text-gray-900 dark:text-gray-300"
+								>
+									Service Provider
+								</label>
+							</div>
+						</div>
 						<form onSubmit={(e) => handleSubmit(e)}>
-							<div className="my-6 py-3 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="email"
-									className="outline-none placeholder:text-xs lg:placeholder:text-sm  px-2 w-full bg-[#F1F1F1]"
-									type="text"
-									placeholder={placeholdert1}
-								/>
-							</div>
-							<div className="relative flex items-center my-6 py-2.5 w-full rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#F1F1F1]">
-								<input
-									onChange={(e) => handleChange(e)}
-									id="password"
-									className="bg-[#F1F1F1] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-									type={showPass ? "text" : "password"}
-									placeholder={placeholdert2}
-								/>
-								{showPass ? (
-									<AiOutlineEye
-										onClick={() => setShowPass(false)}
-										className="absolute right-2 top-4"
-									/>
-								) : (
-									<AiOutlineEyeInvisible
-										onClick={() => setShowPass(true)}
-										className="absolute right-2 top-4"
-									/>
-								)}
-							</div>
-							<div className="flex !justify-center  md:justify-start">
-								<div className="flex items-center py-5">
-									<input
-										id="default-radio-1"
-										type="radio"
-										onClick={dataChange}
-										defaultChecked
-										value="tag1"
-										name="data"
-										className="w-4 h-4 text-primary bg-gray-100 border-gray-300  "
-									/>
-									<label
-										for="default-radio-1"
-										className="ml-2 mr-5  text-sm whitespace-nowrap  font-medium text-gray-900 dark:text-gray-300"
-									>
-										Employee Account
-									</label>
+							{show === 1 && (
+								<div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Email"
+											labelText={"Email"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="password"
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={"mt-12 mb-2"}
+										/>
+									</div>
 								</div>
-								<div className="flex items-center">
-									<input
-										onClick={dataChange}
-										id="default-radio-2"
-										type="radio"
-										value="tag2"
-										name="data"
-										className="w-4 h-4 text-primary bg-gray-100 border-gray-300"
-									/>
-									<label
-										for="default-radio-2"
-										className="ml-2 text-sm whitespace-nowrap font-medium text-gray-900 dark:text-gray-300"
-									>
-										Business Account
-									</label>
+							)}
+							{show === 2 && (
+								<div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Full Name"
+											labelText={"Full Name"}
+											labelStyle={"mt-2 mb-2"}
+										/>
+									</div>
+									<div className="mt-8">
+										<label className="">
+											Country
+											<select
+												onChange={(e) => handleChange(e)}
+												value={data.requiredCareerLevel}
+												id="requiredCareerLevel"
+												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											>
+												<option selected>Country</option>
+												<option value="Beginners">United Kingdom</option>
+												<option value="Intermediate">Pakistan</option>
+												<option value="Experienced">Australia</option>
+											</select>
+										</label>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="number"
+											placeholder="Mobile"
+											labelText={"Mobile"}
+											labelStyle={"mt-2 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="email"
+											placeholder="Email"
+											labelText={"Email"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="mt-8">
+										<label className="">
+											Work Category
+											<select
+												onChange={(e) => handleChange(e)}
+												value={data.requiredCareerLevel}
+												id="requiredCareerLevel"
+												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											>
+												<option selected>Work Category</option>
+												<option value="Beginners">Business</option>
+												<option value="Intermediate">Owner</option>
+												<option value="Experienced">Emoloyee</option>
+											</select>
+										</label>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="password"
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={"mt-3 mb-2"}
+										/>
+									</div>
+									<div className="relative">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="password"
+											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
+											placeholder="Confirm Password"
+											labelText={"Confirm Password"}
+											labelStyle={"mt-10"}
+										/>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute right-0 "
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute top-12 right-3"
+											/>
+										)}
+									</div>
+									<div className="">
+										<div className="mt-14 my-5">
+											<span className="font-bold text-[#0a093d]">
+												Upload Experience Letter
+											</span>
+										</div>
+										<div className="border-2 rounded-md ">
+											<div className="flex flex-col justify-center items-center py-8">
+												<div className="py-4">
+													<img
+														className=""
+														src={image ? image : "/images/upload.png"}
+														alt=""
+													/>
+												</div>
+												{/* <p>Drag photos here</p> */}
+												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
+													<p className="text-primary text-sm font-semibold ">
+														Upload
+													</p>
+													<input
+														accept="/image/*"
+														onChange={imageHandler}
+														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
+														type="file"
+													/>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div className="">
+										<div className="mt-8 my-5">
+											<span className="font-bold text-[#0a093d]">
+												Upload Id
+											</span>
+										</div>
+										<div className="border-2 rounded-md ">
+											<div className="flex flex-col justify-center items-center py-8">
+												<div className="py-4">
+													<img
+														className=""
+														src={image ? image : "/images/upload.png"}
+														alt=""
+													/>
+												</div>
+												{/* <p>Drag photos here</p> */}
+												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
+													<p className="text-primary text-sm font-semibold ">
+														Upload
+													</p>
+													<input
+														accept="/image/*"
+														onChange={imageHandler}
+														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
+														type="file"
+													/>
+												</button>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							{/* <div className="text-center">
-								<h1 className="text-red-600 text-sm">{isError}</h1>
+							)}
+							{/* <div className="flex items-center mb-2 mt-9">
+								<input
+									onChange={(e) => isSetCheck(e.target.checked)}
+									id="isActive"
+									type="checkbox"
+									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+								/>
+								<label className="pt-0.5 text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
+									I agree to TASSLEEH {""}
+									<Link target={"_blank"} href={"/terms-&-conditions"}>
+										<span className="text-primary">terms</span> and{" "}
+									</Link>
+									<Link target={"_blank"} href={"/privacy-policy"}>
+										<span className="text-primary">conditions.</span>
+									</Link>
+								</label>
 							</div> */}
-							<div className="lg:py-4">
+							{/* <Link href="/compelete-profile"> */}
+							<div className="pt-20 flex justify-center">
 								<Button
 									id="disabled"
 									type="submit"
-									text="Log in"
-									customClass=" bg-primary flex items-center justify-center rounded-md p-2 text-sm font-semibold text-white w-full !h-12"
+									text="Login"
+									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-32 !h-12"
 									img={
 										<svg
 											id="loadingmail"
@@ -373,63 +539,17 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 									}
 								/>
 							</div>
+							{/* </Link> */}
 						</form>
-						<div className="flex justify-center items-center py-3">
-							<hr className="w-[50px]" />
-							<p className="mx-2">or</p>
-							<hr className="w-[50px]" />
-						</div>
-						<div className="max-w-fit p-0 lg:my-6 m-auto">
-							{typeof window !== "undefined" ? (
-								<LoginSocialFacebook
-									appId="1337714373684794"
-									// appId = ""
-									fieldsProfile={
-										"id,first_name,last_name,name,name_format,picture,email"
-									}
-									redirect_uri={REDIRECT_URI}
-									onResolve={handleFBLogin}
-									onReject={(err) => {
-										console.log(err, "facebookReject");
-									}}
-								>
-									<button className="flex items-center mx-auto  bg-[#1877F2] py-1.5 px-3.5 gap-2 rounded-sm">
-										<img src="/images/facebook (2).png" alt="" />
-										<p className="text-xs text-white mr-2">
-											Continue with Facebook
-										</p>
-									</button>
-								</LoginSocialFacebook>
-							) : null}
-						</div>
-						<button
-							onClick={() => {
-								signWithGoogle();
-							}}
-							className="flex mx-auto justify-between items-center bg-[#F44336] py-1 px-3 gap-3 rounded-sm"
-						>
-							<img className="ml-1" src="/images/google-plus.png" alt="" />
-							<p className="text-xs text-white mr-4">Continue with Google</p>
-						</button>
-						<div className="pt-3  md:pt-6 mb-3 lg:pt-9">
-							<p
-								onClick={() => router.push("/forgotpassword")}
-								className="text-primary text-center text-lg font-medium cursor-pointer"
-							>
-								Forgotten your password?
-							</p>
-						</div>
 					</div>
-					<div className="flex lg:mt-10 md:mt-8 mt-10 justify-center border-2 rounded-lg md:rounded-none border-solid h-12 w-[96.5%] my-4 mx-auto items-center ">
-						<Link href={"/signup"}>
+					<Link href={"/signin"}>
+						<div className="flex lg:mt-0 mt-11 md:mt-8 mb-2 justify-center rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">
 							<p className=" text-sm font-medium text-[#636363]">
-								Don't have an account?
-								<span className="text-primary ml-1 cursor-pointer">
-									Sign up
-								</span>
+								Already have an account?
+								<span className="text-primary ml-1">Sign in</span>
 							</p>
-						</Link>
-					</div>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</>

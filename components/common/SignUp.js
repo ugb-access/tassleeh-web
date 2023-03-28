@@ -34,6 +34,8 @@ const SignUp = ({
 	const [setCheck, isSetCheck] = useState(false);
 	const [spinner, setSpinner] = useState(false);
 	const [showPass, setShowPass] = useState(false);
+	const [image, setImage] = useState("");
+	const [checkImage, setCheckImage] = useState("");
 	const [show, setShow] = useState(1);
 	const [data, setData] = useState({
 		email: "",
@@ -141,6 +143,59 @@ const SignUp = ({
 		const newData = { ...data };
 		newData[e.target.id] = e.target.value;
 		setData(newData);
+	};
+	const handleFile = (e) => {
+		e.preventDefault();
+		if (handleValidations()) {
+			setSpinner(true);
+			if (image) {
+				if (checkImage) {
+					const file = checkImage;
+					if (file) {
+						const preview = URL.createObjectURL(file);
+						// setFile({ obj: file, preview });
+						// e.target.value = "";
+						const storageRef = ref(storage, `/business/${file.name}`);
+						//firebase upload and progress
+						const uploadTask = uploadBytesResumable(storageRef, file);
+						setRequesting(true);
+						uploadTask.on(
+							"state_changed",
+							(snapshot) => {
+								const percent = Math.round(
+									(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+								); // update progress
+
+								setPercent(percent);
+							},
+							(err) => console.log(err),
+							() => {
+								// download url
+								getDownloadURL(uploadTask.snapshot.ref)
+									.then((url) => {
+										handleSubmit(url);
+									})
+									.catch((err) => setCheckImage(""))
+									.finally((res) => setRequesting(false));
+							}
+						);
+					}
+				}
+			} else {
+				toast.error("post job image cannot be empty");
+				setSpinner(false);
+			}
+		}
+	};
+	const imageHandler = (e) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			if (reader.readyState === 2) {
+				setImage(reader.result);
+				setCheckImage(e.target.files[0]);
+			}
+		};
+		reader.readAsDataURL(e.target.files[0]);
 	};
 	// google signup
 	let googleProvider = new GoogleAuthProvider();
@@ -347,11 +402,11 @@ const SignUp = ({
 											labelStyle={"mt-8 mb-2"}
 										/>
 									</div>
-									<div className="">
+									<div className="relative">
 										<TextInput
 											// onChange={(e) => handleChange(e)}
 											id="password"
-											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type={showPass ? "text" : "password"}
 											placeholder="Confirm Password"
 											labelText={"Confirm Password"}
@@ -360,28 +415,183 @@ const SignUp = ({
 										{showPass ? (
 											<AiOutlineEye
 												onClick={() => setShowPass(false)}
-												className="absolute right-2 top-4"
+												className="absolute right-0 "
 											/>
 										) : (
 											<AiOutlineEyeInvisible
 												onClick={() => setShowPass(true)}
-												className="absolute right-2 top-4"
+												className="absolute top-12 right-3"
 											/>
 										)}
 									</div>
 								</div>
 							)}
-							{show === 2 && <div>
-								ali
-								</div>}
-							<div className="flex items-center mb-4 mt-7">
+							{show === 2 && (
+								<div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="text"
+											placeholder="Full Name"
+											labelText={"Full Name"}
+											labelStyle={"mt-2 mb-2"}
+										/>
+									</div>
+									<div className="mt-8">
+										<label className="">
+											Country
+											<select
+												onChange={(e) => handleChange(e)}
+												value={data.requiredCareerLevel}
+												id="requiredCareerLevel"
+												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											>
+												<option selected>Country</option>
+												<option value="Beginners">United Kingdom</option>
+												<option value="Intermediate">Pakistan</option>
+												<option value="Experienced">Australia</option>
+											</select>
+										</label>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="number"
+											placeholder="Mobile"
+											labelText={"Mobile"}
+											labelStyle={"mt-2 mb-2"}
+										/>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="email"
+											placeholder="Email"
+											labelText={"Email"}
+											labelStyle={"mt-8 mb-2"}
+										/>
+									</div>
+									<div className="mt-8">
+										<label className="">
+											Work Category
+											<select
+												onChange={(e) => handleChange(e)}
+												value={data.requiredCareerLevel}
+												id="requiredCareerLevel"
+												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											>
+												<option selected>Work Category</option>
+												<option value="Beginners">Business</option>
+												<option value="Intermediate">Owner</option>
+												<option value="Experienced">Emoloyee</option>
+											</select>
+										</label>
+									</div>
+									<div className="">
+										<TextInput
+											onChange={(e) => handleChange(e)}
+											id="fullName"
+											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type="password"
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={"mt-3 mb-2"}
+										/>
+									</div>
+									<div className="relative">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="password"
+											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
+											placeholder="Confirm Password"
+											labelText={"Confirm Password"}
+											labelStyle={"mt-10"}
+										/>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute right-0 "
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute top-12 right-3"
+											/>
+										)}
+									</div>
+									<div className="">
+										<div className="mt-14 my-5">
+											<span className="font-bold text-[#0a093d]">Upload Experience Letter</span>
+										</div>
+										<div className="border-2 rounded-md ">
+											<div className="flex flex-col justify-center items-center py-8">
+												<div className="py-4">
+													<img
+														className=""
+														src={image ? image : "/images/upload.png"}
+														alt=""
+													/>
+												</div>
+												{/* <p>Drag photos here</p> */}
+												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
+													<p className="text-primary text-sm font-semibold ">
+														Upload
+													</p>
+													<input
+														accept="/image/*"
+														onChange={imageHandler}
+														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
+														type="file"
+													/>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div className="">
+										<div className="mt-8 my-5">
+											<span className="font-bold text-[#0a093d]">Upload Id</span>
+										</div>
+										<div className="border-2 rounded-md ">
+											<div className="flex flex-col justify-center items-center py-8">
+												<div className="py-4">
+													<img
+														className=""
+														src={image ? image :"/images/upload.png"}
+														alt=""
+													/>
+												</div>
+												{/* <p>Drag photos here</p> */}
+												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
+													<p className="text-primary text-sm font-semibold ">
+														Upload
+													</p>
+													<input
+														accept="/image/*"
+														onChange={imageHandler}
+														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
+														type="file"
+													/>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							)}
+							<div className="flex items-center mb-2 mt-9">
 								<input
 									onChange={(e) => isSetCheck(e.target.checked)}
 									id="isActive"
 									type="checkbox"
 									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
 								/>
-								<label className=" text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
+								<label className="pt-0.5 text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
 									I agree to TASSLEEH {""}
 									<Link target={"_blank"} href={"/terms-&-conditions"}>
 										<span className="text-primary">terms</span> and{" "}
@@ -392,12 +602,12 @@ const SignUp = ({
 								</label>
 							</div>
 							{/* <Link href="/compelete-profile"> */}
-							<div className="py-4">
+							<div className="pt-4 flex justify-center">
 								<Button
 									id="disabled"
 									type="submit"
-									text="Sign up"
-									customClass=" bg-primary flex items-center justify-center rounded-md p-2 text-sm font-semibold text-white w-full !h-12"
+									text="Create Account"
+									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white w-44 !h-12"
 									img={
 										<svg
 											id="loadingmail"
@@ -419,53 +629,12 @@ const SignUp = ({
 							</div>
 							{/* </Link> */}
 						</form>
-						<div className="flex justify-center items-center">
-							<hr className="w-[50px]" />
-							<p className="mx-2">or</p>
-							<hr className="w-[50px]" />
-						</div>
-						{/* <button className="flex items-center mx-auto my-4 bg-[#1877F2] py-1  gap-2 rounded-sm">
-							<img src="/images/facebook (2).png" alt="" />
-							<p className="text-xs text-white mr-2">Continue with Facebook</p>
-						</button> */}
-						<div className="max-w-fit p-0 lg:my-6 m-auto">
-							{typeof window !== "undefined" ? (
-								<LoginSocialFacebook
-									appId="1337714373684794"
-									// appId = ""
-									fieldsProfile={
-										"id,first_name,last_name,name,name_format,picture,email"
-									}
-									redirect_uri={REDIRECT_URI}
-									onResolve={handleFBLogin}
-									onReject={(err) => {
-										console.log(err, "facebookReject");
-									}}
-								>
-									<button className="flex items-center mx-auto  bg-[#1877F2] py-1.5 px-3.5 gap-2 rounded-sm">
-										<img src="/images/facebook (2).png" alt="" />
-										<p className="text-xs text-white mr-2">
-											Continue with Facebook
-										</p>
-									</button>
-								</LoginSocialFacebook>
-							) : null}
-						</div>
-						<button
-							onClick={() => {
-								signWithGoogle();
-							}}
-							className="flex mx-auto justify-between items-center bg-[#F44336] py-1 px-3 gap-3 rounded-sm"
-						>
-							<img className="ml-1" src="/images/google-plus.png" alt="" />
-							<p className="text-xs text-white mr-4">Continue with Google</p>
-						</button>
 					</div>
 					<Link href={"/signin"}>
-						<div className="flex lg:mt-6 mt-11 md:mt-8 mb-2 justify-center border-2 border-solid rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">
+						<div className="flex lg:mt-0 mt-11 md:mt-8 mb-2 justify-center rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">
 							<p className=" text-sm font-medium text-[#636363]">
 								Already have an account?
-								<span className="text-primary ml-1">Log in</span>
+								<span className="text-primary ml-1">Sign in</span>
 							</p>
 						</div>
 					</Link>

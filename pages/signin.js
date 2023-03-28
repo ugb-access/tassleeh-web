@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import SignIn from "../components/common/SignIn";
+import AuthLayout from "../layout/AuthLayout";
 
 const Signin = () => {
 	return (
@@ -8,6 +9,7 @@ const Signin = () => {
 			<Head>
 				<title> SignIn - Job Locator </title>
 			</Head>
+			<AuthLayout text={"Create your account as:"}>
 			<SignIn
 				profilepic="/images/signin.png"
 				h2="Find Your"
@@ -18,6 +20,7 @@ const Signin = () => {
 				placeholdert1="Phone number, username or email address"
 				placeholdert2="Password"
 			/>
+			</AuthLayout>
 		</div>
 	);
 };
