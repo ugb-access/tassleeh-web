@@ -332,170 +332,44 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 											labelStyle={"mt-12 mb-2"}
 										/>
 									</div>
+									<div>
+										<p>Forgot Password?</p>
+									</div>
 								</div>
 							)}
 							{show === 2 && (
 								<div>
-									<div className="">
-										<TextInput
-											onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="text"
-											placeholder="Full Name"
-											labelText={"Full Name"}
-											labelStyle={"mt-2 mb-2"}
-										/>
-									</div>
-									<div className="mt-8">
-										<label className="">
-											Country
-											<select
+									<div>
+										<div className="">
+											<TextInput
 												onChange={(e) => handleChange(e)}
-												value={data.requiredCareerLevel}
-												id="requiredCareerLevel"
-												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											>
-												<option selected>Country</option>
-												<option value="Beginners">United Kingdom</option>
-												<option value="Intermediate">Pakistan</option>
-												<option value="Experienced">Australia</option>
-											</select>
-										</label>
-									</div>
-									<div className="">
-										<TextInput
-											onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="number"
-											placeholder="Mobile"
-											labelText={"Mobile"}
-											labelStyle={"mt-2 mb-2"}
-										/>
-									</div>
-									<div className="">
-										<TextInput
-											onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="email"
-											placeholder="Email"
-											labelText={"Email"}
-											labelStyle={"mt-8 mb-2"}
-										/>
-									</div>
-									<div className="mt-8">
-										<label className="">
-											Work Category
-											<select
+												id="fullName"
+												customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+												type="text"
+												placeholder="Email"
+												labelText={"Email"}
+												labelStyle={"mt-8 mb-2"}
+											/>
+										</div>
+										<div className="">
+											<TextInput
 												onChange={(e) => handleChange(e)}
-												value={data.requiredCareerLevel}
-												id="requiredCareerLevel"
-												className="!h-12 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											>
-												<option selected>Work Category</option>
-												<option value="Beginners">Business</option>
-												<option value="Intermediate">Owner</option>
-												<option value="Experienced">Emoloyee</option>
-											</select>
-										</label>
-									</div>
-									<div className="">
-										<TextInput
-											onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="password"
-											placeholder="Password"
-											labelText={"Password"}
-											labelStyle={"mt-3 mb-2"}
-										/>
-									</div>
-									<div className="relative">
-										<TextInput
-											// onChange={(e) => handleChange(e)}
-											id="password"
-											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type={showPass ? "text" : "password"}
-											placeholder="Confirm Password"
-											labelText={"Confirm Password"}
-											labelStyle={"mt-10"}
-										/>
-										{showPass ? (
-											<AiOutlineEye
-												onClick={() => setShowPass(false)}
-												className="absolute right-0 "
+												id="fullName"
+												customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+												type="password"
+												placeholder="Password"
+												labelText={"Password"}
+												labelStyle={"mt-12 mb-2"}
 											/>
-										) : (
-											<AiOutlineEyeInvisible
-												onClick={() => setShowPass(true)}
-												className="absolute top-12 right-3"
-											/>
-										)}
-									</div>
-									<div className="">
-										<div className="mt-14 my-5">
-											<span className="font-bold text-[#0a093d]">
-												Upload Experience Letter
-											</span>
 										</div>
-										<div className="border-2 rounded-md ">
-											<div className="flex flex-col justify-center items-center py-8">
-												<div className="py-4">
-													<img
-														className=""
-														src={image ? image : "/images/upload.png"}
-														alt=""
-													/>
-												</div>
-												{/* <p>Drag photos here</p> */}
-												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
-													<p className="text-primary text-sm font-semibold ">
-														Upload
-													</p>
-													<input
-														accept="/image/*"
-														onChange={imageHandler}
-														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
-														type="file"
-													/>
-												</button>
-											</div>
-										</div>
-									</div>
-									<div className="">
-										<div className="mt-8 my-5">
-											<span className="font-bold text-[#0a093d]">
-												Upload Id
-											</span>
-										</div>
-										<div className="border-2 rounded-md ">
-											<div className="flex flex-col justify-center items-center py-8">
-												<div className="py-4">
-													<img
-														className=""
-														src={image ? image : "/images/upload.png"}
-														alt=""
-													/>
-												</div>
-												{/* <p>Drag photos here</p> */}
-												<button className="relative border border-solid rounded-2xl py-3 px-6 mt-3 border-primary">
-													<p className="text-primary text-sm font-semibold ">
-														Upload
-													</p>
-													<input
-														accept="/image/*"
-														onChange={imageHandler}
-														className="absolute opacity-0 right-0 left-0 top-0 bottom-0"
-														type="file"
-													/>
-												</button>
-											</div>
+										<div>
+											<p>Forgot Password?</p>
 										</div>
 									</div>
 								</div>
+
 							)}
+
 							{/* <div className="flex items-center mb-2 mt-9">
 								<input
 									onChange={(e) => isSetCheck(e.target.checked)}
@@ -513,8 +387,12 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 									</Link>
 								</label>
 							</div> */}
-							{/* <Link href="/compelete-profile"> */}
-							<div className="pt-20 flex justify-center">
+							<Link href="/forgotpassword">
+							<div className="flex justify-end pt-3">
+								<p className="text-primary">Forgot Password?</p>
+							</div>
+							</Link>
+							<div className="pt-16 flex justify-center">
 								<Button
 									id="disabled"
 									type="submit"
@@ -542,11 +420,53 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 							{/* </Link> */}
 						</form>
 					</div>
-					<Link href={"/signin"}>
+					<div className="flex justify-center items-center mt-4">
+						<hr className="w-[50px]" />
+						<p className="mx-2">or Sign Up With</p>
+						<hr className="w-[50px]" />
+					</div>
+					<div className="flex justify-center items-center gap-8 mt-6">
+						<div className="">
+							{typeof window !== "undefined" ? (
+								<LoginSocialFacebook
+									appId="1337714373684794"
+									// appId = ""
+									fieldsProfile={
+										"id,first_name,last_name,name,name_format,picture,email"
+									}
+									redirect_uri={REDIRECT_URI}
+									onResolve={handleFBLogin}
+									onReject={(err) => {
+										console.log(err, "facebookReject");
+									}}
+								>
+									<button className="">
+										<img className="h-10" src="/images/Google.png" alt="" />
+									</button>
+								</LoginSocialFacebook>
+							) : null}
+						</div>
+						<div>
+							<button
+								onClick={() => {
+									signWithGoogle();
+								}}
+								className=""
+							>
+								<img className="h-10" src="/images/fb.png" alt="" />
+							</button>
+						</div>
+						{/* <div>
+									<button>
+										<img className="h-10" src="/images/linkedin.png" alt="" />
+									</button>
+								</div> */}
+					</div>
+					<Link href={"/signup"}>
 						<div className="flex lg:mt-0 mt-11 md:mt-8 mb-2 justify-center rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">
 							<p className=" text-sm font-medium text-[#636363]">
-								Already have an account?
-								<span className="text-primary ml-1">Sign in</span>
+								Don't have an account?
+								<span className="text-primary ml-1">Sign up</span>
 							</p>
 						</div>
 					</Link>

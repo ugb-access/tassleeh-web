@@ -528,7 +528,9 @@ const SignUp = ({
 									</div>
 									<div className="">
 										<div className="mt-14 my-5">
-											<span className="font-bold text-[#0a093d]">Upload Experience Letter</span>
+											<span className="font-bold text-[#0a093d]">
+												Upload Experience Letter
+											</span>
 										</div>
 										<div className="border-2 rounded-md ">
 											<div className="flex flex-col justify-center items-center py-8">
@@ -556,14 +558,16 @@ const SignUp = ({
 									</div>
 									<div className="">
 										<div className="mt-8 my-5">
-											<span className="font-bold text-[#0a093d]">Upload Id</span>
+											<span className="font-bold text-[#0a093d]">
+												Upload Id
+											</span>
 										</div>
 										<div className="border-2 rounded-md ">
 											<div className="flex flex-col justify-center items-center py-8">
 												<div className="py-4">
 													<img
 														className=""
-														src={image ? image :"/images/upload.png"}
+														src={image ? image : "/images/upload.png"}
 														alt=""
 													/>
 												</div>
@@ -607,7 +611,7 @@ const SignUp = ({
 									id="disabled"
 									type="submit"
 									text="Create Account"
-									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white w-44 !h-12"
+									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-44 !h-12"
 									img={
 										<svg
 											id="loadingmail"
@@ -629,6 +633,51 @@ const SignUp = ({
 							</div>
 							{/* </Link> */}
 						</form>
+						{show === 1 ? (
+						<div><div className="flex justify-center items-center mt-4">
+							<hr className="w-[50px]" />
+							<p className="mx-2">or Sign Up With</p>
+							<hr className="w-[50px]" />
+						</div>
+							<div className="flex justify-center items-center gap-8 mt-6">
+								<div className="">
+									{typeof window !== "undefined" ? (
+										<LoginSocialFacebook
+											appId="1337714373684794"
+											// appId = ""
+											fieldsProfile={
+												"id,first_name,last_name,name,name_format,picture,email"
+											}
+											redirect_uri={REDIRECT_URI}
+											onResolve={handleFBLogin}
+											onReject={(err) => {
+												console.log(err, "facebookReject");
+											}}
+										>
+											<button className="">
+												<img className="h-10" src="/images/Google.png" alt="" />
+											</button>
+										</LoginSocialFacebook>
+									) : null}
+								</div>
+								<div>
+									<button
+										onClick={() => {
+											signWithGoogle();
+										}}
+										className=""
+									>
+										<img className="h-10" src="/images/fb.png" alt="" />
+									</button>
+								</div>
+								{/* <div>
+									<button>
+										<img className="h-10" src="/images/linkedin.png" alt="" />
+									</button>
+								</div> */}
+							</div>
+							</div>
+						) : null}
 					</div>
 					<Link href={"/signin"}>
 						<div className="flex lg:mt-0 mt-11 md:mt-8 mb-2 justify-center rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">

@@ -9,7 +9,7 @@ const Signin = () => {
 			<Head>
 				<title> SignIn - Job Locator </title>
 			</Head>
-			<AuthLayout text={"Create your account as:"}>
+			<AuthLayout text={"Login to your account as:"}>
 			<SignIn
 				profilepic="/images/signin.png"
 				h2="Find Your"
