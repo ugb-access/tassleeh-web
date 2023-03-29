@@ -31,7 +31,7 @@ const Sidebar = ({ dashSideData }) => {
 							onClick={handleOpenSidebar}
 						/>
 					</div>
-					<div className="logo-sidebar">
+					{/* <div className="logo-sidebar">
 						<div className="">
 							<img
 								className="!lg:h-16 !h-10  logo-sidebar !mt-4 "
@@ -39,7 +39,7 @@ const Sidebar = ({ dashSideData }) => {
 								alt="Logo"
 							/>
 						</div>
-					</div>
+					</div> */}
 					<div>
 						{dashSideData.map((items, index) => {
 							// console.log(items, "item");

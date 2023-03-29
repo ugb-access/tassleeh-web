@@ -80,7 +80,7 @@ const Dashboard = () => {
 	];
 	return (
 		<>
-			{spinner && (
+			{/* {spinner && (
 				<div className="fixed z-50 w-full">
 					<div className="h-[200%] w-[200%] z-50 right-0 bottom-0 backdrop-blur-sm fixed"></div>
 					<div className="z-50  rounded-xl  sm:right-60 bottom-20 items-center flex text-center justify-center  relative">
@@ -89,18 +89,7 @@ const Dashboard = () => {
 						</div>
 					</div>
 				</div>
-			)}
-			<Header
-				searchPlaceHolder="Search By UserName"
-				headerTitle="Dashboard"
-				headerDiscription="Get details about total spent, total jobs, and your subscribed plans."
-				profileLink={"/employee/dashboard/profile"}
-			/>
-			<DashboardBusiness
-				getSpinner={(e) => setSpinner(e)}
-				cardsData={businessData}
-				areaData={areaGraphData}
-			/>
+			)} */}
 		</>
 	);
 };

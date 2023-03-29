@@ -5,8 +5,10 @@ import Head from "next/head";
 import DashboardHeader from "./DashboardHeader";
 import DashboardFooterSecond from "./DashboardFooterSecond";
 import Sidebar from "./DashboradSidebar";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiOutlineSetting } from "react-icons/ai";
 import { FaHistory } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
+import { BiMessageAltDetail, BiLogOut } from "react-icons/bi";
 // import { AiFillHome } from "react-icons/ai";
 import {
 	HiCreditCard,
@@ -56,33 +58,23 @@ const businessdata = [
 	},
 	{
 		barIink: "/business/dashboard/post-jobs",
-		barIcon: <GoBriefcase />,
+		barIcon: <SlCalender />,
 		barText: "Bookings",
 	},
 	{
 		barIink: "/business/dashboard/my-jobs",
-		barIcon: <HiCreditCard />,
-		barText: "My Jobs",
+		barIcon: <BiMessageAltDetail />,
+		barText: "Messages",
 	},
 	{
 		barIink: "/business/dashboard/job-applicants",
-		barIcon: <HiCreditCard />,
-		barText: "Jobs Applicants",
+		barIcon: <AiOutlineSetting />,
+		barText: "Settings",
 	},
 	{
 		barIink: "/business/dashboard/business-plan",
-		barIcon: <FaHistory />,
-		barText: "Plans",
-	},
-	{
-		barIink: "/business/dashboard/payment-history",
-		barIcon: <HiDocumentAdd />,
-		barText: "Payment History",
-	},
-	{
-		barIink: "/",
-		barIcon: <HiOutlineChevronDoubleLeft />,
-		barText: "Back To Site",
+		barIcon: <BiLogOut />,
+		barText: "Logout",
 	},
 ];
 const StoreLayout = ({ children }) => {
@@ -91,38 +83,40 @@ const StoreLayout = ({ children }) => {
 	return (
 		<div>
 			{router.pathname.startsWith("/business/dashboard") ? (
-				//<AuthWrapper>//
+				//<AuthWrapper>//<AuthWrapper>
+				<div className="">
+					<DashboardHeader />
 					<div className="sm:flex">
-						<div>
+						<div className="">
 							<Sidebar dashSideData={businessdata} />
 						</div>
 						<div className="basis-full sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
-							{/* <DashboardHeader /> */}
 							<div className="pt-2 sm:pt-0">{children}</div>
 							<div id="containerfooter" className=" mt-auto">
 								<DashboardFooterSecond />
 							</div>
 						</div>
 					</div>
-				//</AuthWrapper>
+				</div>
 			) : (
+				//</AuthWrapper>
 				<>
 					{router.pathname.startsWith("/employee/dashboard") ? (
 						// <AuthWrapper>
-							<div className="sm:flex">
-								<div>
-									<Sidebar dashSideData={employeedata} />
-								</div>
-								<div className="sm:pr-4 sm:flex sm:flex-col min-h-screen lg:pr-0 basis-full">
-									{/* <DashboardHeader /> */}
-									<div className="pt-2 sm:pt-0">{children}</div>
-									<div id="containerfooter" className="mt-auto">
-										<DashboardFooterSecond />
-									</div>
+						<div className="sm:flex">
+							<div>
+								<Sidebar dashSideData={employeedata} />
+							</div>
+							<div className="sm:pr-4 sm:flex sm:flex-col min-h-screen lg:pr-0 basis-full">
+								{/* <DashboardHeader /> */}
+								<div className="pt-2 sm:pt-0">{children}</div>
+								<div id="containerfooter" className="mt-auto">
+									<DashboardFooterSecond />
 								</div>
 							</div>
-						// {/* </AuthWrapper> */}
+						</div>
 					) : (
+						// {/* </AuthWrapper> */}
 						<WithAuthWrapper>
 							{!(
 								router.pathname.startsWith("/signin") ||
@@ -130,7 +124,7 @@ const StoreLayout = ({ children }) => {
 								router.pathname.startsWith("/forgotpassword") ||
 								router.pathname.startsWith("/verifyemail") ||
 								router.pathname.startsWith("/reset-password") ||
-								router.pathname.startsWith("/newpassword") 
+								router.pathname.startsWith("/newpassword")
 							) ? (
 								<Header />
 							) : null}
@@ -141,7 +135,7 @@ const StoreLayout = ({ children }) => {
 								router.pathname.startsWith("/forgotpassword") ||
 								router.pathname.startsWith("/verifyemail") ||
 								router.pathname.startsWith("/reset-password") ||
-								router.pathname.startsWith("/newpassword") 
+								router.pathname.startsWith("/newpassword")
 							) ? (
 								<Footer />
 							) : null}

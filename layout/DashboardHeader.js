@@ -85,14 +85,86 @@ const Header = ({
 		setTypeUser(UserType?.type);
 	}, []);
 	return (
-		<div className="main-div-header md:px-4 px-6">
-			<div className="header-flex pt-6 !mt-0">
-				<div className="header-top flex sm:block items-center">
-					{/* <HiMenu onClick={setAsideBar} className="sm:hidden block"/> */}
+		<div className="">
+			<div className="flex justify-between items-center pr-20 pl-10 header0">
+				<div>
+					<img src="/images/logo-main.png" alt="" />
+				</div>
+				<div>
+					<div className="flex items-center gap-20">
+						<div className="flex items-center border px-3 py-1.5 rounded-2xl">
+							<input
+								className="placeholder:text-sm"
+								type=""
+								placeholder="Search here"
+							/>
+							<img className="h-5" src="/images/search.png" alt="" />
+						</div>
+						<div
+							onClick={() => setOpen(!open)}
+							style={{ cursor: "pointer" }}
+							className="profile relative"
+						>
+							<div className="">
+								<img src={accountImage ? accountImage : proImage} />
+							</div>
+							{/* <div
+						style={{ cursor: "pointer" }}
+						className="profile-text hidden md:block"
+					>
+						<p className="person-name">
+							{accountTitle ? accountTitle : firstName}
+						</p>
+						<p className="person-admin capitalize">
+							{typeUser === "user" ? "Employee" : "Business"} Account
+						</p>
+					</div> */}
+							{open ? (
+								<div>
+									<div className="absolute sm:top-[60px] top-[34px] sm:right-[-70px] left-[30px] w-32 pt-2 pb-4 pl-2 shadow-lg z-50 bg-[#fff]">
+										<Link href={profileLink}>
+											<div className="flex items-center">
+												<div className="side-bar-icon-sel !text-primary">
+													<HiOutlineUser />
+												</div>
+												<p className="font-semibold ml-2 text-sm !text-primary">
+													Profile
+												</p>
+											</div>
+										</Link>
+										<hr className="mt-3 pb-2 " />
+										<div
+											onClick={userLogOut}
+											className="flex  items-center mt-2"
+										>
+											<div className="text-primary text-xl sm:pl-1">
+												<HiOutlineLogin />
+											</div>
+											<p className="font-semibold ml-2 text-sm !text-primary">
+												Logout
+											</p>
+										</div>
+									</div>
+									<div
+										onClick={() => setOpen(false)}
+										className="fixed w-full h-full top-0 left-0 z-30 "
+									></div>
+								</div>
+							) : null}
+							<div className="pl-4">
+								<p className="text-[#404040]">Andrew</p>
+								<p className="text-sm text-[#aeaeae]">Normal User</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* <div className="header-top flex sm:block items-center">
+					<HiMenu onClick={setAsideBar} className="sm:hidden block"/>
 					<h2 className="heading ">{headerTitle}</h2>
 					<p className="header-para sm:block hidden">{headerDiscription}</p>
-				</div>
-				<div className="sm:flex items-center ml-auto mr-2 md:pr-6 hidden ">
+				</div> */}
+			{/* <div className="sm:flex items-center ml-auto mr-2 md:pr-6 hidden ">
 					{!(headerTitle === "Dashboard") &&
 						!(headerTitle === "Post Jobs") &&
 						!(headerTitle === "Make Your CV") &&
@@ -123,9 +195,9 @@ const Header = ({
 								/>
 							</div>
 						)}
-				</div>
+				</div> */}
 
-				<div
+			{/* <div
 					onClick={() => setOpen(!open)}
 					style={{ cursor: "pointer" }}
 					className="profile relative"
@@ -173,8 +245,7 @@ const Header = ({
 							></div>
 						</div>
 					) : null}
-				</div>
-			</div>
+				</div> */}
 		</div>
 	);
 };
