@@ -34,8 +34,8 @@ const Sidebar = ({ dashSideData }) => {
 					<div className="logo-sidebar">
 						<div className="">
 							<img
-								className="!lg:h-12 !h-10  logo-sidebar !mt-4 "
-								src="/images/logo.png"
+								className="!lg:h-16 !h-10  logo-sidebar !mt-4 "
+								src="/images/logo-main.png"
 								alt="Logo"
 							/>
 						</div>

@@ -7,6 +7,7 @@ import DashboardFooterSecond from "./DashboardFooterSecond";
 import Sidebar from "./DashboradSidebar";
 import { AiFillHome } from "react-icons/ai";
 import { FaHistory } from "react-icons/fa";
+// import { AiFillHome } from "react-icons/ai";
 import {
 	HiCreditCard,
 	HiDocumentAdd,
@@ -51,12 +52,12 @@ const businessdata = [
 	{
 		barIink: "/business/dashboard",
 		barIcon: <AiFillHome />,
-		barText: "Dashboard",
+		barText: "Home",
 	},
 	{
 		barIink: "/business/dashboard/post-jobs",
 		barIcon: <GoBriefcase />,
-		barText: "Post Jobs",
+		barText: "Bookings",
 	},
 	{
 		barIink: "/business/dashboard/my-jobs",
@@ -90,7 +91,7 @@ const StoreLayout = ({ children }) => {
 	return (
 		<div>
 			{router.pathname.startsWith("/business/dashboard") ? (
-				<AuthWrapper>
+				//<AuthWrapper>//
 					<div className="sm:flex">
 						<div>
 							<Sidebar dashSideData={businessdata} />
@@ -103,11 +104,11 @@ const StoreLayout = ({ children }) => {
 							</div>
 						</div>
 					</div>
-				</AuthWrapper>
+				//</AuthWrapper>
 			) : (
 				<>
 					{router.pathname.startsWith("/employee/dashboard") ? (
-						<AuthWrapper>
+						// <AuthWrapper>
 							<div className="sm:flex">
 								<div>
 									<Sidebar dashSideData={employeedata} />
@@ -120,7 +121,7 @@ const StoreLayout = ({ children }) => {
 									</div>
 								</div>
 							</div>
-						</AuthWrapper>
+						// {/* </AuthWrapper> */}
 					) : (
 						<WithAuthWrapper>
 							{!(
