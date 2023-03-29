@@ -184,79 +184,79 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 	// google sign in
 	//facebook sign in
 	const REDIRECT_URI = "http://localhost:3000/";
-	const handleFBLogin = (resp) => {
-		console.log(resp, "facebookRes");
-		if (resp?.data) {
-			let employeeData = {
-				email: resp?.data?.email,
-				fullName: resp?.data?.name,
-				// phone: resp?.data?.phoneNumber,
-				image: resp?.data?.picture?.data?.url,
-				type: data?.type,
-				isFeatured: false,
-				userName: resp?.data?.name,
-				password: resp?.data?.userID,
-			};
-			let businessData = {
-				email: resp?.data?.email,
-				fullName: resp?.data?.name,
-				// phone: resp?.data?.phoneNumber,
-				businessImage: resp?.data?.picture?.data?.url,
-				type: data?.type,
-				isFeatured: false,
-				userName: resp?.data?.name,
-				password: resp?.data?.userID,
-			};
-			console.log(employeeData, businessData, "createdData");
-			signupUserCheck(data?.type === "user" ? employeeData : businessData)
-				.then((res) => {
-					// console.log(res, "checkUser");
-					if (!res?.data?.userExist) {
-						localStorage.setItem(
-							"userData",
-							JSON.stringify(
-								data?.type === "user" ? employeeData : businessData
-							)
-						);
-						router.push("/compelete-profile");
-					} else {
-						// toast.error(res?.data?.message);
-						// sign in facebook
-						let dataSign = {
-							email: resp?.data?.email,
-							// password : resp?.user?.email,
-							password: resp?.data?.userID,
-							type: data?.type,
-						};
-						loginUser(dataSign)
-							.then((response) => {
-								// console.log(response);
-								if (response?.data?.success) {
-									let info = jwt_decode(response?.data?.token);
-									localStorage.setItem("user", JSON.stringify(info?.payload));
-									setSpinner(false);
-									if (info?.payload?.type === "user") {
-										router.push("/");
-										setSpinner(false);
-									} else {
-										router.push("/");
-										setSpinner(false);
-									}
-									setSpinner(false);
-								} else {
-									toast.warn(response?.data?.message);
-								}
-							})
-							.catch((err) => {
-								setSpinner(false);
-							});
-					}
-				})
-				.catch((err) => {
-					toast.error(err?.message);
-				});
-		}
-	};
+	// const handleFBLogin = (resp) => {
+	// 	console.log(resp, "facebookRes");
+	// 	if (resp?.data) {
+	// 		let employeeData = {
+	// 			email: resp?.data?.email,
+	// 			fullName: resp?.data?.name,
+	// 			// phone: resp?.data?.phoneNumber,
+	// 			image: resp?.data?.picture?.data?.url,
+	// 			type: data?.type,
+	// 			isFeatured: false,
+	// 			userName: resp?.data?.name,
+	// 			password: resp?.data?.userID,
+	// 		};
+	// 		let businessData = {
+	// 			email: resp?.data?.email,
+	// 			fullName: resp?.data?.name,
+	// 			// phone: resp?.data?.phoneNumber,
+	// 			businessImage: resp?.data?.picture?.data?.url,
+	// 			type: data?.type,
+	// 			isFeatured: false,
+	// 			userName: resp?.data?.name,
+	// 			password: resp?.data?.userID,
+	// 		};
+	// 		console.log(employeeData, businessData, "createdData");
+	// 		signupUserCheck(data?.type === "user" ? employeeData : businessData)
+	// 			.then((res) => {
+	// 				// console.log(res, "checkUser");
+	// 				if (!res?.data?.userExist) {
+	// 					localStorage.setItem(
+	// 						"userData",
+	// 						JSON.stringify(
+	// 							data?.type === "user" ? employeeData : businessData
+	// 						)
+	// 					);
+	// 					router.push("/compelete-profile");
+	// 				} else {
+	// 					// toast.error(res?.data?.message);
+	// 					// sign in facebook
+	// 					let dataSign = {
+	// 						email: resp?.data?.email,
+	// 						// password : resp?.user?.email,
+	// 						password: resp?.data?.userID,
+	// 						type: data?.type,
+	// 					};
+	// 					loginUser(dataSign)
+	// 						.then((response) => {
+	// 							// console.log(response);
+	// 							if (response?.data?.success) {
+	// 								let info = jwt_decode(response?.data?.token);
+	// 								localStorage.setItem("user", JSON.stringify(info?.payload));
+	// 								setSpinner(false);
+	// 								if (info?.payload?.type === "user") {
+	// 									router.push("/");
+	// 									setSpinner(false);
+	// 								} else {
+	// 									router.push("/");
+	// 									setSpinner(false);
+	// 								}
+	// 								setSpinner(false);
+	// 							} else {
+	// 								toast.warn(response?.data?.message);
+	// 							}
+	// 						})
+	// 						.catch((err) => {
+	// 							setSpinner(false);
+	// 						});
+	// 				}
+	// 			})
+	// 			.catch((err) => {
+	// 				toast.error(err?.message);
+	// 			});
+	// 	}
+	// };
 	return (
 		<>
 			{spinner && (
@@ -435,7 +435,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 										"id,first_name,last_name,name,name_format,picture,email"
 									}
 									redirect_uri={REDIRECT_URI}
-									onResolve={handleFBLogin}
+									// onResolve={handleFBLogin}
 									onReject={(err) => {
 										console.log(err, "facebookReject");
 									}}

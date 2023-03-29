@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getWebStat } from "../services/auth-service";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const About = () => {
 	const router = useRouter();
@@ -61,19 +62,23 @@ const About = () => {
 			{/* ------------------------aBOUT JOB LOCATOR-------------- */}
 			<section>
 				<div className="relative poster flex flex-col justify-center items-center">
-					<h1 className="text-white text-3xl sm:text-5xl font-bold">Services</h1>
+					<h1 className="text-white text-3xl sm:text-5xl font-bold">
+						Services
+					</h1>
 					<p className="text-white text-justify text-xl sm:w-3/5 sm:text-center py-4">
 						Our pride is providing the most extensive range of services. From
 						home maintenance to personal assistance. We make sure that your
 						safety is never compromised. This is why we hire all the staff under
 						the roof of TASSLEEH, just for your satisfaction.
 					</p>
-					<div>
-						<Button
-							text="Get Started"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-32 !h-12 sm:!h-16"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div>
+							<Button
+								text="Get Started"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-32 !h-12 sm:!h-16"
+							/>
+						</div>
+					</Link>
 				</div>
 			</section>
 			{/* ------------------------car-services-------------- */}
@@ -170,12 +175,14 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<div className="mt-6">
-						<Button
-							text="Try Now"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div className="mt-6">
+							<Button
+								text="Try Now"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							/>
+						</div>
+					</Link>
 				</div>
 				<div>
 					<div>
@@ -274,12 +281,14 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<div className="mt-7">
-						<Button
-							text="Try Now"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div className="mt-7">
+							<Button
+								text="Try Now"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							/>
+						</div>
+					</Link>
 				</div>
 			</div>
 			{/* ------------------------Home-services-------------- */}
@@ -402,12 +411,14 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<div className="mt-6">
-						<Button
-							text="Try Now"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div className="mt-6">
+							<Button
+								text="Try Now"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							/>
+						</div>
+					</Link>
 				</div>
 				<div>
 					<div>
@@ -505,12 +516,14 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<div className="mt-12">
-						<Button
-							text="Try Now"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div className="mt-12">
+							<Button
+								text="Try Now"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							/>
+						</div>
+					</Link>
 				</div>
 			</div>
 			{/* ----------------------Download----------------------------- */}

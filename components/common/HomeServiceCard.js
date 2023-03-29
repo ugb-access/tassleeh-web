@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../Button";
 
 const HomeServiceCard = ({
@@ -35,6 +36,7 @@ const HomeServiceCard = ({
 						</div>
 					</div>
 				</div>
+				<Link href={"/signin"}>
 				<div className="flex justify-center items-center mt-10">
 					<Button
 						customClass={
@@ -43,6 +45,7 @@ const HomeServiceCard = ({
 						text={"Try Now"}
 					/>
 				</div>
+				</Link>
 			</div>
 		</>
 	);

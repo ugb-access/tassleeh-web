@@ -424,12 +424,14 @@ const Home = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex justify-center sm:justify-start">
-						<Button
-							text="Get Started"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-24 sm:!w-32 !h-10 sm:!h-14"
-						/>
-					</div>
+					<Link href={"/signin"}>
+						<div className="flex justify-center sm:justify-start">
+							<Button
+								text="Get Started"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-24 sm:!w-32 !h-10 sm:!h-14"
+							/>
+						</div>
+					</Link>
 				</div>
 				<div>
 					<div className="mt-9 sm:mt-0">
@@ -461,14 +463,18 @@ const Home = () => {
 					</p>
 
 					<div className="flex justify-center sm:justify-start gap-4 mt-10">
-						<Button
-							text="Get Started"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-32 !h-12 sm:!h-14"
-						/>
-						<Button
-							text="Invite Friend"
-							customClass="text-primary rounded-2xl p-2 text-sm font-semibold border border-primary !w-28 sm:!w-32 !h-12 sm:!h-14"
-						/>
+						<Link href={"/signin"}>
+							<Button
+								text="Get Started"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-32 !h-12 sm:!h-14"
+							/>
+						</Link>
+						<Link href={"/signin"}>
+							<Button
+								text="Invite Friend"
+								customClass="text-primary rounded-2xl p-2 text-sm font-semibold border border-primary !w-28 sm:!w-32 !h-12 sm:!h-14"
+							/>
+						</Link>
 					</div>
 				</div>
 				<div>

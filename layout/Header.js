@@ -101,7 +101,7 @@ const Header = () => {
 										placeholder="Search here..."
 										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "
 									/>
-									<Link href={"/signup"}>
+									<Link href={"/signin"}>
 										<div>
 											<Button
 												text="Get Started"

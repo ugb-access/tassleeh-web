@@ -149,31 +149,31 @@ const Footer = () => {
 									How it works
 								</li>
 							</Link> */}
-							<Link href={"/about"}>
+							<Link href={"/"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">Home</li>
 							</Link>
-							<Link href={"/contact"}>
+							<Link href={"/services"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">
-									Services?
+									Services
 								</li>
 							</Link>
 							{/* <Link href={"/blogs"}>
 								<li className="mt-6 cursor-pointer hover:opacity-70">Blogs</li>
 							</Link> */}
-							<Link href={"/terms-&-conditions"}>
+							{/* <Link href={"/terms-&-conditions"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">
 									About Us
 								</li>
-							</Link>
-							<Link href={"/privacy-policy"}>
+							</Link> */}
+							<Link href={"/contact"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">
 									Contact Us
 								</li>
 							</Link>
-							<Link href={"/contact-us"}>
+							<Link href={"/signin"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">Login</li>
 							</Link>
-							<Link href={"/contact-us"}>
+							<Link href={"/signup"}>
 								<li className="mt-3 cursor-pointer hover:opacity-70">
 									Register
 								</li>
