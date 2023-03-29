@@ -164,27 +164,17 @@ const Header = () => {
 											<div className="text-center !leading-10 ">
 												<Link onClick={() => setOpen(false)} href={"/"}>
 													<p className="text-[#0000004D] text-md font-bold  border-t-2">
-														HOME
+														Home
 													</p>
 												</Link>
-												<Link onClick={() => setOpen(false)} href={"/about"}>
+												<Link onClick={() => setOpen(false)} href={"/services"}>
 													<p className="text-[#0000004D] text-md font-bold border-t-2">
-														ABOUT
+														Services
 													</p>
 												</Link>
 												<Link onClick={() => setOpen(false)} href={"/contact"}>
 													<p className="text-[#0000004D] text-md font-bold border-t-2">
-														CONTACT
-													</p>
-												</Link>
-												<Link onClick={() => setOpen(false)} href={"/faq"}>
-													<p className="text-[#0000004D] text-md font-bold border-t-2">
-														FAQ
-													</p>
-												</Link>
-												<Link onClick={() => setOpen(false)} href={"/blogs/"}>
-													<p className="text-[#0000004D] text-md font-bold border-t-2">
-														BLOG
+														Contact Us
 													</p>
 												</Link>
 												{!validToken && (
