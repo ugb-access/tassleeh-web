@@ -272,7 +272,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 			<div className="">
 				<div className="col-2 flex flex-col">
 					<div className="py-5 pt-5 md:px-6 px-4 sm:px-6 lg:px-12 border-solid rounded-lg md:rounded-none  mx-3">
-						<div className="flex !justify-center  md:!justify-start">
+						<div className="flex gap-6">
 							<div className="flex items-center py-5">
 								<input
 									id="default-radio-1"

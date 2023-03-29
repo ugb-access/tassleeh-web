@@ -14,7 +14,7 @@ const HomeServiceCard = ({
 					<div className="sm:h-72">
 						<div className="flex items-center">
 							<div className="flex flex-col">
-								<div className="text-[#2f2c4a] sm:text-xl text-lg font-semibold">{item?.title}</div>
+								<div className="text-[#2f2c4a] sm:text-2xl text-lg font-semibold">{item?.title}</div>
 
 								<div className="pt-4 sm:w-80 w-64 text-sm sm:text-base text-[#656464]">{item?.description}</div>
 							</div>
@@ -30,7 +30,7 @@ const HomeServiceCard = ({
 						</ul>
 					</div>
 					<div className="border flex justify-center items-center h-10 sm:h-16 w-10 sm:w-16 rounded-3xl bg-primary">
-						<div className="h-6 w-6">
+						<div className="">
 							<img className="" src={item?.icon}></img>
 						</div>
 					</div>

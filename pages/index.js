@@ -287,7 +287,7 @@ const Home = () => {
 			<div className="back">
 				<section className="">
 					<div className="relative flex flex-col justify-center items-center gap-y-5 ">
-						<div className="hidden md:block absolute right-64 bottom-6">
+						<div className="hidden lg:block absolute right-64 bottom-6">
 							<img src="/images/Arr.png" alt="" />
 						</div>
 						<div className="mt-24">
@@ -300,18 +300,26 @@ const Home = () => {
 							</p>
 						</div>
 						<div className="flex border px-4 py-1.5 rounded-lg items-center">
-							<div className="flex gap-4">
-								<img src="/images/search.png" alt="" />
-								<input
-									type="text"
-									className="md:w-[350px]"
-									placeholder="search here"
-								/>
+							<div className="flex items-center gap-4">
+								<div>
+									<img
+										className="sm:h-full h-5"
+										src="/images/search.png"
+										alt=""
+									/>
+								</div>
+								<div>
+									<input
+										type="text"
+										className="bg-transparent md:w-[350px] w-52 "
+										placeholder="search here"
+									/>
+								</div>
 							</div>
 							<div>
 								<Button
 									text="Search"
-									customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white !w-28 !h-12"
+									customClass="bg-primary rounded-full p-2 text-xs font-semibold text-white w-20 sm:!w-28 h-8 sm:!h-12"
 								/>
 							</div>
 						</div>
@@ -331,13 +339,13 @@ const Home = () => {
 			{/* -------------------Availaible-jobs----------------------- */}
 			<section className="flex justify-center flex-wrap mt-24">
 				<div className=" pt-2 px-5 md:w-2/5">
-					<p className=" text-primary font-medium text-base my-4">
+					<p className=" text-primary font-medium text-sm sm:text-lg my-4">
 						Whats TASSLEEH?
 					</p>
-					<h1 className="text-2xl font-bold text-[#0a093d] my-4">
+					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-4 sm:w-[400px]">
 						Why Choose TASSLEEH Platform?
 					</h1>
-					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
+					<p className="mt-2 mb-2 text-sm sm:text-base font-normal leading-8 text-[#656464] sm:w-[490px]">
 						We are a value addition which covers all 360 services under one
 						platform. Our motive is to provide best services to our corporate,
 						commercial, and residential customers.
@@ -351,7 +359,7 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 opacity-70">
 								Vetted and background-checked in house staff
 							</p>
 						</div>
@@ -363,7 +371,7 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 opacity-70">
 								High-Tech and Most Advanced Equipment
 							</p>
 						</div>
@@ -375,7 +383,7 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 opacity-70">
 								Quality Control and Safety
 							</p>
 						</div>
@@ -387,7 +395,7 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 opacity-70">
 								Affordable and Upfront Pricing
 							</p>
 						</div>
@@ -399,7 +407,7 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 opacity-70">
 								Timely and Convenient Services
 							</p>
 						</div>
@@ -411,21 +419,21 @@ const Home = () => {
 									alt=""
 								/>
 							</div>
-							<p className="px-3 text-lg font-normal leading-8 w opacity-70">
+							<p className="px-3 text-sm sm:text-lg font-normal leading-8 w opacity-70">
 								Experienced, Trained and Certified
 							</p>
 						</div>
 					</div>
-					<div>
+					<div className="flex justify-center sm:justify-start">
 						<Button
 							text="Get Started"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-24 sm:!w-32 !h-10 sm:!h-14"
 						/>
 					</div>
 				</div>
 				<div>
-					<div>
-						<img src="/images/group-0.png" alt="" />
+					<div className="mt-9 sm:mt-0">
+						<img className="sm:h-full h-80" src="/images/group-0.png" alt="" />
 					</div>
 				</div>
 			</section>
@@ -441,8 +449,8 @@ const Home = () => {
 			{/* ----------------------------Popular------------------------------- */}
 			<section className="flex justify-center flex-wrap mt-24">
 				<div className=" pt-2 px-5 md:w-2/5 mt-12">
-					<p className=" text-primary font-medium text-lg my-4">About Us</p>
-					<h1 className="text-4xl font-bold text-[#0a093d] my-5 sm:w-80">
+					<p className=" text-primary font-medium sm:text-lg my-2">About Us</p>
+					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-5 sm:w-80">
 						About TASSLEEH Platform?
 					</h1>
 					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
@@ -452,14 +460,14 @@ const Home = () => {
 						all their problems.
 					</p>
 
-					<div className="flex gap-4 mt-10">
+					<div className="flex justify-center sm:justify-start gap-4 mt-10">
 						<Button
 							text="Get Started"
-							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-32 !h-14"
+							customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-32 !h-12 sm:!h-14"
 						/>
 						<Button
 							text="Invite Friend"
-							customClass="text-primary rounded-2xl p-2 text-sm font-semibold border border-primary !w-32 !h-14"
+							customClass="text-primary rounded-2xl p-2 text-sm font-semibold border border-primary !w-28 sm:!w-32 !h-12 sm:!h-14"
 						/>
 					</div>
 				</div>
@@ -470,28 +478,40 @@ const Home = () => {
 			{/* --------------------------Popular-companies----------------------------- */}
 
 			{/* ---------------------------Dowload-APP--------------------------- */}
-			<section className="flex justify-around items-center flex-wrap bg-[#f4f9ff] mt-20">
+			<section className="flex justify-around items-center flex-wrap bg-[#f4f9ff] mt-20 sm:pt-0 pt-10">
 				<div className="">
 					<div className="pl-6">
 						<p className="text-lg text-primary font-semibold ">
 							Download Our Mobile Application
 						</p>
-						<h2 className="text-[#0a093d] text-4xl font-bold w-96 my-3">
+						<h2 className="text-[#0a093d] sm:text-4xl text-lg font-bold sm:w-96 my-3">
 							You Can Easily Find Our Mobile App…!
 						</h2>
-						<p className="w-96 text-[#656464]">
+						<p className="sm:w-96 w-80 text-[#656464] text-sm sm:text-base ">
 							Make your life easier by downloading TASSLEEH Mobile Application.
 							We provide best services. Start your with us now...
 						</p>
 					</div>
-					<div className="flex items-center">
-						<img src="/images/app.png" alt="android store" />
-						<img src="/images/android.png" alt="app store" />
+					<div className="flex items-center sm:justify-start justify-center">
+						<img
+							className="sm:h-full h-20"
+							src="/images/app.png"
+							alt="android store"
+						/>
+						<img
+							className="sm:h-full h-10"
+							src="/images/android.png"
+							alt="app store"
+						/>
 					</div>
 				</div>
 				<div>
 					<div>
-						<img className="h-[500px]" src="/images/mobile muckup.png" alt="" />
+						<img
+							className="sm:h-[500px]"
+							src="/images/mobile muckup.png"
+							alt=""
+						/>
 					</div>
 				</div>
 			</section>
@@ -506,9 +526,13 @@ const Home = () => {
 				<div className="flex justify-center mt-16 flex-wrap">
 					{ReviewCardData.map((item, index) => {
 						return (
-							<div className="mb-16 px-16 relative">
-								<div className="absolute top-[-17px] left-9">
-									<img className="h-12" src="/images/semicolon.png" alt="" />
+							<div className="mb-16 sm:px-16 relative">
+								<div className="absolute sm:top-[-17px] left-0 top-[-15px] sm:left-9">
+									<img
+										className="sm:h-12 h-8"
+										src="/images/semicolon.png"
+										alt=""
+									/>
 								</div>
 								<div>
 									<ReviewCard key={index} item={item} />
