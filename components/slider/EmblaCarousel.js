@@ -76,7 +76,7 @@ const EmblaCarousel = ({ slides, options }) => {
 										{/* {item.title}{" "} */}
 										{/* <span className="ml-1">{item?.black}</span> */}
 									</h2>
-									<p className="text-[#0a093d] text-justify text-xl  lg:text-3xl font-bold py-2 w-[600px]">
+									<p className="text-[#0a093d] text-justify text-xl  lg:text-3xl font-bold py-2 w-[580px]">
 										{/* {item.description} */}
 										<p>Our motive is to provide <span className="text-primary">best services</span> to our customers under one platform.</p>
 									</p>

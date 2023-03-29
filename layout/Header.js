@@ -96,7 +96,7 @@ const Header = () => {
 							</div>
 
 							<div className="flex ml-[0px] items-center">
-								<div className="gap-8 flex items-center">
+								<div className="hidden gap-8 md:flex items-center">
 									<input
 										placeholder="Search here..."
 										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "

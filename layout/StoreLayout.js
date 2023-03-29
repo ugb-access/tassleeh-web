@@ -128,7 +128,8 @@ const StoreLayout = ({ children }) => {
 								router.pathname.startsWith("/signup") ||
 								router.pathname.startsWith("/forgotpassword") ||
 								router.pathname.startsWith("/verifyemail") ||
-								router.pathname.startsWith("/reset-password")
+								router.pathname.startsWith("/reset-password") ||
+								router.pathname.startsWith("/newpassword") 
 							) ? (
 								<Header />
 							) : null}
@@ -138,7 +139,8 @@ const StoreLayout = ({ children }) => {
 								router.pathname.startsWith("/signup") ||
 								router.pathname.startsWith("/forgotpassword") ||
 								router.pathname.startsWith("/verifyemail") ||
-								router.pathname.startsWith("/reset-password")
+								router.pathname.startsWith("/reset-password") ||
+								router.pathname.startsWith("/newpassword") 
 							) ? (
 								<Footer />
 							) : null}

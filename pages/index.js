@@ -267,8 +267,7 @@ const Home = () => {
 			title: "Alex Hales",
 			description:
 				'I received support from TASSLEEH in ways that are beyond words. One of the key drivers of our hyper growth was their very competent workforce. These people truly embody the phrase "worth for money."',
-		}
-
+		},
 	];
 	return (
 		<div>
@@ -287,12 +286,15 @@ const Home = () => {
 			</Head>
 			<div className="back">
 				<section className="">
-					<div className="flex flex-col justify-center items-center gap-y-5 ">
+					<div className="relative flex flex-col justify-center items-center gap-y-5 ">
+						<div className="hidden md:block absolute right-64 bottom-6">
+							<img src="/images/Arr.png" alt="" />
+						</div>
 						<div className="mt-24">
-							<h1 className="text-6xl text-[#0A093D] font-bold">
+							<h1 className="md:text-6xl sm:text-4xl text-2xl text-[#0A093D] text-center font-bold">
 								We Provide <span className="text-[#03A0CB]">Best</span> Services
 							</h1>
-							<p className="text-[#656464] text-lg text-center pt-4">
+							<p className="text-[#656464] md:text-lg sm:text-base text-sm text-center pt-4">
 								TASSLEEH provides best services for your cars, electronics,
 								home, and accessories.
 							</p>
@@ -302,7 +304,7 @@ const Home = () => {
 								<img src="/images/search.png" alt="" />
 								<input
 									type="text"
-									className="w-[350px]"
+									className="md:w-[350px]"
 									placeholder="search here"
 								/>
 							</div>
@@ -316,7 +318,7 @@ const Home = () => {
 					</div>
 				</section>
 				{/* ---------------------Services------------------------- */}
-				<section className="flex flex-wrap justify-center gap-12 mt-20  px-48 ">
+				<section className="flex flex-wrap justify-center sm:gap-12 mt-20 mx-auto sm:px-48 ">
 					{HomeServicesData.map((item, index) => {
 						return (
 							<div className="mb-16">
@@ -327,15 +329,15 @@ const Home = () => {
 				</section>
 			</div>
 			{/* -------------------Availaible-jobs----------------------- */}
-			<section className="flex justify-center mt-24">
-				<div className=" pt-2 px-5 w-2/5">
+			<section className="flex justify-center flex-wrap mt-24">
+				<div className=" pt-2 px-5 md:w-2/5">
 					<p className=" text-primary font-medium text-base my-4">
 						Whats TASSLEEH?
 					</p>
 					<h1 className="text-2xl font-bold text-[#0a093d] my-4">
 						Why Choose TASSLEEH Platform?
 					</h1>
-					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] w-[460px]">
+					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
 						We are a value addition which covers all 360 services under one
 						platform. Our motive is to provide best services to our corporate,
 						commercial, and residential customers.
@@ -343,7 +345,11 @@ const Home = () => {
 					<div className="my-4">
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Vetted and background-checked in house staff
@@ -351,7 +357,11 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								High-Tech and Most Advanced Equipment
@@ -359,7 +369,11 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Quality Control and Safety
@@ -367,7 +381,11 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Affordable and Upfront Pricing
@@ -375,7 +393,11 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-4">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 opacity-70">
 								Timely and Convenient Services
@@ -383,7 +405,11 @@ const Home = () => {
 						</div>
 						<div className="flex items-center mb-2">
 							<div className="">
-								<img className="mx-auto py-1" src="/images/Ellipse 11 (1).png" alt="" />
+								<img
+									className="mx-auto py-1"
+									src="/images/Ellipse 11 (1).png"
+									alt=""
+								/>
 							</div>
 							<p className="px-3 text-lg font-normal leading-8 w opacity-70">
 								Experienced, Trained and Certified
@@ -413,13 +439,13 @@ const Home = () => {
 			</section>
 
 			{/* ----------------------------Popular------------------------------- */}
-			<section className="flex justify-center  mt-24">
-				<div className=" pt-2 px-5 w-2/5 mt-12">
+			<section className="flex justify-center flex-wrap mt-24">
+				<div className=" pt-2 px-5 md:w-2/5 mt-12">
 					<p className=" text-primary font-medium text-lg my-4">About Us</p>
-					<h1 className="text-4xl font-bold text-[#0a093d] my-5 w-80">
+					<h1 className="text-4xl font-bold text-[#0a093d] my-5 sm:w-80">
 						About TASSLEEH Platform?
 					</h1>
-					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] w-[460px]">
+					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
 						TASSLEEH is a leading multiple service provider platform catering to
 						your 360 needs with quality guaranteed. Our aim and priority is to
 						add value to our consumers' lives by providing smart solutions to
@@ -444,7 +470,7 @@ const Home = () => {
 			{/* --------------------------Popular-companies----------------------------- */}
 
 			{/* ---------------------------Dowload-APP--------------------------- */}
-			<section className="flex justify-around items-center bg-[#f4f9ff] mt-20">
+			<section className="flex justify-around items-center flex-wrap bg-[#f4f9ff] mt-20">
 				<div className="">
 					<div className="pl-6">
 						<p className="text-lg text-primary font-semibold ">
@@ -473,11 +499,11 @@ const Home = () => {
 			<section>
 				<div className="flex flex-col justify-center items-center mt-24">
 					<p className="text-primary text-lg mb-2">Customer Reviews</p>
-					<h1 className="text-4xl font-bold text-[#0a093d]">
+					<h1 className="text-xl sm:text-left text-center sm:text-2xl md:text-4xl font-bold text-[#0a093d]">
 						Valuable Customers Sharing Their Reviews{" "}
 					</h1>
 				</div>
-				<div className="flex justify-center mt-16">
+				<div className="flex justify-center mt-16 flex-wrap">
 					{ReviewCardData.map((item, index) => {
 						return (
 							<div className="mb-16 px-16 relative">
