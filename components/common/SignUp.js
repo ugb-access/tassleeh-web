@@ -356,7 +356,7 @@ const SignUp = ({
 								</label>
 							</div>
 						</div>
-						<form onSubmit={(e) => handleSubmit(e)}>
+						<div>
 							{show === 1 && (
 								<div>
 									<div className="">
@@ -612,7 +612,7 @@ const SignUp = ({
 							<div className="pt-4 flex justify-center">
 								<Button
 									id="disabled"
-									type="submit"
+									// type="submit"
 									text="Create Account"
 									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-44 !h-12"
 									img={
@@ -635,7 +635,7 @@ const SignUp = ({
 								/>
 							</div>
 							{/* </Link> */}
-						</form>
+						</div>
 						{show === 1 ? (
 							<div>
 								<div className="flex justify-center items-center mt-4">

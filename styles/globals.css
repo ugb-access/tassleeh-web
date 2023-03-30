@@ -5,19 +5,22 @@
 * {
 	box-sizing: border-box;
 }
-	
 
 span {
 	text-decoration: blue;
 	text-underline-offset: 15px !important;
+}
+.otpInput input ::placeholder {
+	color: red !important;
+	opacity: 1;
 }
 
 /* ----------------hover menu--------------- */
 .service-card {
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.back{
-	background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
+.back {
+	background: linear-gradient(311.76deg, #d4e7fe -15.24%, #ffffff 78.85%);
 }
 .poster {
 	background-image: url("../public/images/base1.png");
@@ -70,8 +73,6 @@ span {
 	}
 }
 
-
-
 .blog-para {
 	width: 100%;
 	line-height: 1.2rem;
@@ -116,7 +117,6 @@ span {
 	display: block !important;
 	width: 100%;
 }
-
 
 /* blog detail */
 
@@ -182,7 +182,7 @@ span {
 .embla__dot,
 .embla__button {
 	background-color: transparent;
-	color: #03A0CB !important;
+	color: #03a0cb !important;
 	touch-action: manipulation;
 	display: inline-flex;
 	text-decoration: none;
@@ -218,7 +218,7 @@ span {
 	content: "";
 }
 .embla__dot--selected:after {
-	background: #03A0CB !important;
+	background: #03a0cb !important;
 	min-width: 14px;
 	height: 1rem;
 }
@@ -368,15 +368,15 @@ input[type="calenderdate"]:focus::before,
 input[type="calenderdate"]:valid::before {
 	content: "" !important;
 }
-.swal-button--cancel{
+.swal-button--cancel {
 	padding: 10px;
 }
-.lists ol{
-    list-style: decimal !important;
+.lists ol {
+	list-style: decimal !important;
 	margin: 14.4px 0px !important;
 	padding: 0px 0px 0px 40px;
 }
-.lists ul{
+.lists ul {
 	list-style-type: disc !important;
 	margin: 14.4px 0px !important;
 	padding: 0px 0px 0px 40px;

@@ -33,69 +33,69 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 		password: "",
 		type: "user",
 	});
-	const handleValidation = (e) => {
-		if (data.email === "") {
-			toast.warn("Email cannot be empty");
-			return false;
-		}
-		if (data.password === "") {
-			toast.warn("Password cannot be empty");
-			return false;
-		}
-		// if (!(data.password.length >= 8)) {
-		// 	toast.warn("Password should be greater than 7 characters");
-		// 	return false;
-		// }
-		return true;
-	};
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (handleValidation()) {
-			setSpinner(true);
-			loginUser(data)
-				.then((res) => {
-					// console.log(res);
-					if (res.data.success === true) {
-						toast.success(res.data.message);
-						document.getElementById("loadingmail").style.display = "block";
-						document.getElementById("disabled").style = "disabled";
-						document.getElementById("disabled").style.cursor = "not-allowed";
-						let info = jwt_decode(res?.data?.token);
-						localStorage.setItem("user", JSON.stringify(info?.payload));
-						setSpinner(false);
-						if (info?.payload?.type === "user") {
-							router.push("/");
-							setSpinner(false);
-						} else {
-							router.push("/");
-							setSpinner(false);
-						}
-						setSpinner(false);
-					} else {
-						setSpinner(false);
-						toast.warn(res?.data?.message);
-					}
-				})
-				.catch((err) => {
-					toast.error(err);
-					setSpinner(false);
-				});
-		}
-	};
-	const dataChange = (e) => {
-		if (e.target.value == "tag1" && e.target.checked === true) {
-			setData({ ...data, type: "user" });
-		}
-		if (e.target.value == "tag2" && e.target.checked === true) {
-			setData({ ...data, type: "business" });
-		}
-	};
-	const handleChange = (e) => {
-		const newData = { ...data };
-		newData[e.target.id] = e.target.value;
-		setData(newData);
-		setIsError("");
-	};
+	// const handleValidation = (e) => {
+	// 	if (data.email === "") {
+	// 		toast.warn("Email cannot be empty");
+	// 		return false;
+	// 	}
+	// 	if (data.password === "") {
+	// 		toast.warn("Password cannot be empty");
+	// 		return false;
+	// 	}
+	// 	// if (!(data.password.length >= 8)) {
+	// 	// 	toast.warn("Password should be greater than 7 characters");
+	// 	// 	return false;
+	// 	// }
+	// 	return true;
+	// };
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault();
+	// 	if (handleValidation()) {
+	// 		setSpinner(true);
+	// 		loginUser(data)
+	// 			.then((res) => {
+	// 				// console.log(res);
+	// 				if (res.data.success === true) {
+	// 					toast.success(res.data.message);
+	// 					document.getElementById("loadingmail").style.display = "block";
+	// 					document.getElementById("disabled").style = "disabled";
+	// 					document.getElementById("disabled").style.cursor = "not-allowed";
+	// 					let info = jwt_decode(res?.data?.token);
+	// 					localStorage.setItem("user", JSON.stringify(info?.payload));
+	// 					setSpinner(false);
+	// 					if (info?.payload?.type === "user") {
+	// 						router.push("/");
+	// 						setSpinner(false);
+	// 					} else {
+	// 						router.push("/");
+	// 						setSpinner(false);
+	// 					}
+	// 					setSpinner(false);
+	// 				} else {
+	// 					setSpinner(false);
+	// 					toast.warn(res?.data?.message);
+	// 				}
+	// 			})
+	// 			.catch((err) => {
+	// 				toast.error(err);
+	// 				setSpinner(false);
+	// 			});
+	// 	}
+	// };
+	// const dataChange = (e) => {
+	// 	if (e.target.value == "tag1" && e.target.checked === true) {
+	// 		setData({ ...data, type: "user" });
+	// 	}
+	// 	if (e.target.value == "tag2" && e.target.checked === true) {
+	// 		setData({ ...data, type: "business" });
+	// 	}
+	// };
+	// const handleChange = (e) => {
+	// 	const newData = { ...data };
+	// 	newData[e.target.id] = e.target.value;
+	// 	setData(newData);
+	// 	setIsError("");
+	// };
 	// google sign in
 	let googleProvider = new GoogleAuthProvider();
 	const signWithGoogle = () => {
@@ -307,12 +307,12 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 								</label>
 							</div>
 						</div>
-						<form onSubmit={(e) => handleSubmit(e)}>
+						<div>
 							{show === 1 && (
 								<div>
 									<div className="">
 										<TextInput
-											onChange={(e) => handleChange(e)}
+											// onChange={(e) => handleChange(e)}
 											id="fullName"
 											customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type="text"
@@ -323,7 +323,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 									</div>
 									<div className="">
 										<TextInput
-											onChange={(e) => handleChange(e)}
+											// onChange={(e) => handleChange(e)}
 											id="fullName"
 											customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type="password"
@@ -342,7 +342,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 									<div>
 										<div className="">
 											<TextInput
-												onChange={(e) => handleChange(e)}
+												// onChange={(e) => handleChange(e)}
 												id="fullName"
 												customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 												type="text"
@@ -353,7 +353,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 										</div>
 										<div className="">
 											<TextInput
-												onChange={(e) => handleChange(e)}
+												// onChange={(e) => handleChange(e)}
 												id="fullName"
 												customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 												type="password"
@@ -393,8 +393,8 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 							</Link>
 							<div className="pt-16 flex justify-center">
 								<Button
-									id="disabled"
-									type="submit"
+									// id="disabled"
+									// type="submit"
 									text="Login"
 									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-32 !h-12"
 									img={
@@ -417,7 +417,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 								/>
 							</div>
 							{/* </Link> */}
-						</form>
+						</div>
 					</div>
 					<div className="flex justify-center items-center mt-4">
 						<hr className="w-[50px]" />

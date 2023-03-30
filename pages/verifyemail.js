@@ -82,12 +82,12 @@ const ForgotPassword = () => {
 											justifyContent: "center",
 											borderRadius: "",
 										}}
+										className="otpInput"
 										value={otp}
 										onChange={handleOtpChange}
 										numInputs={5}
 										separator={<span>&nbsp; &nbsp; &nbsp;</span>}
 										separateAfter={1}
-										className="!placeholder:text-gray-100"
 										inputProps={{ placeholder: "-" }}
 										onSubmit={fetcchOtp}
 									/>
