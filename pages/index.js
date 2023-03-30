@@ -338,14 +338,14 @@ const Home = () => {
 			</div>
 			{/* -------------------Availaible-jobs----------------------- */}
 			<section className="flex justify-center flex-wrap mt-24">
-				<div className=" pt-2 px-5 md:w-2/5">
+				<div className=" pt-2 px-5 lg:w-2/5 ">
 					<p className=" text-primary font-medium text-sm sm:text-lg my-4">
 						Whats TASSLEEH?
 					</p>
-					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-4 sm:w-[400px]">
+					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-4 lg:w-[400px]">
 						Why Choose TASSLEEH Platform?
 					</h1>
-					<p className="mt-2 mb-2 text-sm sm:text-base font-normal leading-8 text-[#656464] sm:w-[490px]">
+					<p className="mt-2 mb-2 text-sm sm:text-base font-normal leading-8 text-[#656464] md:w-[550px] lg:w-[490px] sm:w-[490px]">
 						We are a value addition which covers all 360 services under one
 						platform. Our motive is to provide best services to our corporate,
 						commercial, and residential customers.
@@ -434,7 +434,7 @@ const Home = () => {
 					</Link>
 				</div>
 				<div>
-					<div className="mt-9 sm:mt-0">
+					<div className="mt-9 sm:mt-0 md:mt-10 lg:mt-0">
 						<img className="sm:h-full h-80" src="/images/group-0.png" alt="" />
 					</div>
 				</div>
@@ -450,19 +450,19 @@ const Home = () => {
 
 			{/* ----------------------------Popular------------------------------- */}
 			<section className="flex justify-center flex-wrap mt-24">
-				<div className=" pt-2 px-5 md:w-2/5 mt-12">
+				<div className=" pt-2 px-5 lg:w-2/5 mt-12">
 					<p className=" text-primary font-medium sm:text-lg my-2">About Us</p>
-					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-5 sm:w-80">
+					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-5 sm:w-80 md:w-full lg:w-80">
 						About TASSLEEH Platform?
 					</h1>
-					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
+					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] lg:w-[460px] md:[750px] sm:w-[460px]">
 						TASSLEEH is a leading multiple service provider platform catering to
 						your 360 needs with quality guaranteed. Our aim and priority is to
 						add value to our consumers' lives by providing smart solutions to
 						all their problems.
 					</p>
 
-					<div className="flex justify-center sm:justify-start gap-4 mt-10">
+					<div className="flex justify-center sm:justify-start md:justify-center lg:justify-start gap-4 mt-10">
 						<Link href={"/signin"}>
 							<Button
 								text="Get Started"

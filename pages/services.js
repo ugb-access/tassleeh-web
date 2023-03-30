@@ -57,7 +57,7 @@ const About = () => {
 	return (
 		<div>
 			<Head>
-				<title> About - Job-Locator </title>
+				<title> Services - Tassleeh </title>
 			</Head>
 			{/* ------------------------aBOUT JOB LOCATOR-------------- */}
 			<section>
@@ -65,7 +65,7 @@ const About = () => {
 					<h1 className="text-white text-3xl sm:text-5xl font-bold">
 						Services
 					</h1>
-					<p className="text-white text-justify text-xl sm:w-3/5 sm:text-center py-4">
+					<p className="text-white  sm:text-xl sm:w-3/5 md:leading-9 text-center py-4">
 						Our pride is providing the most extensive range of services. From
 						home maintenance to personal assistance. We make sure that your
 						safety is never compromised. This is why we hire all the staff under
@@ -87,7 +87,7 @@ const About = () => {
 				<h1 className="text-2xl sm:text-4xl font-bold text-[#0a093d] mt-2 mb-3 ">
 					We Provide Best Services
 				</h1>
-				<p className="text-[#646565] w-[410px] text-center">
+				<p className="text-[#646565] sm:w-[410px] text-center">
 					TASSLEEH provides ultimate installations, repairs, maintenance, and
 					grooming services at your doorstep.
 				</p>
