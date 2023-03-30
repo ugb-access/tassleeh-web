@@ -4,10 +4,10 @@ const SidebarLink = ({ sideLink, sideText, sideIcon }) => {
 	const router = useRouter();
 	return (
 		<div className="">
-			<Link href={sideLink}>
+			<Link href={""}>
 				<div
 					className={`text-icon ${
-						router.asPath == sideLink && "bg-[#FDF6F6]"
+						router.asPath == sideLink && ""
 					} `}
 				>
 					<div

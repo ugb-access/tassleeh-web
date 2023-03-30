@@ -10,6 +10,10 @@
 .main-div-sidebar {
     width: 100%;
     min-height: 100%;
+    display: flex;
+    justify-content: start;
+    padding-left: 18px;
+    padding-right: 18px;
     /* border-right: 1px solid #F8F8F8 !important; */
     /* background-color: #FCFCFF; */
     /* border-right: 3px solid #FCFCFF; */
@@ -50,10 +54,10 @@
     margin: 25px 50px;
     border-radius: 4px;
     padding: 8px;
-    background-color: #FDF6F6;
+    /* background-color: #FDF6F6; */
 }
 .text-icon:hover {
-    background-color: #FDF6F6;
+    /* background-color: #FDF6F6; */
     cursor: pointer;
 }
 .text-icon:hover .icon-para {

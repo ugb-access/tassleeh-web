@@ -40,7 +40,7 @@ const Sidebar = ({ dashSideData }) => {
 							/>
 						</div>
 					</div> */}
-					<div>
+					<div className="">
 						{dashSideData.map((items, index) => {
 							// console.log(items, "item");
 

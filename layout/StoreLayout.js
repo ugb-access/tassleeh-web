@@ -85,7 +85,9 @@ const StoreLayout = ({ children }) => {
 			{router.pathname.startsWith("/user/dashboard") ? (
 				//<AuthWrapper>//<AuthWrapper>
 				<div className="">
-					<DashboardHeader />
+					<div className="">
+						<DashboardHeader />
+					</div>
 					<div className="sm:flex">
 						<div className="">
 							<Sidebar dashSideData={businessdata} />

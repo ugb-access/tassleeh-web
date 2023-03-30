@@ -440,11 +440,23 @@ const Home = () => {
 				</div>
 			</section>
 			{/* ---------------------------Our Achievement------------------------ */}
-			<section>
-				<div>
-					<div className="mt-32">
-						<img className="w-full" src="/images/Our Achievement.png" alt="" />
-					</div>
+			<section className="mt-28">
+				<div className="relative poster flex flex-col justify-center items-center">
+					<p className="text-primary text-lg mb-4">Our Achievement</p>
+					<h1 className="text-white text-xl md:text-center lg:text-left sm:text-5xl font-bold">
+					We are Connecting You The Digital Life.
+					</h1>
+					<p className="text-white  sm:text-xl sm:w-3/5 md:leading-9 text-center py-4">
+					The aim and priority of Kam Kaj are to add value to our consumers' lives by providing smart solutions to all their problems. Our pride is providing the most extensive range of services. From home maintenance to personal assistance. We make sure that your safety is never compromised. This is why we hire all the staff under the roof of Kam Kaj, just for your satisfaction.
+					</p>
+					<Link href={"/signin"}>
+						<div className="mt-3">
+							<Button
+								text="Get Started"
+								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-40 !h-12 sm:!h-16"
+							/>
+						</div>
+					</Link>
 				</div>
 			</section>
 
