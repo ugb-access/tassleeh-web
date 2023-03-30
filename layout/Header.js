@@ -140,7 +140,7 @@ const Header = () => {
 									</Link>
 								)}
 								{validToken?.type === "business" && (
-									<Link href={"/business/dashboard"}>
+									<Link href={"/user/dashboard"}>
 										<Button
 											text="Dashboard"
 											customClass={`hidden md:block text-white font-bold md:text-sm border-solid bg-primary rounded-md w-[100px] h-[30px] md:h-[30px] md:mr-4`}
@@ -193,7 +193,7 @@ const Header = () => {
 														href={
 															validToken?.type === "user"
 																? "/employee/dashboard"
-																: "/business/dashboard"
+																: "/user/dashboard"
 														}
 													>
 														<p className="text-[#0000004D] text-md font-bold border-t-2">

@@ -499,16 +499,23 @@ const Home = () => {
 						</p>
 					</div>
 					<div className="flex items-center sm:justify-start justify-center">
-						<img
-							className="sm:h-full h-20"
-							src="/images/app.png"
-							alt="android store"
-						/>
-						<img
-							className="sm:h-full h-10"
-							src="/images/android.png"
-							alt="app store"
-						/>
+						<Link
+							href={"https://play.google.com/store/games?hl=en&gl=US"}
+							target="_blank"
+						>
+							<img
+								className="sm:h-full h-20"
+								src="/images/app.png"
+								alt="android store"
+							/>
+						</Link>
+						<Link href={"https://www.apple.com/app-store/"} target="_blank">
+							<img
+								className="sm:h-full h-10"
+								src="/images/android.png"
+								alt="app store"
+							/>
+						</Link>
 					</div>
 				</div>
 				<div>

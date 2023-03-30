@@ -44,41 +44,44 @@ const SetNewPassword = () => {
 										labelStyle={"mt-12 mb-2"}
 									/>
 								</div>
-								<div className="pt-20 flex justify-center">
-									<Button
-										id="disabled"
-										type="submit"
-										text="Reset Password"
-										customClass=" bg-primary rounded-xl p-2 text-sm font-medium text-white !w-56 !h-10"
-										img={
-											<svg
-												id="loadingmail"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="none"
-												viewBox="0 0 24 24"
-												strokeWidth={1.5}
-												stroke="currentColor"
-												className="w-6 h-6 animate-spin mx-2 hidden"
-											>
-												<path
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-												/>
-											</svg>
-										}
-									/>
-								</div>
+								<Link href={"/signin"}>
+									<div className="pt-20 flex justify-center">
+										<Button
+											id="disabled"
+											type="submit"
+											text="Reset Password"
+											customClass=" bg-primary rounded-xl p-2 text-sm font-medium text-white !w-56 !h-10"
+											img={
+												<svg
+													id="loadingmail"
+													xmlns="http://www.w3.org/2000/svg"
+													fill="none"
+													viewBox="0 0 24 24"
+													strokeWidth={1.5}
+													stroke="currentColor"
+													className="w-6 h-6 animate-spin mx-2 hidden"
+												>
+													<path
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+													/>
+												</svg>
+											}
+										/>
+									</div>
+								</Link>
 								<div className="flex flex-col items-center ">
 									<p className="text-sm leading-6 w-[320px] text-[#656464] text-center mt-8 lg:">
 										Return to{" "}
-										<Link href={"/signin"}><span
-											// onClick={handleResendOTP}
-											className="cursor-pointer text-primary"
-										>
-											Sign In
-										</span>
-                                        </Link>
+										<Link href={"/signin"}>
+											<span
+												// onClick={handleResendOTP}
+												className="cursor-pointer text-primary"
+											>
+												Sign In
+											</span>
+										</Link>
 									</p>
 								</div>
 							</div>

@@ -24,7 +24,7 @@ const Sidebar = ({ dashSideData }) => {
 					<div className="md:!hidden p-4">
 						<img src="/images/responsivelogo.png" alt="Logo" />
 					</div>
-					<hr />
+					{/* <hr /> */}
 					<div className="ico-menu border-0 bg-purple-100 sm:hidden right-[-16px] absolute z-[51] w-full flex justify-end ">
 						<HiMenu
 							className="text-2xl text-primary"

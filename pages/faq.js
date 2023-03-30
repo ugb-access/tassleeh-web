@@ -40,7 +40,7 @@ const FAQ = () => {
 										} else if (data.type === "user") {
 											router.push("/employee/dashboard");
 										} else if (data.type === "business") {
-											router.push("/business/dashboard");
+											router.push("/user/dashboard");
 										}
 									}}
 									text="GET STARTED"

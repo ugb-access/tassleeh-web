@@ -151,7 +151,7 @@ const MyJobs = () => {
 									</div>
 								</Link>
 								<div>
-									<Link href="/business/dashboard/post-jobs">
+									<Link href="/user/dashboard/post-jobs">
 										<Button
 											img={<img src="/images/add.png"></img>}
 											text="Create Job"
@@ -203,7 +203,7 @@ const MyJobs = () => {
 							/>
 						);
 					})}
-					<Link href={"/business/dashboard/post-jobs"}>
+					<Link href={"/user/dashboard/post-jobs"}>
 						<div className="border-2 border-solid border-[#E3E3E3] rounded-2xl py-3 h-56 w-48">
 							<div className="flex flex-col items-center h-full justify-center">
 								<div className="pb-5">

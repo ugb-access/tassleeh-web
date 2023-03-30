@@ -209,7 +209,7 @@ const Profile = () => {
 				accountTitle={accountTitle}
 				headerTitle="Business profile"
 				headerDiscription="Get details about your profile"
-				profileLink={"/business/dashboard/business-profile"}
+				profileLink={"/user/dashboard/business-profile"}
 			/>
 			{spinner && (
 				<div className="fixed z-50 w-full">

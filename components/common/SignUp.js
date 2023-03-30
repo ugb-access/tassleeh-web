@@ -406,7 +406,7 @@ const SignUp = ({
 										<TextInput
 											// onChange={(e) => handleChange(e)}
 											id="password"
-											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											customClass=" mt-2 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type={showPass ? "text" : "password"}
 											placeholder="Confirm Password"
 											labelText={"Confirm Password"}
@@ -588,14 +588,17 @@ const SignUp = ({
 									</div>
 								</div>
 							)}
-							<div className="flex items-center mb-2 mt-9">
+
+							<div
+								className={`flex items-center ${show === 2 ? "mt-3" : "mt-9"}`}
+							>
 								<input
 									onChange={(e) => isSetCheck(e.target.checked)}
 									id="isActive"
 									type="checkbox"
-									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300"
 								/>
-								<label className="pt-0.5 text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
+								<label className=" text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
 									I agree to TASSLEEH {""}
 									<Link target={"_blank"} href={"/terms-&-conditions"}>
 										<span className="text-primary">terms</span> and{" "}
@@ -634,48 +637,32 @@ const SignUp = ({
 							{/* </Link> */}
 						</form>
 						{show === 1 ? (
-						<div><div className="flex justify-center items-center mt-4">
-							<hr className="w-[50px]" />
-							<p className="mx-2">or Sign Up With</p>
-							<hr className="w-[50px]" />
-						</div>
-							<div className="flex justify-center items-center gap-8 mt-6">
-								<div className="">
-									{typeof window !== "undefined" ? (
-										<LoginSocialFacebook
-											appId="1337714373684794"
-											// appId = ""
-											fieldsProfile={
-												"id,first_name,last_name,name,name_format,picture,email"
-											}
-											redirect_uri={REDIRECT_URI}
-											onResolve={handleFBLogin}
-											onReject={(err) => {
-												console.log(err, "facebookReject");
-											}}
-										>
-											<button className="">
-												<img className="h-10" src="/images/Google.png" alt="" />
+							<div>
+								<div className="flex justify-center items-center mt-4">
+									<hr className="w-[50px]" />
+									<p className="mx-2">or Sign Up With</p>
+									<hr className="w-[50px]" />
+								</div>
+								<div className="flex justify-center items-center gap-8 mt-6">
+									<Link href={"https://accounts.google.com/signin"}>
+										<button className="">
+											<img className="h-10" src="/images/Google.png" alt="" />
+										</button>
+									</Link>
+
+									<div>
+										<Link href={"https://www.facebook.com/"}>
+											<button
+												// onClick={() => {
+												// 	signWithGoogle();
+												// }}
+												className=""
+											>
+												<img className="h-10" src="/images/fb.png" alt="" />
 											</button>
-										</LoginSocialFacebook>
-									) : null}
+										</Link>
+									</div>
 								</div>
-								<div>
-									<button
-										onClick={() => {
-											signWithGoogle();
-										}}
-										className=""
-									>
-										<img className="h-10" src="/images/fb.png" alt="" />
-									</button>
-								</div>
-								{/* <div>
-									<button>
-										<img className="h-10" src="/images/linkedin.png" alt="" />
-									</button>
-								</div> */}
-							</div>
 							</div>
 						) : null}
 					</div>

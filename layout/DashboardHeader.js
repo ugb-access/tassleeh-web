@@ -20,8 +20,8 @@ const Header = ({
 	let path = router.asPath;
 	if (path.includes("employee/dashboard")) {
 		profileLink = "/employee/dashboard/profile";
-	} else if (path.includes("business/dashboard")) {
-		profileLink = "/business/dashboard/business-profile";
+	} else if (path.includes("user/dashboard")) {
+		profileLink = "/user/dashboard/business-profile";
 	}
 	// let title = "Dashboard";
 	// let description =

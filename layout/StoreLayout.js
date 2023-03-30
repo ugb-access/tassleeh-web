@@ -52,27 +52,27 @@ const employeedata = [
 ];
 const businessdata = [
 	{
-		barIink: "/business/dashboard",
+		barIink: "/user/dashboard",
 		barIcon: <AiFillHome />,
 		barText: "Home",
 	},
 	{
-		barIink: "/business/dashboard/post-jobs",
+		barIink: "/user/dashboard/post-jobs",
 		barIcon: <SlCalender />,
 		barText: "Bookings",
 	},
 	{
-		barIink: "/business/dashboard/my-jobs",
+		barIink: "/user/dashboard/my-jobs",
 		barIcon: <BiMessageAltDetail />,
 		barText: "Messages",
 	},
 	{
-		barIink: "/business/dashboard/job-applicants",
+		barIink: "/user/dashboard/job-applicants",
 		barIcon: <AiOutlineSetting />,
 		barText: "Settings",
 	},
 	{
-		barIink: "/business/dashboard/business-plan",
+		barIink: "/user/dashboard/business-plan",
 		barIcon: <BiLogOut />,
 		barText: "Logout",
 	},
@@ -82,7 +82,7 @@ const StoreLayout = ({ children }) => {
 	// console.log(router)
 	return (
 		<div>
-			{router.pathname.startsWith("/business/dashboard") ? (
+			{router.pathname.startsWith("/user/dashboard") ? (
 				//<AuthWrapper>//<AuthWrapper>
 				<div className="">
 					<DashboardHeader />

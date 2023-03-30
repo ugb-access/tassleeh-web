@@ -87,35 +87,39 @@ const ForgotPassword = () => {
 										numInputs={5}
 										separator={<span>&nbsp; &nbsp; &nbsp;</span>}
 										separateAfter={1}
+										className="!placeholder:text-gray-100"
+										inputProps={{ placeholder: "-" }}
 										onSubmit={fetcchOtp}
 									/>
 								</div>
-								<div className="flex flex-col space-y-5">
-									<div className="mt-4">
-										<button
-											onClick={fetcchOtp}
-											id="btndis"
-											className="flex flex-row h-10  items-center justify-center text-center w-32 border rounded-xl outline-none p-2 bg-primary border-none text-white text-sm shadow-sm"
-										>
-											<svg
-												id="otpverify"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="none"
-												viewBox="0 0 24 24"
-												strokeWidth={1.5}
-												stroke="currentColor"
-												className="w-6 h-6 animate-spin mx-2 hidden"
+								<Link href={"/newpassword"}>
+									<div className="flex flex-col space-y-5">
+										<div className="mt-4">
+											<button
+												// onClick={fetcchOtp}
+												id="btndis"
+												className="flex flex-row h-10  items-center justify-center text-center w-32 border rounded-xl outline-none p-2 bg-primary border-none text-white text-sm shadow-sm"
 											>
-												<path
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-												/>
-											</svg>
-											Verify
-										</button>
+												<svg
+													id="otpverify"
+													xmlns="http://www.w3.org/2000/svg"
+													fill="none"
+													viewBox="0 0 24 24"
+													strokeWidth={1.5}
+													stroke="currentColor"
+													className="w-6 h-6 animate-spin mx-2 hidden"
+												>
+													<path
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+													/>
+												</svg>
+												Verify
+											</button>
+										</div>
 									</div>
-								</div>
+								</Link>
 								<p className="text-sm leading-6 w-[320px] text-[#656464] text-center mt-8 lg:">
 									Didn’t get a code?
 									<span

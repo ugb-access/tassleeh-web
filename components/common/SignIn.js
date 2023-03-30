@@ -367,7 +367,6 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 										</div>
 									</div>
 								</div>
-
 							)}
 
 							{/* <div className="flex items-center mb-2 mt-9">
@@ -388,9 +387,9 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 								</label>
 							</div> */}
 							<Link href="/forgotpassword">
-							<div className="flex justify-end pt-3">
-								<p className="text-primary">Forgot Password?</p>
-							</div>
+								<div className="flex justify-end pt-3">
+									<p className="text-primary">Forgot Password?</p>
+								</div>
 							</Link>
 							<div className="pt-16 flex justify-center">
 								<Button
@@ -426,35 +425,23 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 						<hr className="w-[50px]" />
 					</div>
 					<div className="flex justify-center items-center gap-8 mt-6">
-						<div className="">
-							{typeof window !== "undefined" ? (
-								<LoginSocialFacebook
-									appId="1337714373684794"
-									// appId = ""
-									fieldsProfile={
-										"id,first_name,last_name,name,name_format,picture,email"
-									}
-									redirect_uri={REDIRECT_URI}
-									// onResolve={handleFBLogin}
-									onReject={(err) => {
-										console.log(err, "facebookReject");
-									}}
-								>
-									<button className="">
-										<img className="h-10" src="/images/Google.png" alt="" />
-									</button>
-								</LoginSocialFacebook>
-							) : null}
-						</div>
-						<div>
-							<button
-								onClick={() => {
-									signWithGoogle();
-								}}
-								className=""
-							>
-								<img className="h-10" src="/images/fb.png" alt="" />
+						<Link href={"https://accounts.google.com/signin"}>
+							<button className="">
+								<img className="h-10" src="/images/Google.png" alt="" />
 							</button>
+						</Link>
+
+						<div>
+							<Link href={"https://www.facebook.com/"}>
+								<button
+									// onClick={() => {
+									// 	signWithGoogle();
+									// }}
+									className=""
+								>
+									<img className="h-10" src="/images/fb.png" alt="" />
+								</button>
+							</Link>
 						</div>
 						{/* <div>
 									<button>

@@ -203,7 +203,7 @@ const ForgotPassword = () => {
 							/>
 						</div>
 						<div className="pt-20 flex justify-center">
-							<Button
+							<Link href={"/verifyemail"}><Button
 								id="disabled"
 								type="submit"
 								text="Send Reset Instructions"
@@ -226,6 +226,7 @@ const ForgotPassword = () => {
 									</svg>
 								}
 							/>
+							</Link>
 						</div>
 						<Link href={"/signin"}>
 							<div className="flex justify-center text-sm mt-7">
