@@ -122,7 +122,7 @@ const Header = ({
 							{open ? (
 								<div>
 									<div className="absolute sm:top-[60px] top-[34px] sm:right-[-70px] left-[30px] w-32 pt-2 pb-4 pl-2 shadow-lg z-50 bg-[#fff]">
-										<Link href={profileLink}>
+										{/* <Link href={profileLink}> */}
 											<div className="flex items-center">
 												<div className="side-bar-icon-sel !text-primary">
 													<HiOutlineUser />
@@ -131,7 +131,7 @@ const Header = ({
 													Profile
 												</p>
 											</div>
-										</Link>
+										{/* </Link> */}
 										<hr className="mt-3 pb-2 " />
 										<div
 											onClick={userLogOut}
