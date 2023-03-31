@@ -56,7 +56,7 @@ const Header = () => {
 									</Link>
 									<Link href={"/contact"}>
 										<p
-											className={` text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
+											className={` text-[#656464] text-lg font-semibold whitespace-nowrap mx-6 hover:text-primary  ${
 												router.asPath.startsWith("/contact") && "!text-primary"
 											}`}
 										>
@@ -101,7 +101,7 @@ const Header = () => {
 										placeholder="Search here..."
 										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "
 									/>
-									<Link href={"/signin"}>
+									<Link href={"/user-dashboard/dashboard"}>
 										<div>
 											<Button
 												text="Get Started"

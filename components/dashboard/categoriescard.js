@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../Button";
 
 const CategoriesCard = ({ item }) => {
@@ -14,12 +15,14 @@ const CategoriesCard = ({ item }) => {
 						<h1 className="text-xl font-bold text-[#2F2C4A]">{item?.title}</h1>
 						<p className="mt-2 leading-8 text-[#656464]">{item?.description}</p>
 					</div>
-					<Button
-						customClass={
-							"mt-7 border border-primary text-secondary !w-[100px] !h-[35px] rounded-lg"
-						}
-						text={"Try Now"}
-					/>
+					<Link href={"/user-dashboard/dashboard/category-details"}>
+						<Button
+							customClass={
+								"mt-7 border border-primary text-secondary !w-[100px] !h-[35px] rounded-lg"
+							}
+							text={"Try Now"}
+						/>
+					</Link>
 				</div>
 			</div>
 		</>
