@@ -456,6 +456,7 @@ const Home = () => {
 								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-40 !h-12 sm:!h-16"
 							/>
 						</div>
+						
 					</Link>
 				</div>
 			</section>
