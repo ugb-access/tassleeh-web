@@ -5,6 +5,7 @@ import DashboardBusiness from "../../../components/dashboard/business-index";
 import { useState, useEffect } from "react";
 import { businessDashboardCards } from "../../../services/auth-service";
 import { ImSpinner9 } from "react-icons/im";
+import CategoriesCard from "../../../components/dashboard/categoriescard";
 const Dashboard = () => {
 	const [spinner, setSpinner] = useState(true);
 	const [businessCardsData, setBusinessCardData] = useState([]);
@@ -38,46 +39,40 @@ const Dashboard = () => {
 	}, [spinner]);
 	// console.log(data);
 
-	const businessData = [
+	const categoriesData = [
 		{
-			CardHead: "Total Spent",
-			CardNum: businessCardsData?.totalSpend
-				? businessCardsData?.totalSpend
-				: 0,
-			// CardSpan: "+100%",
-			CardImg: "/images/pound_symbol.png",
+			icon: "/images/",
+			title: "Cars",
+			description:
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			CardHead: "Total Jobs",
-			CardNum: businessCardsData?.totalJobs ? businessCardsData?.totalJobs : 0,
-			// CardSpan: "+20%",
-			CardImg: "/images/bx-briefcase (2).png",
+			icon: "/images/",
+			title: "Cars",
+			description:
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			CardHead: "Current Plan",
-			CardNum: businessCardsData?.currentPlan
-				? businessCardsData?.currentPlan
-				: "",
-			// CardSpan: "",
-			CardImg: "/images/crcard.png",
+			icon: "/images/",
+			title: "Cars",
+			description:
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			CardHead: "Total Applicants",
-			CardNum: businessCardsData?.totalApplicants
-				? businessCardsData?.totalApplicants
-				: 0,
-			// CardSpan: "+2%",
-			CardImg: "/images/userr.png",
+			icon: "/images/",
+			title: "Cars",
+			description:
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 	];
 
-	const areaGraphData = [
-		{
-			heading: "Overview - Total Jobs",
-			img: "/images/Path.png",
-			para: "Overview - Total Jobs",
-		},
-	];
+	// const areaGraphData = [
+	// 	{
+	// 		heading: "Overview - Total Jobs",
+	// 		img: "/images/Path.png",
+	// 		para: "Overview - Total Jobs",
+	// 	},
+	// ];
 	return (
 		<>
 			{/* {spinner && (
@@ -90,8 +85,14 @@ const Dashboard = () => {
 					</div>
 				</div>
 			)} */}
-			<div>
-				
+			<div className="flex">
+				{categoriesData.map((item, index) => {
+					return (
+						<div className="mb-16">
+							<CategoriesCard key={index} item={item} />
+						</div>
+					);
+				})}
 			</div>
 		</>
 	);
