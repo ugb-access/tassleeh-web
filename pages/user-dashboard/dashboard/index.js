@@ -41,25 +41,25 @@ const Dashboard = () => {
 
 	const categoriesData = [
 		{
-			icon: "/images/",
+			icon: "/images/card1.png",
 			title: "Cars",
 			description:
 				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			icon: "/images/",
+			icon: "/images/card2.png",
 			title: "Cars",
 			description:
 				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			icon: "/images/",
+			icon: "/images/card3.png",
 			title: "Cars",
 			description:
 				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
-			icon: "/images/",
+			icon: "/images/card4.png",
 			title: "Cars",
 			description:
 				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
@@ -85,12 +85,10 @@ const Dashboard = () => {
 					</div>
 				</div>
 			)} */}
-			<div className="flex">
+			<div className="flex flex-wrap justify-center gap-14 gap-y-2">
 				{categoriesData.map((item, index) => {
 					return (
-						<div className="mb-16">
 							<CategoriesCard key={index} item={item} />
-						</div>
 					);
 				})}
 			</div>
