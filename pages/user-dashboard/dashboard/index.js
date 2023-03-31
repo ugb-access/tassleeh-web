@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { businessDashboardCards } from "../../../services/auth-service";
 import { ImSpinner9 } from "react-icons/im";
 import CategoriesCard from "../../../components/dashboard/categoriescard";
+import MiniHeader from "../../../components/dashboard/mini-header";
 const Dashboard = () => {
 	const [spinner, setSpinner] = useState(true);
 	const [businessCardsData, setBusinessCardData] = useState([]);
@@ -85,11 +86,10 @@ const Dashboard = () => {
 					</div>
 				</div>
 			)} */}
-			<div className="flex flex-wrap justify-center gap-14 gap-y-2">
+			<MiniHeader header={"Cars"} />
+			<div className="flex flex-wrap pt-16 pb-3 justify-center gap-14 gap-y-16">
 				{categoriesData.map((item, index) => {
-					return (
-							<CategoriesCard key={index} item={item} />
-					);
+					return <CategoriesCard key={index} item={item} />;
 				})}
 			</div>
 		</>

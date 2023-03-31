@@ -3,7 +3,7 @@ import Button from "../Button";
 const CategoriesCard = ({ item }) => {
 	return (
 		<>
-			<div className="service-card flex justify-center gap-2 rounded-md mt-20 sm:py-6 md:w-[43%] md:h-[300px] bg-white">
+			<div className="service-card flex justify-center gap-2 rounded-md sm:py-6 md:w-[43%] md:h-[300px] bg-white">
 				<div className="w-[35%]">
 					<div>
 						<img src={item?.icon} alt="" />
