@@ -18,7 +18,7 @@ import {
 import { GoBriefcase } from "react-icons/go";
 import AuthWrapper from "../hoc/authWrapper";
 import WithAuthWrapper from "../hoc/withAuthWrapper";
-const employeedata = [
+const serviceLinks = [
 	{
 		barIink: "/employee/dashboard",
 		barIcon: <AiFillHome />,
@@ -50,19 +50,19 @@ const employeedata = [
 		barText: "Back To Site",
 	},
 ];
-const businessdata = [
+const userLink = [
 	{
-		barIink: "/user/dashboard",
+		barIink: "/user-dashboard/dashboard",
 		barIcon: <AiFillHome />,
 		barText: "Home",
 	},
 	{
-		barIink: "/user/dashboard/post-jobs",
+		barIink: "/user-dashboard/bookings",
 		barIcon: <SlCalender />,
 		barText: "Bookings",
 	},
 	{
-		barIink: "/user/dashboard/my-jobs",
+		barIink: "/user-dashboard/messages",
 		barIcon: <BiMessageAltDetail />,
 		barText: "Messages",
 	},
@@ -82,7 +82,7 @@ const StoreLayout = ({ children }) => {
 	// console.log(router)
 	return (
 		<div>
-			{router.pathname.startsWith("/user/dashboard") ? (
+			{router.pathname.startsWith("/user-dashboard") ? (
 				//<AuthWrapper>//<AuthWrapper>
 				<div className="">
 					<div className="">
@@ -90,12 +90,12 @@ const StoreLayout = ({ children }) => {
 					</div>
 					<div className="sm:flex">
 						<div className="">
-							<Sidebar dashSideData={businessdata} />
+							<Sidebar dashSideData={userLink} />
 						</div>
 						<div className="basis-full sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
 							<div className="pt-2 sm:pt-0">{children}</div>
 							<div id="containerfooter" className=" mt-auto">
-								<DashboardFooterSecond />
+								{/* <DashboardFooterSecond /> */}
 							</div>
 						</div>
 					</div>
@@ -107,13 +107,13 @@ const StoreLayout = ({ children }) => {
 						// <AuthWrapper>
 						<div className="sm:flex">
 							<div>
-								<Sidebar dashSideData={employeedata} />
+								<Sidebar dashSideData={serviceLinks} />
 							</div>
 							<div className="sm:pr-4 sm:flex sm:flex-col min-h-screen lg:pr-0 basis-full">
 								{/* <DashboardHeader /> */}
 								<div className="pt-2 sm:pt-0">{children}</div>
 								<div id="containerfooter" className="mt-auto">
-									<DashboardFooterSecond />
+									{/* <DashboardFooterSecond /> */}
 								</div>
 							</div>
 						</div>
