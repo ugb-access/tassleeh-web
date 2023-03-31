@@ -4,12 +4,8 @@ const SidebarLink = ({ sideLink, sideText, sideIcon }) => {
 	const router = useRouter();
 	return (
 		<div className="">
-			<Link href={""}>
-				<div
-					className={`text-icon ${
-						router.asPath == sideLink && ""
-					} `}
-				>
+			<Link href={sideLink}>
+				<div className={`text-icon ${router.asPath == sideLink && ""} `}>
 					<div
 						className={`side-bar-icon-sel ${
 							router.asPath == sideLink && "!text-primary"
