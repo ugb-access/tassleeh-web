@@ -31,7 +31,7 @@ const SubCategoryDetails = () => {
 	return (
 		<div>
 			<MiniHeader headerText={"Cars"} showRequestButton />
-			<div className="flex flex-wrap justify- gap-10 ">
+			<div className="grid grid-cols-4 gap-9 justify-between">
 				{subCatData?.map((item, index) => {
 					return <SubCategoryCard item={item} key={index} />;
 				})}
