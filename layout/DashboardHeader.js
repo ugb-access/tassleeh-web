@@ -86,7 +86,7 @@ const Header = ({
 	}, []);
 	return (
 		<div className="">
-			<div className="flex justify-between items-center pr-20 pl-10 header0 pt-4 pb-3">
+			<div className="flex justify-between items-center pr-10 pl-10 header0 pt-2 pb-2">
 				<div>
 					<img src="/images/logo-main.png" alt="" />
 				</div>

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button";
 const MiniHeader = ({ header, button }) => {
 	return (
-		<div className="flex justify-between pt-6 px-12">
+		<div className="flex justify-between pt-6 ">
 			<div className="text-xl font-semibold">{header}</div>
 			<div>
 				<Button
