@@ -86,7 +86,7 @@ const Dashboard = () => {
 					</div>
 				</div>
 			)} */}
-			<MiniHeader header={"Cars"} />
+			<MiniHeader headerText={"Cars"} showRequestButton />
 			<div className="flex flex-wrap pt-5 pb-3 justify-between gap-14 gap-y-12">
 				{categoriesData.map((item, index) => {
 					return <CategoriesCard key={index} item={item} />;

@@ -93,7 +93,7 @@ const StoreLayout = ({ children }) => {
 							<Sidebar dashSideData={userLink} />
 						</div>
 						<div className="basis-full bg-[#F5F5F5] sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
-							<div className="pt-2 px-10 sm:pt-0">{children}</div>
+							<div className="pt-2 px-10 sm:py-10">{children}</div>
 							{/* <div id="containerfooter" className=" mt-auto">
 								<DashboardFooterSecond />
 							</div> */}

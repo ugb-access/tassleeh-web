@@ -29,8 +29,8 @@ const subCatData = [
 ];
 const SubCategoryDetails = () => {
 	return (
-		<div className="px-10 py-10">
-			<MiniHeader header={"Cars"} />
+		<div>
+			<MiniHeader headerText={"Cars"} showRequestButton />
 			<div className="flex flex-wrap justify- gap-10 ">
 				{subCatData?.map((item, index) => {
 					return <SubCategoryCard item={item} key={index} />;
