@@ -49,21 +49,21 @@ const Dashboard = () => {
 		},
 		{
 			icon: "/images/card2.png",
-			title: "Cars",
+			title: "Electronics",
 			description:
-				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
+				"TASSLEEH is well aware that electrical chores can easily pile up on your to-do list, hence we bring to you the best electrician services. We provide you with the best solution and a range of repairing services.",
 		},
 		{
 			icon: "/images/card3.png",
-			title: "Cars",
+			title: "Home",
 			description:
-				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
+				"We perform high quality, guaranteed service you can trust at a fair price. We provide superior customer service. Our team of highly skilled, licensed, certified and trained staff focuses on our customers.",
 		},
 		{
 			icon: "/images/card4.png",
-			title: "Cars",
+			title: "Accessories",
 			description:
-				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
+				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
 		},
 	];
 
@@ -87,7 +87,7 @@ const Dashboard = () => {
 				</div>
 			)} */}
 			<MiniHeader headerText={"Cars"} showRequestButton />
-			<div className="flex flex-wrap pt-5 pb-3 justify-between gap-14 gap-y-12">
+			<div className="grid grid-cols-2 gap-12 pt-3 pb-3">
 				{categoriesData.map((item, index) => {
 					return <CategoriesCard key={index} item={item} />;
 				})}
