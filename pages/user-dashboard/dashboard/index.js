@@ -66,33 +66,15 @@ const Dashboard = () => {
 				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 	];
-
-	// const areaGraphData = [
-	// 	{
-	// 		heading: "Overview - Total Jobs",
-	// 		img: "/images/Path.png",
-	// 		para: "Overview - Total Jobs",
-	// 	},
-	// ];
 	return (
-		<>
-			{/* {spinner && (
-				<div className="fixed z-50 w-full">
-					<div className="h-[200%] w-[200%] z-50 right-0 bottom-0 backdrop-blur-sm fixed"></div>
-					<div className="z-50  rounded-xl  sm:right-60 bottom-20 items-center flex text-center justify-center  relative">
-						<div className="flex justify-center h-full items-center items-center">
-							<ImSpinner9 className="z-50 text-[50px] animate-spin" />
-						</div>
-					</div>
-				</div>
-			)} */}
+		<div>
 			<MiniHeader headerText={"Cars"} showRequestButton />
 			<div className="flex flex-wrap pt-5 pb-3 justify-between gap-14 gap-y-12">
 				{categoriesData.map((item, index) => {
 					return <CategoriesCard key={index} item={item} />;
 				})}
 			</div>
-		</>
+		</div>
 	);
 };
 

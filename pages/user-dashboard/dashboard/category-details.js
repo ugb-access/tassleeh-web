@@ -1,6 +1,7 @@
 import React from "react";
 import MiniHeader from "../../../components/dashboard/mini-header";
 import SubCategoryCard from "../../../components/dashboard/sub-category-card";
+import LoadMap from "./googleMap";
 const subCatData = [
 	{
 		image: "/images/subCatImg (1).png",
@@ -35,6 +36,14 @@ const SubCategoryDetails = () => {
 				{subCatData?.map((item, index) => {
 					return <SubCategoryCard item={item} key={index} />;
 				})}
+			</div>
+
+			{/* map */}
+			<div className="mt-3">
+				<h1 className="font-bold text-2xl py-5">Service providers near you</h1>
+			</div>
+			<div>
+				<LoadMap />
 			</div>
 		</div>
 	);

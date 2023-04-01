@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@headlessui/react": "^1.7.5",
 		"@paypal/react-paypal-js": "^7.8.2",
-		"@react-google-maps/api": "^2.17.1",
+		"@react-google-maps/api": "^2.18.1",
 		"axios": "^1.2.1",
 		"date-fns": "^2.29.3",
 		"embla-carousel-autoplay": "^7.0.5",
