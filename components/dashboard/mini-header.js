@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { useRouter } from "next/router";
 const MiniHeader = ({
 	type,
 	headerText,
@@ -12,9 +13,15 @@ const MiniHeader = ({
 	completedClick,
 	cancelledClick,
 }) => {
+	const router = useRouter();
 	return (
 		<div className="flex justify-between pb-6 items-center">
-			{showIcon && <IoIosArrowRoundBack className="text-2xl text-primary"/>}
+			{showIcon && (
+				<IoIosArrowRoundBack
+					onClick={() => router.back()}
+					className="text-2xl text-primary cursor-pointer"
+				/>
+			)}
 			<div className="text-xl font-semibold">{headerText}</div>
 			<div>
 				{showRequestButton && (

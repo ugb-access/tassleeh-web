@@ -17,7 +17,7 @@ const center = {
 };
 const LoadMap = () => {
 	const [map, setMap] = useState(null);
-	const [toggleInfoWindow, setToggleInfoWindow] = useState("");
+	const [toggleInfoWindow, setToggleInfoWindow] = useState(false);
 	const { isLoaded } = useJsApiLoader({
 		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
 		id: "google-map-script",
@@ -44,85 +44,33 @@ const LoadMap = () => {
 							lng: 73.0479,
 						}}
 						animation="drop"
-						// onClick={() => {}}
+						onClick={() => setToggleInfoWindow(true)}
 					/>
-					{/* {toggleInfoWindow && ( */}
-					<InfoWindow
-						// onCloseClick={() => setToggleInfoWindow(show)}
-						position={{
-							lat: 33.6844,
-							lng: 73.0479,
-						}}
-					>
-						<div>hasham</div>
-					</InfoWindow>
-					{/* )} */}
+					{toggleInfoWindow && (
+						<InfoWindow
+							className="mb-10"
+							style={{ margin: "10" }}
+							onCloseClick={() => setToggleInfoWindow(false)}
+							position={{
+								lat: 37.884,
+								lng: 73.047,
+							}}
+						>
+							<div className="flex gap-4 items-center">
+								<div>
+									<img src="/images/map-pic.png" alt="" />
+								</div>
+								<div>
+									<div className="font-semibold text-[#404040]">
+										Andrew Smith
+									</div>
+									<div className="text-[#AEAEAE] mt-1">20 minutes away</div>
+								</div>
+							</div>
+						</InfoWindow>
+					)}
 					{/* </div> */}
 				</GoogleMap>
-				// <GoogleMap
-				// 	// ref={mapRef}
-				// 	style={{}}
-				// 	// onCenterChanged={()=> mapRef.current.panTo(center)}
-				// 	center={center}
-				// 	zoom={11}
-				// 	mapContainerStyle={{
-				// 		width: "100%",
-				//
-				// 	}}
-				// 	onClick={() => setToggleInfoWindow("")}
-				// >
-				// 	{filterData?.map((item, index) => {
-				// 		// console.log(item, "item");
-				// 		return (
-				// 			<div key={index}>
-				// 				<Marker
-				// 					icon={{
-				// 						url: "/images/liveicon.png",
-				// 					}}
-				// 					position={{
-				// 						lat: mapCenter?.lat,
-				// 						lng: mapCenter?.long,
-				// 					}}
-				// 				/>
-				// 				<Marker
-				// 					onMouseOver={() => {
-				// 						handleMarkerSize(item?._id);
-				// 					}}
-				// 					onMouseOut={() => {
-				// 						handleMarkerSize("");
-				// 					}}
-				// 					key={item?._id}
-				// 					icon={{
-				// 						url: "/images/pointer.png",
-				// 						scaledSize: new google.maps.Size(
-				// 							toggleMarkerSize === item?._id ? 32 : 30,
-				// 							toggleMarkerSize === item?._id ? 32 : 30
-				// 						),
-				// 					}}
-				// 					position={{
-				// 						lat: item?.lat,
-				// 						lng: item?.long,
-				// 					}}
-				// 					animation="drop"
-				// 					onClick={() => {
-				// 						openInfoWindow(item?._id);
-				// 					}}
-				// 				/>
-				// 				{toggleInfoWindow === item?._id && (
-				// 					<InfoWindow
-				// 						onCloseClick={() => setToggleInfoWindow("")}
-				// 						position={{
-				// 							lat: item?.lat,
-				// 							lng: item?.long,
-				// 						}}
-				// 					>
-				// 						<div></div>
-				// 					</InfoWindow>
-				// 				)}
-				// 			</div>
-				// 		);
-				// 	})}
-				// </GoogleMap>
 			)}
 		</div>
 	);
