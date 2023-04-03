@@ -18,52 +18,43 @@ const center = {
 const LoadMap = () => {
 	const [map, setMap] = useState(null);
 	const [toggleInfoWindow, setToggleInfoWindow] = useState("");
-
 	const { isLoaded } = useJsApiLoader({
 		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
 		id: "google-map-script",
 	});
-	const onLoad = React.useCallback(function callback(map) {
-		// This is just an example of getting and using the map instance!!! don't just blindly copy!
-		const bounds = new window.google.maps.LatLngBounds(center);
-		map.fitBounds(bounds);
-
-		setMap(map);
-	}, []);
-	const onUnmount = useCallback(function callback(map) {
-		setMap(null);
-	}, []);
+	// const onLoad = useCallback(function callback(map) {
+	// 	const bounds = new window.google.maps.LatLngBounds(center);
+	// 	map.fitBounds(bounds);
+	// 	setMap(map);
+	// }, []);
+	// const onUnmount = useCallback(function callback(map) {
+	// 	setMap(null);
+	// }, []);
 	return (
 		<div>
 			{isLoaded && (
-				<GoogleMap
-					mapContainerStyle={containerStyle}
-					center={center}
-					zoom={3}
-					onLoad={onLoad}
-					onUnmount={onUnmount}
-				>
+				<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={4}>
 					{/* <div> */}
 					<Marker
 						icon={{
 							url: "/images/mapmarker.png",
 						}}
-						// style=
 						position={{
 							lat: 33.6844,
 							lng: 73.0479,
 						}}
 						animation="drop"
+						onClick={() => {}}
 					/>
 					{toggleInfoWindow && (
 						<InfoWindow
-							onCloseClick={() => setToggleInfoWindow("")}
+							onCloseClick={() => setToggleInfoWindow(show)}
 							position={{
 								lat: item?.lat,
 								lng: item?.long,
 							}}
 						>
-							<div></div>
+							<div>hasham</div>
 						</InfoWindow>
 					)}
 					{/* </div> */}
