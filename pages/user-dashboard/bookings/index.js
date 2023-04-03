@@ -87,7 +87,7 @@ const BookingDashBoard = () => {
 				cancelledClick={() => setType("Cancelled")}
 				showFilterButtons
 			/>
-			<Link href={"/user-dashboard/dashboard/category-details"}>
+			<Link href={"/user-dashboard/bookings/requests-detail"}>
 				<div className="">
 					{filterData?.map((item, index) => {
 						return <BookingDetail key={index} item={item} />;

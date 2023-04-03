@@ -1,9 +1,11 @@
 import React from "react";
 import Button from "../Button";
+import { IoIosArrowRoundBack } from "react-icons/io";
 const MiniHeader = ({
 	type,
 	headerText,
 	button,
+	showIcon,
 	showRequestButton,
 	showFilterButtons,
 	currentClick,
@@ -12,6 +14,7 @@ const MiniHeader = ({
 }) => {
 	return (
 		<div className="flex justify-between pb-6 items-center">
+			{showIcon && <IoIosArrowRoundBack className="text-2xl text-primary"/>}
 			<div className="text-xl font-semibold">{headerText}</div>
 			<div>
 				{showRequestButton && (

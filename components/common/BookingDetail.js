@@ -2,7 +2,7 @@ import Button from "../Button";
 
 const BookingDetail = ({ item }) => {
 	return (
-		<div className="header0 flex justify-between items-center ro mb-7 bg-[#ffffff] py-3 px-4">
+		<div className="header0 flex justify-between items-center mb-7 bg-[#ffffff] py-6 px-4">
 			<div className="flex gap-3 items-center">
 				<img src={item?.icon} alt="" />
 				<h1>
