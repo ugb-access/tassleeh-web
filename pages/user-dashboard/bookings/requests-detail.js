@@ -5,6 +5,8 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import RequestDescription from "../../../components/common/RequestDescription";
 import DateTime from "../../../components/dashboard/request-datetime";
 import Button from "../../../components/Button";
+import Link from "next/link";
+import AmountPopup from "./amount-popup";
 const BookingDetailData = [
 	{
 		icon: "/images/booking.png",
@@ -30,7 +32,7 @@ const Data = [
 const RequestsDetail = () => {
 	const [type, setType] = useState("Pending");
 	const [filterData, setFilterData] = useState([]);
-	console.log(type);
+	const [showPopup, setShowPopup] = useState(false);
 	const dataType = (type) => {
 		let res = BookingDetailData?.filter((item, index) => item?.status === type);
 		setFilterData(res);
@@ -95,17 +97,20 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 				</div>
 			</div>
 			<div className="flex justify-center items-center gap-3 mt-5">
-				<Button
-					// onClick={currentClick}
-					text="Start Work"
-					customClass="border !w-24 !h-9 bg-[#34A853] text-sm text-white rounded-2xl"
-				/>
+					<Button
+						onClick={() => setShowPopup(true)}
+						text="Start Work"
+						customClass="border !w-24 !h-9 bg-[#34A853] text-sm text-white rounded-2xl"
+					/>
 				<Button
 					// onClick={currentClick}
 					text="Cancel Request"
 					customClass="border !w-32 !h-8 bg-[#F33C3C] text-sm text-white rounded-2xl"
 				/>
 			</div>
+			{showPopup && (
+				<AmountPopup setShowPopup={setShowPopup}/>
+			)}
 		</>
 	);
 };
