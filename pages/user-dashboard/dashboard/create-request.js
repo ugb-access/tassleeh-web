@@ -6,7 +6,13 @@ import swal from "sweetalert";
 
 const CreateRequest = () => {
 	const handleSubmit = () => {
-		swal.fire("Deleted!", "Your file has been deleted.", "success");
+		sweetAlert({
+			title: "Request Submitted",
+			text: "You will get notify when any mechanic accept your request",
+			icon: "success",
+			buttons: "Okay",
+			content: "center",
+		});
 	};
 	return (
 		<div>
