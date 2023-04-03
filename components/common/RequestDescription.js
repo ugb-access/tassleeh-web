@@ -1,13 +1,13 @@
 const RequestDescription = ({ item, descriptionText, data }) => {
 	return (
-		<div className="header0  bg-[#ffffff] py-6 px-4">
-			<div>
-				<p>Description:</p>
-				<p>{descriptionText}</p>
+		<div className="header0 bg-[#ffffff] py-6 px-6">
+			<div className="flex gap-2">
+				<h1 className="text-base font-semibold">Description:</h1>
+				<p className="text-[#656464]">{descriptionText}</p>
 			</div>
 			<div>
-				<p>Gallery</p>
-				<div className="grid grid-cols-4">
+				<h1 className="my-3 text-base font-semibold">Gallery</h1>
+				<div className="grid grid-cols-4 gap-6">
 					{data?.map((item, index) => {
 						console.log(item);
 						return <img className="w-full h-full" src={item?.image} alt="" />;
