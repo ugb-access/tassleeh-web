@@ -11,12 +11,12 @@ const containerStyle = {
 	height: "80vh",
 };
 
-const center = {
-	lat: 33.6844,
-	lng: 73.0479,
-};
 const LoadMap = () => {
 	const [map, setMap] = useState(null);
+	const [center, setCenter] = useState({
+		lat: 33.6844,
+		lng: 73.0479,
+	});
 	const [toggleInfoWindow, setToggleInfoWindow] = useState(false);
 	const { isLoaded } = useJsApiLoader({
 		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
@@ -44,16 +44,20 @@ const LoadMap = () => {
 							lng: 73.0479,
 						}}
 						animation="drop"
-						onClick={() => setToggleInfoWindow(true)}
+						onClick={() => {
+							setToggleInfoWindow(true);
+							setCenter({
+								lat: 33.6844,
+								lng: 73.0479,
+							});
+						}}
 					/>
 					{toggleInfoWindow && (
 						<InfoWindow
-							className="mb-10"
-							style={{ margin: "10" }}
 							onCloseClick={() => setToggleInfoWindow(false)}
 							position={{
-								lat: 37.884,
-								lng: 73.047,
+								lat: 33.6844,
+								lng: 73.0479,
 							}}
 						>
 							<div className="flex gap-4 items-center">
