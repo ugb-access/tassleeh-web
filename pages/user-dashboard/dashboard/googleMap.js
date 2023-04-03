@@ -44,19 +44,19 @@ const LoadMap = () => {
 							lng: 73.0479,
 						}}
 						animation="drop"
-						onClick={() => {}}
+						// onClick={() => {}}
 					/>
-					{toggleInfoWindow && (
-						<InfoWindow
-							onCloseClick={() => setToggleInfoWindow(show)}
-							position={{
-								lat: item?.lat,
-								lng: item?.long,
-							}}
-						>
-							<div>hasham</div>
-						</InfoWindow>
-					)}
+					{/* {toggleInfoWindow && ( */}
+					<InfoWindow
+						// onCloseClick={() => setToggleInfoWindow(show)}
+						position={{
+							lat: 33.6844,
+							lng: 73.0479,
+						}}
+					>
+						<div>hasham</div>
+					</InfoWindow>
+					{/* )} */}
 					{/* </div> */}
 				</GoogleMap>
 				// <GoogleMap
