@@ -3,6 +3,7 @@ import BookingDetail from "../../../components/common/BookingDetail";
 import MiniHeader from "../../../components/dashboard/mini-header";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import RequestDescription from "../../../components/common/RequestDescription";
+import DateTime from "../../../components/dashboard/request-datetime";
 const BookingDetailData = [
 	{
 		icon: "/images/booking.png",
@@ -11,20 +12,19 @@ const BookingDetailData = [
 	},
 ];
 const Data = [
-    {
-        image: "/images/gallery1.png",
-    },
-    {
-        image: "/images/gallery1.png",
-    },
-    {
-        image: "/images/gallery1.png",
-    },
-    {
-        image: "/images/gallery1.png",
-    },
-
-]
+	{
+		image: "/images/gallery1.png",
+	},
+	{
+		image: "/images/gallery1.png",
+	},
+	{
+		image: "/images/gallery1.png",
+	},
+	{
+		image: "/images/gallery1.png",
+	},
+];
 
 const RequestsDetail = () => {
 	const [type, setType] = useState("Pending");
@@ -49,7 +49,14 @@ const RequestsDetail = () => {
 						return <BookingDetail key={index} item={item} />;
 					})}
 				</div>
-                <RequestDescription data={Data}/>
+				<RequestDescription
+					data={Data}
+					descriptionText={`As an Auto Mechanic, or Service Technician, I fix vehicles and replace their parts for customers. My duties 
+include inspecting the vehicle's mechanical components and its engine, diagnosing problems with vehicles and performing maintenance and repair work on cars, trucks and other vehicles.`}
+				/>
+			</div>
+			<div className="mt-6">
+				<DateTime address={"7152 Winding Way Dr.Woodside, NY 11377"} />
 			</div>
 		</>
 	);
