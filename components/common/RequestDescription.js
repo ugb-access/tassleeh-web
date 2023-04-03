@@ -9,7 +9,6 @@ const RequestDescription = ({ item, descriptionText, data }) => {
 				<h1 className="my-3 text-base font-semibold">Gallery</h1>
 				<div className="grid grid-cols-4 gap-6">
 					{data?.map((item, index) => {
-						console.log(item);
 						return <img className="w-full h-full" src={item?.image} alt="" />;
 					})}
 				</div>
