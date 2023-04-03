@@ -24,7 +24,7 @@ const data = [
 const ProfileList = () => {
 	return (
 		<div>
-			<MiniHeader headerText={"Mechanics"} showRequestButton />
+			<MiniHeader headerText={"Mechanics"} />
 			<div className="grid gap-5 grid-cols-4">
 				{data?.map((item, index) => {
 					return <ProfileListCard item={item} />;

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import Link from "next/link";
 
 const MechanicDetailCard = ({ item }) => {
 	return (
@@ -25,14 +26,16 @@ const MechanicDetailCard = ({ item }) => {
 					</h1>
 				</div>
 			</div>
-			<div className="items-start">
-				<Button
-					text={"Contact Worker"}
-					customClass={
-						"bg-primary rounded-2xl p-2 mr-2 text-sm font-semibold text-white w-20 sm:!w-40 h-8 sm:!h-10"
-					}
-				/>
-			</div>
+			<Link href={"/user-dashboard/dashboard/create-request"}>
+				<div className="items-start">
+					<Button
+						text={"Contact Worker"}
+						customClass={
+							"bg-primary rounded-2xl p-2 mr-2 text-sm font-semibold text-white w-20 sm:!w-40 h-8 sm:!h-10"
+						}
+					/>
+				</div>
+			</Link>
 		</div>
 	);
 };
