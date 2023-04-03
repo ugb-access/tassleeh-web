@@ -30,6 +30,7 @@ span {
 }
 .header0 {
 	box-shadow: 0px 2px 30px rgba(146, 153, 184, 0.102);
+	border-radius: 0.5rem;
 }
 /* -----------------line--------------------------- */
 .line::after {

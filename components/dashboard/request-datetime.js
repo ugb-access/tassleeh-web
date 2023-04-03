@@ -3,7 +3,7 @@ import Button from "../Button";
 const DateTime = ({ address }) => {
 	return (
 		<>
-			<div className="header0 flex flex-col gap-y-3 bg-[#ffffff]">
+			<div className="header0 flex flex-col gap-y-3 bg-[#ffffff] py-4 px-6">
 				<h1 className="text-[#2F2C4A] font-semibold">Date and Time</h1>
 				<Button
 					// onClick={currentClick}
