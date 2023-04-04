@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.swal-text {
+	text-align: center;
+	font-weight: 400;
+}
+.swal-footer {
+	display: flex;
+	justify-content: center;
+}
 * {
 	box-sizing: border-box;
 }
