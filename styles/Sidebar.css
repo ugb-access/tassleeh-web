@@ -124,7 +124,7 @@
         display: none;
     }
 }
-@media only screen and (max-width: 424px){
+@media only screen and (max-width: 480px){
     .logo-sidebar img {
         width: 10rem;
         height: 4rem;
@@ -133,6 +133,39 @@
     .text-icon {
         display: flex;
         justify-content: center;
+        margin-left: -31px;
+    }
+    .text-icon-sel {
+        display: flex;
+        justify-content: center;
+    }
+    .icon-para {
+        display: none;
+    }
+    .icon-para-sel {
+        display: none;
+    }
+    .side-bar-icon-sel {
+        font-size: 1rem;
+    }
+    .side-bar-icon {
+        font-size: 1.5rem;
+        color: #C7C7C7;
+    }
+    .ico-menu {
+        left: 25px;
+    }
+}
+@media only screen and (max-width: 360px){
+    .logo-sidebar img {
+        width: 10rem;
+        height: 4rem;
+        display: none;
+    }
+    .text-icon {
+        display: flex;
+        justify-content: center;
+        margin-left: -36px;
     }
     .text-icon-sel {
         display: flex;

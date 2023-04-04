@@ -54,7 +54,7 @@ const Sidebar = ({ dashSideData }) => {
 							);
 						})}
 					</div>
-					<div className="block sm:hidden " onClick={handleOpenSidebar}>
+					<div className="hidden " onClick={handleOpenSidebar}>
 						<HiOutlineArrowSmLeft className="text-2xl text-[#B1B1B1] mx-auto" />
 					</div>
 					{/* 			
