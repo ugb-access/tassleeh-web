@@ -11,13 +11,17 @@ const containerStyle = {
 	height: "80vh",
 };
 
-const center = {
-	lat: 33.6844,
-	lng: 73.0479,
-};
+// const center = {
+// 	lat: 33.6844,
+// 	lng: 73.0479,
+// };
 const LoadMap = () => {
 	const [map, setMap] = useState(null);
-	const [toggleInfoWindow, setToggleInfoWindow] = useState(false);
+	const [center, setCenter] = useState({
+		lat: 33.6844,
+		lng: 73.0479,
+	});
+	const [toggleInfoWindow, setToggleInfoWindow] = useState(true);
 	const { isLoaded } = useJsApiLoader({
 		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
 		id: "google-map-script",
@@ -30,45 +34,65 @@ const LoadMap = () => {
 	// const onUnmount = useCallback(function callback(map) {
 	// 	setMap(null);
 	// }, []);
+	const markers = [
+		{
+			lat: 33.6844,
+			lng: 73.0479,
+		},
+		{
+			lat: 35.6844,
+			lng: 63.0479,
+		},
+		{
+			lat: 23.6844,
+			lng: 78.0479,
+		},
+	];
 	return (
 		<div>
 			{isLoaded && (
 				<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={4}>
 					{/* <div> */}
-					<Marker
-						icon={{
-							url: "/images/mapmarker.png",
-						}}
-						position={{
-							lat: 33.6844,
-							lng: 73.0479,
-						}}
-						animation="drop"
-						onClick={() => setToggleInfoWindow(true)}
-					/>
-					{toggleInfoWindow && (
-						<InfoWindow
-							className="mb-10"
-							style={{ margin: "10" }}
-							onCloseClick={() => setToggleInfoWindow(false)}
-							position={{
-								lat: 37.884,
-								lng: 73.047,
-							}}
-						>
-							<div className="flex gap-4 items-center">
-								<div>
-									<img src="/images/map-pic.png" alt="" />
-								</div>
-								<div>
-									<div className="font-semibold text-[#404040]">
-										Andrew Smith
-									</div>
-									<div className="text-[#AEAEAE] mt-1">20 minutes away</div>
-								</div>
-							</div>
-						</InfoWindow>
-					)}
+					{markers.map((p, i) => {
+						return (
+							<>
+								<Marker
+									icon={{
+										url: "/images/mapmarker.png",
+									}}
+									position={p}
+									animation="drop"
+									onClick={() => {
+										setToggleInfoWindow(i);
+										setCenter(p);
+									}}
+								/>
+								{toggleInfoWindow === i && (
+									<InfoWindow
+										className="mb-10"
+										style={{ margin: "10" }}
+										onCloseClick={() => setToggleInfoWindow(-1)}
+										position={p}
+									>
+										<div className="flex gap-4 items-center cursor-pointer">
+											<div>
+												<img src="/images/map-pic.png" alt="" />
+											</div>
+											<div>
+												<div className="font-semibold text-[#404040]">
+													Andrew Smith
+												</div>
+												<div className="text-[#AEAEAE] mt-1">
+													20 minutes away
+												</div>
+											</div>
+										</div>
+									</InfoWindow>
+								)}
+							</>
+						);
+					})}
+
 					{/* </div> */}
 				</GoogleMap>
 			)}
