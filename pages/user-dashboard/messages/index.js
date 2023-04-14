@@ -7,6 +7,7 @@ import MessageCard from "./MessageCard";
 import RecipientCard from "./RecipientCard";
 import socket from "../../../services/socket";
 import { toast } from "react-toastify";
+import { BiArrowBack } from "react-icons/bi";
 // import { AVATAR } from "../../../services/images";
 import Button from "./../../../components/Button";
 // import { addRecipientMethod } from "../../api/apiMethods";
@@ -42,6 +43,7 @@ const Chat = ({
 	// const location = useLocation();
 	const [channelID, setChannelID] = useState(false);
 	const [senderID, setSenderID] = useState("");
+	const [open, setOpen] = useState(false);
 
 	const [selectedUser, setSelectedUser] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -303,7 +305,9 @@ const Chat = ({
 									<img className="h-10" src="/images/mess-profile.png" alt="" />
 								</div>
 								<div>
-									<p className="font-medium">Andrew</p>
+									<p className="font-medium">
+										{selectedUser?.userName || selectedUser?.email}
+									</p>
 									<div className="flex items-center text-[#74788D] gap-2">
 										<div
 											style={{
@@ -367,11 +371,13 @@ const Chat = ({
 								return (
 									<RecipientCard
 										item={item}
+										openPopup={setOpen}
 										online={true}
 										selectedUser={item?.sender?._id === selectedUser?._id}
 										key={item?.sender?._id}
 										onSelect={
 											() => {
+												setOpen(true);
 												onSelect(item.sender, item.lastMessage?.channel);
 											}
 											//  setState(
@@ -397,7 +403,124 @@ const Chat = ({
 						</div>
 					</div>
 					{/* <div className="straight-line"></div> */}
+					{!!open ? (
+						<div className="block md:hidden bg-white z-50 h-[100vh] w-screen fixed left-0 top-0 ">
+							{!!selectedUser ? (
+								<div className="">
+									<div className="">
+										<div className="flex  justify-between px-5 py-[14px]">
+											<div className="flex gap-5 items-center">
+												<div>
+													<div className="flex items-center gap-1">
+														<div onClick={() => setOpen(false)}>
+															<BiArrowBack />
+														</div>
+														<p className="font-medium text=[#495057]">
+															{selectedUser?.userName || selectedUser?.email}
+														</p>
+													</div>
+													<div className="flex items-center text-[#74788D] gap-2">
+														<div
+															style={{
+																width: 10,
+																height: 10,
+																borderRadius: 5,
+																background: "#34C38F",
+																border: "1px solid #FFF",
+															}}
+														/>
+														Active
+													</div>
+												</div>
+											</div>
+											<div className="flex items-center md:gap-5 gap-1.5">
+												<div>
+													<Button
+														text={"+ Create Request"}
+														customClass={
+															"md:w-full  whitespace-nowrap text-primary font-semibold text-base"
+														}
+													/>
+												</div>
+												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
+													<img src="/images/shape.png" alt="" />
+												</div>
+												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
+													<img src="/images/messhead (2).png" alt="" />
+												</div>
+												<div className="bg-[#EFF2F7] py-3.5 px-2 w-full rounded-full">
+													<img src="/images/messhead (1).png" alt="" />
+												</div>
+											</div>
+										</div>
+									</div>
 
+									<div className="flex items-center px-5">
+										<hr className="w-full" />
+										<div className="px-2">Today</div>
+										<hr className="w-full" />
+									</div>
+
+									<div className="scrolldiv">
+										<text style={{ paddingTop: 10 }} />
+										{messageData.map((m, index) => (
+											<MessageCard
+												userName={selectedUser?.userName || selectedUser?.email}
+												message={m}
+												avatar={
+													uid === m?.sender?._id
+														? user?.avatar
+														: selectedUser?.avatar
+												}
+												// isUser={uid === m?.sender?._id}
+												isUser={index % 2 === 0}
+												key={m?._id}
+											/>
+										))}
+										<text
+											ref={(ref) => (scrollRef = ref)}
+											style={{ paddingBottom: 10 }}
+										/>
+									</div>
+									<div>
+										<div className="send-div flex gap-5">
+											<input
+												className="send-input"
+												onKeyDown={(e) => {
+													if (e.key === "Enter") {
+														sendMessage();
+													}
+												}}
+												value={message}
+												onChange={(e) => setMessage(e.target.value)}
+												placeholder="Enter Message..."
+												// onKeyDownCapture={(e) =>
+												//     e.code === "Enter" && sendMessage()
+												// }
+											/>
+											<div
+												onClick={() => sendMessage()}
+												className="bg-primary flex gap-3 h-[2.5rem] px-3  rounded-full items-center cursor-pointer"
+											>
+												<div className="text-white leading-5 ">Send</div>
+												<div>
+													<img
+														className="h-3  w-7"
+														src="/images/sendIcon.png"
+														alt="send"
+													/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							) : (
+								<div style={{ marginLeft: 10 }}>
+									<text>Tap any chat </text>
+								</div>
+							)}
+						</div>
+					) : null}
 					{/*  */}
 					{!!selectedUser ? (
 						<div
@@ -410,7 +533,7 @@ const Chat = ({
 							//     overflow: "scroll"
 							// }}
 
-							className="right-side hidden"
+							className="right-side"
 						>
 							<div className="">
 								{/* <img
