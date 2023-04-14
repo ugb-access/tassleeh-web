@@ -3,7 +3,7 @@ import React from "react";
 const ReviewCard = ({ item }) => {
 	return (
 		<div className="">
-			<div className="flex my-3 gap-5">
+			<div className="lg:flex my-3 gap-5">
 				<div>
 					<img className="rounded-full " src={item?.icon} alt="" />
 				</div>
