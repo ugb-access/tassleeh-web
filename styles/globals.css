@@ -500,7 +500,7 @@ p.coverLeng {
 }
 
 .left-side {
-	border-right: 1px solid #aaa;
+	/* border-right: 1px solid #aaa; */
 	border-bottom: none;
 	/* padding: 10px; */
 	/* margin-right: 10px; */
@@ -514,9 +514,10 @@ p.coverLeng {
 
 .right-side {
 	display: flex;
+	background-color: white;
 	flex-direction: column;
 	position: relative;
-	height: 70vh;
+	height: 100vh;
 	width: 100%;
 }
 
@@ -551,33 +552,27 @@ p.active-email {
 	bottom: -30px;
 	width: 100%;
 	justify-content: space-between;
-	background: #f5f9fc;
-	height: 90px;
-	padding-left: 3%;
-	border-radius: 10px;
+	background: white;
+	height: 70px;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-top: 1px solid #eff2f7;
 }
 
 input.send-input {
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 5px;
-	border: 1px solid #aaa;
-	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 30px;
+	background-color: #eff2f7;
 	display: flex;
 	justify-content: center;
-	height: 3.5rem;
+	height: 2.8rem;
 	width: 97%;
 }
 
 input.send-input:focus {
 	outline: none;
 }
-
-img.chat-send-img {
-	position: absolute;
-	right: 4.4rem;
-}
-
 .msg-top {
 	display: flex;
 	margin-top: 0.5rem;
@@ -622,11 +617,11 @@ img.msg-img {
 .scrolldiv {
 	display: flex;
 	flex-direction: column;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	width: 100%;
 	height: 39.5rem;
 	margin-bottom: 6%;
-	/* border: 1px solid red; */
 }
 
 p.chat-msg {
@@ -638,7 +633,6 @@ p.chat-msg {
 	display: flex;
 	justify-content: flex-start;
 }
-
 /* ------------------- Media Query ------------------------------ */
 
 @media only screen and (max-width: 400px) and (min-width: 279px) {
@@ -796,7 +790,7 @@ p.chat-msg {
 		background: #f5f9fc;
 		height: 20px;
 		padding-left: 3%;
-		border-radius: 5px;
+		border-radius: 30px;
 	}
 
 	input.send-input {

@@ -1,18 +1,18 @@
 import React, { Component, useEffect, useState } from "react";
 import { connect } from "react-redux";
 // import dummy from "../../assets/dummyimage.png";
-import send from "../../../assets/send.png";
+// import send from "../../../assets/send.png";
 import { getUnReadCount } from "../../../services/helper";
 import MessageCard from "./MessageCard";
 import RecipientCard from "./RecipientCard";
 import socket from "../../../services/socket";
 import { toast } from "react-toastify";
-import { AVATAR } from "../../../services/images";
-
+// import { AVATAR } from "../../../services/images";
+import Button from "./../../../components/Button";
 // import { addRecipientMethod } from "../../api/apiMethods";
 
 import middleware from "../../../store/middleware";
-import { AiOutlineSearch } from "react-icons/ai";
+// import { AiOutlineSearch } from "react-icons/ai";
 // import { useLocation } from "react-router-dom";
 
 // import "../../css/Chat.css";
@@ -404,45 +404,72 @@ const Chat = ({
 							//     overflow: "scroll"
 							// }}
 
-							className="right-side"
+							className="right-side hidden"
 						>
-							<div className="chat-header-active">
+							<div className="">
 								{/* <img
 									className="active-img"
 									src={selectedUser?.avatar || AVATAR}
 								/> */}
 
-								<div>
-									<p className="active-email">
+								{/* <div>
+									<p className="">
 										<b>{selectedUser?.userName || selectedUser?.email}</b>
 									</p>
-
-									{/* <TbDotsVertical
-                                    fontSize={"30px"}
-                                    onClick={() =>  setState({ visible: true })}
-                                    style={{ marginTop: "20px" }}
-                                /> */}
-
-									{/* {onlineUsers.includes(selectedUser?._id) && (
-                                    <p
-                                        style={{
-                                            fontSize: "13px",
-                                            marginTop: "0px",
-                                            marginLeft: "1%",
-                                        }}
-                                    >
-                                        Online
-                                    </p>
-                                )} */}
+								</div> */}
+								<div className="flex  justify-between px-5 py-[14px]">
+									<div className="flex gap-5 items-center">
+										<div>
+											<p className="font-medium text=[#495057]">
+												{selectedUser?.userName || selectedUser?.email}
+											</p>
+											<div className="flex items-center text-[#74788D] gap-2">
+												<div
+													style={{
+														width: 10,
+														height: 10,
+														borderRadius: 5,
+														background: "#34C38F",
+														border: "1px solid #FFF",
+													}}
+												/>
+												Active
+											</div>
+										</div>
+									</div>
+									<div className="flex items-center gap-5">
+										<div>
+											<Button
+												text={"+ Create Request"}
+												customClass={
+													"w-full whitespace-nowrap text-primary font-semibold text-base"
+												}
+											/>
+										</div>
+										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
+											<img src="/images/shape.png" alt="" />
+										</div>
+										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
+											<img src="/images/messhead (2).png" alt="" />
+										</div>
+										<div className="bg-[#EFF2F7] p-5 py-6  w-full rounded-full ">
+											<img src="/images/messhead (1).png" alt="" />
+										</div>
+									</div>
 								</div>
 							</div>
 
-							<div className="line" />
+							<div className="flex items-center px-5">
+								<hr className="w-full" />
+								<div className="px-2">Today</div>
+								<hr className="w-full" />
+							</div>
 
 							<div className="scrolldiv">
 								<text style={{ paddingTop: 10 }} />
 								{messageData.map((m, index) => (
 									<MessageCard
+										userName={selectedUser?.userName || selectedUser?.email}
 										message={m}
 										avatar={
 											uid === m?.sender?._id
@@ -459,42 +486,36 @@ const Chat = ({
 									style={{ paddingBottom: 10 }}
 								/>
 							</div>
-							<div
-								// style={{
-								//     display: "flex",
-								//     alignItems: "center",
-								//     position: "absolute",
-								//     bottom: 0,
-								//     width: "100%",
-								//     justifyContent: "space-between",
-								//     background: "#f5f9fc",
-								//     height: "90px",
-								//     paddingLeft: "3%",
-								// }}
-
-								className="send-div"
-							>
-								<input
-									className="send-input"
-									onKeyDown={(e) => {
-										if (e.key === "Enter") {
-											sendMessage();
-										}
-									}}
-									value={message}
-									onChange={(e) => setMessage(e.target.value)}
-									placeholder="Type your message"
-									// onKeyDownCapture={(e) =>
-									//     e.code === "Enter" && sendMessage()
-									// }
-								/>
-
-								<img
-									className="chat-send-img"
-									src={send}
-									onClick={() => sendMessage()}
-								></img>
-								{/* <Button name={"Send"} onClick={sendMessage} /> */}
+							<div>
+								<div className="send-div flex gap-5">
+									<input
+										className="send-input"
+										onKeyDown={(e) => {
+											if (e.key === "Enter") {
+												sendMessage();
+											}
+										}}
+										value={message}
+										onChange={(e) => setMessage(e.target.value)}
+										placeholder="Enter Message..."
+										// onKeyDownCapture={(e) =>
+										//     e.code === "Enter" && sendMessage()
+										// }
+									/>
+									<div
+										onClick={() => sendMessage()}
+										className="bg-primary flex gap-3 h-[2.8rem]   lg:px-10 rounded-full items-center cursor-pointer"
+									>
+										<div className="text-white leading-5">Send</div>
+										<div>
+											<img
+												className="h-3  w-7"
+												src="/images/sendIcon.png"
+												alt="send"
+											/>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					) : (
