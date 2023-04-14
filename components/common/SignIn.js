@@ -452,7 +452,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 					<Link href={"/signup"}>
 						<div className="flex lg:mt-0 mt-11 md:mt-8 mb-2 justify-center rounded-lg md:rounded-none w-[96.5%] h-11 mx-auto items-center cursor-pointer">
 							<p className=" text-sm font-medium text-[#636363]">
-								Don't have an account?
+								Dont have an account?
 								<span className="text-primary ml-1">Sign up</span>
 							</p>
 						</div>

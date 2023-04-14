@@ -329,8 +329,8 @@ const Home = () => {
 				<section className="flex flex-wrap justify-center sm:gap-12 mt-20 mx-auto sm:px-48 ">
 					{HomeServicesData.map((item, index) => {
 						return (
-							<div className="mb-16">
-								<HomeServiceCard key={index} item={item} />
+							<div key={index} className="mb-16">
+								<HomeServiceCard item={item} />
 							</div>
 						);
 					})}
@@ -444,10 +444,15 @@ const Home = () => {
 				<div className="relative poster flex flex-col justify-center items-center">
 					<p className="text-primary text-lg mb-4">Our Achievement</p>
 					<h1 className="text-white text-xl md:text-center lg:text-left sm:text-5xl font-bold">
-					We are Connecting You The Digital Life.
+						We are Connecting You The Digital Life.
 					</h1>
 					<p className="text-white  sm:text-xl sm:w-3/5 md:leading-9 text-center py-4">
-					The aim and priority of Kam Kaj are to add value to our consumers' lives by providing smart solutions to all their problems. Our pride is providing the most extensive range of services. From home maintenance to personal assistance. We make sure that your safety is never compromised. This is why we hire all the staff under the roof of Kam Kaj, just for your satisfaction.
+						The aim and priority of Kam Kaj are to add value to our consumers
+						lives by providing smart solutions to all their problems. Our pride
+						is providing the most extensive range of services. From home
+						maintenance to personal assistance. We make sure that your safety is
+						never compromised. This is why we hire all the staff under the roof
+						of Kam Kaj, just for your satisfaction.
 					</p>
 					<Link href={"/signin"}>
 						<div className="mt-3">
@@ -456,7 +461,6 @@ const Home = () => {
 								customClass="bg-primary rounded-2xl p-2 text-sm font-semibold text-white !w-28 sm:!w-40 !h-12 sm:!h-16"
 							/>
 						</div>
-						
 					</Link>
 				</div>
 			</section>
@@ -471,8 +475,8 @@ const Home = () => {
 					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] lg:w-[460px] md:[750px] sm:w-[460px]">
 						TASSLEEH is a leading multiple service provider platform catering to
 						your 360 needs with quality guaranteed. Our aim and priority is to
-						add value to our consumers' lives by providing smart solutions to
-						all their problems.
+						add value to our consumers lives by providing smart solutions to all
+						their problems.
 					</p>
 
 					<div className="flex justify-center sm:justify-start md:justify-center lg:justify-start gap-4 mt-10">
@@ -552,7 +556,7 @@ const Home = () => {
 				<div className="flex justify-center mt-16 flex-wrap">
 					{ReviewCardData.map((item, index) => {
 						return (
-							<div className="mb-16 sm:px-16 relative">
+							<div key={index} className="mb-16 sm:px-16 relative">
 								<div className="absolute sm:top-[-17px] left-0 top-[-15px] sm:left-9">
 									<img
 										className="sm:h-12 h-8"

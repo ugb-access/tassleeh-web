@@ -50,7 +50,7 @@ const MechanicProfile = () => {
 			</div>
 			<div>
 				{data?.map((item, index) => {
-					return <MechanicDetailCard item={item} />;
+					return <MechanicDetailCard key={index} item={item} />;
 				})}
 			</div>
 			<RequestDescription

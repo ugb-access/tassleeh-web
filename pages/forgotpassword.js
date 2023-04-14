@@ -188,7 +188,7 @@ const ForgotPassword = () => {
 				<AuthLayout text={"Forgot Password"}>
 					<div className="py-12 px-14">
 						<p>
-							Enter the email address you used when you joined and we'll send
+							Enter the email address you used when you joined and we will send
 							you instructions to reset your password.
 						</p>
 						<div>

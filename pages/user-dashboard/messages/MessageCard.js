@@ -2,7 +2,7 @@ import moment from "moment";
 import { AVATAR } from "../../../services/images";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
-export default ({ message, isUser, avatar, userName }) => {
+const MessageCard = ({ message, isUser, avatar, userName }) => {
 	return (
 		<div
 			className="msg-top"
@@ -36,3 +36,5 @@ export default ({ message, isUser, avatar, userName }) => {
 		</div>
 	);
 };
+
+export default MessageCard;

@@ -1,7 +1,7 @@
 import moment from "moment";
 import { AVATAR } from "../../../services/images";
 
-export default ({ selectedUser, item, onSelect, online, bg }) => {
+const RecipientCard = ({ selectedUser, item, onSelect, online, bg }) => {
 	const sender = item?.sender;
 	console.log(selectedUser, "userrr");
 	return (
@@ -59,3 +59,5 @@ export default ({ selectedUser, item, onSelect, online, bg }) => {
 		</button>
 	);
 };
+
+export default RecipientCard;

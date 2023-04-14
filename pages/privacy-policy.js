@@ -1,7 +1,7 @@
 const PrivacyPolicy = () => {
 	return (
 		<>
-			<div class="container mx-auto my-4 px-10">
+			{/* <div class="container mx-auto my-4 px-10">
 				<div class="page-heading mt-3.5 mb-4">
 					<div class="title-headings-container">
 						<h1 class="text-lg font-bold">Privacy Policy</h1>
@@ -513,7 +513,7 @@ const PrivacyPolicy = () => {
 						<li>By email: privacypolicy@ukjoblocator.com</li>
 					</ul>
 				</main>
-			</div>
+			</div> */}
 		</>
 	);
 };

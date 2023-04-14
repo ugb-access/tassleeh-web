@@ -438,9 +438,9 @@ const About = () => {
 						Accessories
 					</h1>
 					<p className="mt-2 mb-2 text-base font-normal leading-8 text-[#656464] sm:w-[460px]">
-						The aim and priority of TASSLEEH is to to add value to our
-						consumers' lives by providing best accessories. This is why we
-						provide amazing services just for your satisfaction.
+						The aim and priority of TASSLEEH is to to add value to our consumers
+						lives by providing best accessories. This is why we provide amazing
+						services just for your satisfaction.
 					</p>
 					<div className="mb-2 mt-4">
 						<div className="flex items-center mb-0.5">
@@ -575,7 +575,7 @@ const About = () => {
 				<div className="flex justify-center mt-16 flex-wrap">
 					{ReviewCardData.map((item, index) => {
 						return (
-							<div className="mb-16 sm:px-16 relative">
+							<div key={index} className="mb-16 sm:px-16 relative">
 								<div className="absolute sm:top-[-17px] left-0 top-[-15px] sm:left-9">
 									<img
 										className="sm:h-12 h-8"

@@ -8,6 +8,7 @@ import "../styles/Header.css";
 import "../styles/Account.css";
 import "../styles/Table.css";
 // import "../styles/Chat.css";
+import Script from "next/script";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
 					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx01A_5SQM7WPAZov08WwWtp_fBOWcBBY&libraries=places"></script>
 				) : null}
 			</Head>
+			<Script src="https://third-party-script.js"></Script>
 			<Provider store={store}>
 				<PersistGate loading={null} persistor={persister}>
 					<StoreLayout pageProps={pageProps}>

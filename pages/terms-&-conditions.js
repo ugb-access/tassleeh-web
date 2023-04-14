@@ -1,7 +1,7 @@
 const Terms = () => {
 	return (
 		<>
-			<div class="container mx-auto my-4 px-10">
+			{/* <div class="container mx-auto my-4 px-10">
 				<div class="page-heading mt-3.5 mb-4">
 					<div class="title-headings-container">
 						<h1 class="heading-terms font-extrabold text-[1.3125rem] whitespace-nowrap">
@@ -321,7 +321,7 @@ const Terms = () => {
 						loss or damage of any nature.
 					</p>
 				</main>
-			</div>
+			</div> */}
 		</>
 	);
 };
