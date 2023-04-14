@@ -18,6 +18,7 @@ import {
 import { GoBriefcase } from "react-icons/go";
 import AuthWrapper from "../hoc/authWrapper";
 import WithAuthWrapper from "../hoc/withAuthWrapper";
+import messages from "../pages/user-dashboard/messages";
 const serviceLinks = [
 	{
 		barIink: "/employee/dashboard",
@@ -93,7 +94,13 @@ const StoreLayout = ({ children }) => {
 							<Sidebar dashSideData={userLink} />
 						</div>
 						<div className="basis-full bg-[#F5F5F5] sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
-							<div className="pt-2 px-10 sm:py-5">{children}</div>
+							<div
+								className={`pt-2 px-10 sm:py-5 ${
+									router.asPath.includes("/messages") && "!px-5"
+								}`}
+							>
+								{children}
+							</div>
 							{/* <div id="containerfooter" className=" mt-auto">
 								<DashboardFooterSecond />
 							</div> */}

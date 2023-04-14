@@ -12,6 +12,7 @@ import { AVATAR } from "../../../services/images";
 // import { addRecipientMethod } from "../../api/apiMethods";
 
 import middleware from "../../../store/middleware";
+import { AiOutlineSearch } from "react-icons/ai";
 // import { useLocation } from "react-router-dom";
 
 // import "../../css/Chat.css";
@@ -52,12 +53,28 @@ const Chat = ({
 		{
 			sender: {
 				_id: "1",
-				userName: "Zain Ali Here",
+				userName: "Zain Ali",
 				email: "alilohar20@gmail.com",
+				avatar: "/images/mess-profile.png",
 			},
-			to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
+			to: { _id: 1, userName: "zain is here", email: "alilohar20@gmail.com" },
 			lastMessage: { message: "This was the last message " },
 			unread: 10,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
 		},
 	]);
 
@@ -270,33 +287,78 @@ const Chat = ({
 				paraDash={"Conversation with customer, service provider and other."}
 			/> */}
 			<div style={{ flexDirection: "column" }}>
-				<div className="chat-main-div" style={{ display: "flex", padding: 25 }}>
-					<div className="left-side" style={{ height: totalHeight }}>
+				<div>
+					<p className="text-2xl text-[#2F2C4A] font-bold mb-3">Messages</p>
+				</div>
+				<div className="chat-main-div" style={{ display: "flex" }}>
+					<div className={`left-side pr-5 h-[${totalHeight}]`}>
+						<div className="flex  justify-between">
+							<div className="flex gap-5 items-center">
+								<div>
+									<img className="h-10" src="/images/mess-profile.png" alt="" />
+								</div>
+								<div>
+									<p className="font-medium">Andrew</p>
+									<div className="flex items-center text-[#74788D] gap-2">
+										<div
+											style={{
+												width: 10,
+												height: 10,
+												borderRadius: 5,
+												background: "#34C38F",
+												border: "1px solid #FFF",
+											}}
+										/>
+										Active
+									</div>
+								</div>
+							</div>
+							<div>
+								<img src="/images/Notification.png" alt="" />
+							</div>
+						</div>
+
+						<div className=" hidden md:flex bg-white items-center my-5 border-white border  rounded-full hover:border hover:border-primary ">
+							{/* <AiOutlineSearch className="h-8 w-5 mx-2 cursor-pointer hover:text-primary" /> */}
+							<img
+								className="h-5 mx-2 cursor-pointer"
+								src="/images/shape.png"
+								alt="search"
+							/>
+							<input
+								type="text"
+								placeholder="Search..."
+								value={searchKey}
+								onChange={onSearch}
+								className="rounded-full py-2"
+							/>
+						</div>
+
+						{/* <input
+							className="chat-input"
+							placeholder="Search..."
+							value={searchKey}
+							onChange={onSearch}
+						></input> */}
+						<br />
 						<div style={{ display: "flex" }}>
 							<div>
 								{" "}
 								<p className="conver">
-									<b>Conversation</b>
+									<b>Recent</b>
 								</p>
 							</div>
-							<div style={{ marginLeft: "1%" }}>
-								<p style={{ color: "#006dea" }} className="coverLeng">
+							{/* <div style={{ marginLeft: "1%" }}>
+								<p className="coverLeng text-[#006dea]">
 									<b>({sortedRecipients?.length})</b>
 								</p>
-							</div>
+							</div> */}
 						</div>
-						<input
-							className="chat-input"
-							placeholder="Search"
-							value={searchKey}
-							onChange={onSearch}
-						></input>
-						<br />
 						<div
-							className="recipients-main-div"
+							className="recipients-main-div "
 							style={{ display: "flex", flexDirection: "column" }}
 						>
-							{filterSortedRecipients.map((item) => {
+							{filterSortedRecipients.map((item, index) => {
 								return (
 									<RecipientCard
 										item={item}
@@ -328,7 +390,7 @@ const Chat = ({
 							})}
 						</div>
 					</div>
-					<div className="straight-line"></div>
+					{/* <div className="straight-line"></div> */}
 
 					{/*  */}
 					{!!selectedUser ? (
@@ -345,10 +407,10 @@ const Chat = ({
 							className="right-side"
 						>
 							<div className="chat-header-active">
-								<img
+								{/* <img
 									className="active-img"
 									src={selectedUser?.avatar || AVATAR}
-								/>
+								/> */}
 
 								<div>
 									<p className="active-email">
@@ -427,12 +489,12 @@ const Chat = ({
 									// }
 								/>
 
-								{/* <Button name={"Send"} onClick={ sendMessage} /> */}
 								<img
 									className="chat-send-img"
 									src={send}
 									onClick={() => sendMessage()}
 								></img>
+								{/* <Button name={"Send"} onClick={sendMessage} /> */}
 							</div>
 						</div>
 					) : (

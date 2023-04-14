@@ -1,20 +1,17 @@
+import moment from "moment";
 import { AVATAR } from "../../../services/images";
 
-export default ({ item, onSelect, online }) => {
+export default ({ item, onSelect, online, bg }) => {
 	const sender = item?.sender;
-
+	console.log(item);
 	return (
-		<button onClick={onSelect} className="chat-btn">
-			<div className="top-hand">
+		<button onClick={onSelect} className={` chat-btn hover:bg-white ${bg}`}>
+			<div className="top-hand items-center px-3 py-2">
 				<div className="hand">
-					<div style={{ position: "relative" }}>
-						<img className="recipient-img" src={sender?.avatar || AVATAR}></img>
+					<div className="flex items-center gap-5" style={{ position: "" }}>
 						{!!online && (
 							<div
 								style={{
-									position: "absolute",
-									top: 55,
-									right: 5,
 									width: 10,
 									height: 10,
 									borderRadius: 5,
@@ -23,31 +20,38 @@ export default ({ item, onSelect, online }) => {
 								}}
 							/>
 						)}
+						<img className="recipient-img" src={sender?.avatar || AVATAR}></img>
 					</div>
 
 					<div className="chat-side">
 						<p className="name-chat">
-							<b>
-								{sender?.userName?.length > 10
-									? sender?.userName?.substring(0, 10).concat("...")
-									: sender?.userName?.substring(0, 10) ||
-									  sender?.email?.length > 10
-									? sender?.email?.substring(0, 10).concat("...")
-									: sender?.email?.substring(0, 10)}
-							</b>
+							{sender?.userName}
+							{/* {sender?.userName?.length > 10
+								? sender?.userName?.substring(0, 10).concat("...")
+								: sender?.userName?.substring(0, 10) ||
+								  sender?.email?.length < 10
+								? sender?.email?.substring(0, 10).concat("...")
+								: sender?.email?.substring(0, 10)} */}
 						</p>
-						<p className="chat-msg">
+						<p className="chat-msg whitespace-nowrap">
 							{item?.lastMessage?.message?.length > 15
-								? item?.lastMessage?.message?.substring(0, 15).concat("...")
-								: item?.lastMessage?.message?.substring(0, 15)}
+								? item?.lastMessage.message?.substring(0, 22).concat("...")
+								: item?.lastMessage?.message?.substring(0, 20)}
 						</p>
 					</div>
 				</div>
-				<div className="bottom-hand">
-					<p className="min-ago">{item?.ago}</p>
-					{!!item?.unread && <p className="unread">{item?.unread} </p>}
+				<div className="bottom-hand ">
+					{/* <p className="min-ago">{item?.ago}</p> */}
+					{!!item?.unread && (
+						<p className="text-xs text-[#74788D]">
+							{"05 min"}
+							{/* {moment(item?.message?.createdAt).format("hh:mm A")} */}
+							{/* {item?.unread} */}
+						</p>
+					)}
 				</div>
 			</div>
+			<hr />
 			{/* <div className='line'></div> */}
 		</button>
 	);
