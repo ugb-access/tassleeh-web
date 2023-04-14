@@ -636,16 +636,16 @@ p.chat-msg {
 /* ------------------- Media Query ------------------------------ */
 
 @media only screen and (max-width: 767px) and (min-width: 300px) {
-	img.recipient-img {
-		object-fit: cover;
-		width: 10px;
-		height: 10px;
-		border-radius: 100%;
-	}
+		img.recipient-img {
+			object-fit: cover;
+			/* width: 10px; */
+			/* height: 10px; */
+			border-radius: 100%;	
+		}
 
 	.hand {
 		display: flex;
-		width: 7rem;
+		/* width: 7rem; */
 	}
 
 	.top-hand {
@@ -675,13 +675,13 @@ p.chat-msg {
 	}
 
 	p.name-chat {
-		font-size: 4px;
+		font-size: 10px;
 		color: #404040;
 		margin-bottom: 0rem;
 	}
 
 	p.chat-msg {
-		font-size: 4px;
+		font-size: 10px;
 	}
 
 	button.chat-btn {
@@ -689,7 +689,8 @@ p.chat-msg {
 		border-radius: 5px;
 		margin-bottom: 2%;
 		margin-top: 1%;
-		width: 7rem;
+		width: 100%;
+		padding: 0px 8px;
 		/* background-color: transparent; */
 	}
 
@@ -788,23 +789,23 @@ p.chat-msg {
 		bottom: 0px;
 		width: 100%;
 		justify-content: space-between;
-		background: #f5f9fc;
-		height: 20px;
+		background: white;
+		/* height: 20px; */
 		padding-left: 3%;
-		border-radius: 30px;
+		/* border-radius: 30px; */
 	}
 
 	input.send-input {
-		padding-left: 2px;
-		padding-right: 2px;
-		border-radius: 2px;
-		border: 1px solid #aaa;
+		/* padding-left: 5px;
+		padding-right: 5px; */
+		/* border-radius: 16px; */
+		/* border: 1px solid #aaa; */
 		position: relative;
 		display: flex;
 		justify-content: center;
-		height: 1rem;
-		width: 97%;
-		font-size: 5px;
+		height: 2.5rem;
+		/* font-size: 5px; */
+		bottom: 0px;
 	}
 
 	input.send-input:focus {
@@ -845,9 +846,9 @@ p.chat-msg {
 	.real-msg {
 		display: flex;
 		border-radius: 2px;
-		padding: 2px;
-		overflow-wrap: anywhere;
-		width: 8rem;
+		padding: 10px 20px;
+		/* overflow-wrap: anywhere; */
+		/* width: 8rem; */
 		font-size: 5px;
 		color: #404040;
 	}
