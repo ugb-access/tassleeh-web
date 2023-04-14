@@ -7,7 +7,7 @@ import "../styles/Sidebar.css";
 import "../styles/Header.css";
 import "../styles/Account.css";
 import "../styles/Table.css";
-import "../styles/Chat.css";
+// import "../styles/Chat.css";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
