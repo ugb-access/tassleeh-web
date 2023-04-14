@@ -16,7 +16,6 @@ import middleware from "../../../store/middleware";
 // import { AiOutlineSearch } from "react-icons/ai";
 // import { useLocation } from "react-router-dom";
 
-// import "../../css/Chat.css";
 // import Header from "../../Componenets/Header";
 const mes = [
 	{
