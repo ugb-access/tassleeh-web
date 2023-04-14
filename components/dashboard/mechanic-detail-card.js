@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const MechanicDetailCard = ({ item }) => {
 	return (
-		<div className="header0 flex justify-between mb-7 rounded-lg bg-[#ffffff] py-6 px-4">
+		<div className="header0 md:flex  justify-between mb-7 rounded-lg bg-[#ffffff] py-6 px-4">
 			<div className="flex gap-5 items-center">
 				<div>
 					<img src={item?.icon} className="h-24 w-24" alt="" />
@@ -27,7 +27,7 @@ const MechanicDetailCard = ({ item }) => {
 				</div>
 			</div>
 			<Link href={"/user-dashboard/dashboard/create-request"}>
-				<div className="items-start">
+				<div className="items-start md:my-0 my-5">
 					<Button
 						text={"Contact Worker"}
 						customClass={

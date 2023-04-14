@@ -158,7 +158,7 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 							<div>
 								<div className="flex justify-between px-3 py-2">
 									<h2 className="text-[#272B41] font-bold text-lg">
-                                    Please Rate Your Experience
+										Please Rate Your Experience
 									</h2>
 									<img
 										onClick={() => setShowPopup(false)}
@@ -168,11 +168,32 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 									/>
 								</div>
 								<hr className="pb-3" />
-                                <div className="flex justify-center">
-                                    <img src="/images/icon.png" alt="" />
-                                    <h1>Andrew Smith</h1>
-                                    <img className="h-4" src="/images/rating.png" alt="" />
-                                </div>
+								<div className="flex justify-center flex-col items-center gap-y-3">
+									<div>
+										<img src="/images/icon.png" alt="" />
+									</div>
+									<div>
+										<h1>Andrew Smith</h1>
+									</div>
+									<div>
+										<img className="h-4" src="/images/rating.png" alt="" />
+									</div>
+								</div>
+								<div className="px-3">
+									<h1 className="text-black ">Review</h1>
+									<textarea
+										placeholder="Review Details Here..."
+										className="w-full border p-1"
+										rows="4"
+									></textarea>
+								</div>
+								<div className="flex justify-center py-3">
+									<Button
+										// onClick={() => setShowCreditPopup(3)}
+										text="Submit"
+										customClass=" rounded-lg bg-primary text-sm font-semibold text-white !w-[90px] !h-10"
+									/>
+								</div>
 							</div>
 						)}
 					</div>
