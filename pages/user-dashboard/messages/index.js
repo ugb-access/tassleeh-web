@@ -404,7 +404,7 @@ const Chat = ({
 							//     overflow: "scroll"
 							// }}
 
-							className="right-side hidden"
+							className="right-side"
 						>
 							<div className="">
 								{/* <img
