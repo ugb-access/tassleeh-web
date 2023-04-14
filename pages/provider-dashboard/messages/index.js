@@ -38,7 +38,6 @@ const Chat = ({
 }) => {
 	let scrollRef = "";
 	const uid = user?._id;
-
 	// const location = useLocation();
 	const [channelID, setChannelID] = useState(false);
 	const [senderID, setSenderID] = useState("");
