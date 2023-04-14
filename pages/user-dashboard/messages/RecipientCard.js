@@ -1,11 +1,14 @@
 import moment from "moment";
 import { AVATAR } from "../../../services/images";
 
-export default ({ item, onSelect, online, bg }) => {
+export default ({ selectedUser, item, onSelect, online, bg }) => {
 	const sender = item?.sender;
-	console.log(item);
+	console.log(selectedUser, "userrr");
 	return (
-		<button onClick={onSelect} className={` chat-btn hover:bg-white ${bg}`}>
+		<button
+			onClick={onSelect}
+			className={` ${selectedUser && "bg-white"} chat-btn hover:bg-white ${bg}`}
+		>
 			<div className="top-hand items-center px-3 py-2">
 				<div className="hand">
 					<div className="flex items-center gap-5" style={{ position: "" }}>

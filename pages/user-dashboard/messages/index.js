@@ -95,6 +95,7 @@ const Chat = ({
 			_getRecipients();
 		}
 	}, [socketMessages]);
+
 	useEffect(() => {
 		scrollToBottom();
 	}, [messageData]);
@@ -107,6 +108,10 @@ const Chat = ({
 		if (location.state?.selectedUser) {
 			onSelect(location.state?.selectedUser);
 		}
+		onSelect(
+			filterSortedRecipients[0].sender,
+			filterSortedRecipients[0].lastMessage?.channel
+		);
 	}, []);
 	useEffect(() => {
 		senderID && socket.emit("getAllMessages", { sID: senderID, rID: uid });
@@ -363,6 +368,7 @@ const Chat = ({
 									<RecipientCard
 										item={item}
 										online={true}
+										selectedUser={item?.sender?._id === selectedUser?._id}
 										key={item?.sender?._id}
 										onSelect={
 											() => {
