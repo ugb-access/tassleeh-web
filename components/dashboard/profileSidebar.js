@@ -61,12 +61,7 @@ const ProfileSidebar = ({ img, getImage, getCheckImage, image, data }) => {
 				<p className="leading-5 font-semibold text-[#272B41] text-base">
 					{title || "Andrew Smith"}
 				</p>
-				{/* <p className="text-[#A8A8A8] text-sm font-normal py-2">
-          Graphic Designer
-        </p> */}
-				{/* <p className="text-[#A8A8A8] text-sm font-normal">
-          Norton, VA(State),USA
-        </p> */}
+				<p className="text-[#A8A8A8] text-sm font-normal py-2">Normal User</p>
 			</div>
 			<hr className="my-4" />
 		</div>

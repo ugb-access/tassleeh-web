@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Button from "../Button";
 
-const CategoriesCard = ({ item }) => {
+const CategoriesCard = ({ item, tryNow, text }) => {
 	return (
 		<>
 			<div className="service-card flex lg:flex-nowrap flex-wrap justify-center lg:gap-6 rounded-md sm:py-6 py-4 px-3 bg-white">
@@ -19,14 +19,14 @@ const CategoriesCard = ({ item }) => {
 					</div>
 					<div>
 						<Link
-							href={"/user-dashboard/dashboard/category-details"}
+							href={tryNow}
 							className="flex justify-center lg:justify-start "
 						>
 							<Button
 								customClass={
-									"mt-7 border border-primary text-secondary !w-[100px] !h-[35px] rounded-lg"
+									"mt-7 border border-primary text-secondary px-5 !w-fit !h-[35px] rounded-lg"
 								}
-								text={"Try Now"}
+								text={text}
 							/>
 						</Link>
 					</div>

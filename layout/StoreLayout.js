@@ -21,34 +21,29 @@ import WithAuthWrapper from "../hoc/withAuthWrapper";
 import messages from "../pages/user-dashboard/messages";
 const serviceLinks = [
 	{
-		barIink: "/employee/dashboard",
+		barIink: "/provider-dashboard/dashboard",
 		barIcon: <AiFillHome />,
-		barText: "Dashboard",
+		barText: "Home",
 	},
 	{
-		barIink: "/employee/dashboard/applied-jobs",
-		barIcon: <GoBriefcase />,
-		barText: "Applied Jobs",
+		barIink: "/provider-dashboard/bookings",
+		barIcon: <SlCalender />,
+		barText: "Bookings",
 	},
 	{
-		barIink: "/employee/dashboard/employee-plan",
-		barIcon: <HiCreditCard />,
-		barText: "Plans",
+		barIink: "/provider-dashboard/messages",
+		barIcon: <BiMessageAltDetail />,
+		barText: "Messages",
 	},
 	{
-		barIink: "/employee/dashboard/payment-history",
-		barIcon: <FaHistory />,
-		barText: "Payment History",
-	},
-	{
-		barIink: "/employee/dashboard/make-your-cv",
-		barIcon: <HiDocumentAdd />,
-		barText: "Build CV",
+		barIink: "/provider-dashboard/account-setting/",
+		barIcon: <AiOutlineSetting />,
+		barText: "Settings",
 	},
 	{
 		barIink: "/",
-		barIcon: <HiOutlineChevronDoubleLeft />,
-		barText: "Back To Site",
+		barIcon: <BiLogOut />,
+		barText: "Logout",
 	},
 ];
 const userLink = [
@@ -73,18 +68,16 @@ const userLink = [
 		barText: "Settings",
 	},
 	{
-		barIink: "/user/dashboard/business-plan",
+		barIink: "/",
 		barIcon: <BiLogOut />,
 		barText: "Logout",
 	},
 ];
 const StoreLayout = ({ children }) => {
 	const router = useRouter();
-	// console.log(router)
 	return (
 		<div>
 			{router.pathname.startsWith("/user-dashboard") ? (
-				//<AuthWrapper>//<AuthWrapper>
 				<div className="">
 					<div className="">
 						<DashboardHeader />
@@ -101,31 +94,32 @@ const StoreLayout = ({ children }) => {
 							>
 								{children}
 							</div>
-							{/* <div id="containerfooter" className=" mt-auto">
-								<DashboardFooterSecond />
-							</div> */}
 						</div>
 					</div>
 				</div>
 			) : (
-				//</AuthWrapper>
 				<>
-					{router.pathname.startsWith("/employee/dashboard") ? (
-						// <AuthWrapper>
-						<div className="sm:flex">
-							<div>
-								<Sidebar dashSideData={serviceLinks} />
+					{router.pathname.startsWith("/provider-dashboard") ? (
+						<div className="">
+							<div className="">
+								<DashboardHeader />
 							</div>
-							<div className="sm:pr-4 sm:flex sm:flex-col min-h-screen lg:pr-0 basis-full">
-								{/* <DashboardHeader /> */}
-								<div className="pt-2 sm:pt-0">{children}</div>
-								<div id="containerfooter" className="mt-auto">
-									{/* <DashboardFooterSecond /> */}
+							<div className="sm:flex">
+								<div className="">
+									<Sidebar dashSideData={serviceLinks} />
+								</div>
+								<div className="basis-full bg-[#F5F5F5] sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
+									<div
+										className={`pt-2 px-10 sm:py-5 ${
+											router.asPath.includes("/messages") && "!px-5"
+										}`}
+									>
+										{children}
+									</div>
 								</div>
 							</div>
 						</div>
 					) : (
-						// {/* </AuthWrapper> */}
 						<WithAuthWrapper>
 							{!(
 								router.pathname.startsWith("/signin") ||
