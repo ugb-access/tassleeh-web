@@ -1,13 +1,28 @@
 import Button from "../Button";
 
-const BookingDetail = ({ item }) => {
+const BookingDetail = ({ item, showAmount }) => {
 	return (
 		<div className="header0 flex justify-between items-center mb-7 bg-[#ffffff] py-6 px-4">
 			<div className="flex gap-3 items-center">
 				<img src={item?.icon} alt="" />
-				<h1>
-					Name: <span className="text-[#656464]">{item?.heading}</span>
-				</h1>
+				<div className="flex-col ">
+					<div>
+						<h1 className="font-bold">
+							Name:{" "}
+							<span className="text-[#656464] font-normal">
+								{item?.heading}
+							</span>
+						</h1>
+					</div>
+					{showAmount && (
+						<div className="font-bold">
+							<h1>
+								Amount:{" "}
+								<span className="text-[#656464] font-normal ">$300.00</span>
+							</h1>
+						</div>
+					)}
+				</div>
 			</div>
 			<div>
 				<div

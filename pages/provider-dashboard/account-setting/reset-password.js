@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import ProfileSidebar from "../../../components/dashboard/profileSidebar";
 import Button from "../../../components/Button";
 import TextInput from "../../../components/TextInput";
-// import { adminChangepassword } from "../../../services/auth-services";
 import { useRouter } from "next/router";
-import Header from "../../../layout/DashboardHeader";
 import { toast } from "react-toastify";
-import { ImSpinner9 } from "react-icons/im";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
-
+import MiniHeader from "../../../components/dashboard/mini-header";
 const ResetPassword = () => {
 	const [spinner, setSpinner] = useState(false);
 	const [showPass, setShowPass] = useState(false);
@@ -87,6 +84,9 @@ const ResetPassword = () => {
 
 	return (
 		<>
+			<div>
+				<MiniHeader headerText={"Settings"} />
+			</div>
 			<div className="flex lg:flex-nowrap flex-wrap justify-center ">
 				<div>
 					<ProfileSidebar image={accountImage}></ProfileSidebar>
@@ -150,7 +150,7 @@ const ResetPassword = () => {
 							<Button
 								// onClick={ChangePassword}
 								text="CONFIRM"
-								customClass="tracking-wider bg-primary rounded-md  text-sm font-semibold text-white !w-28 !h-12"
+								customClass="tracking-wider bg-primary rounded-xl  text-sm font-semibold text-white !w-28 !h-12"
 							/>
 						</Link>
 					</div>

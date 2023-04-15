@@ -178,7 +178,7 @@ const Profile = () => {
 						// data={data}
 					></ProfileSidebar>
 				</div>
-				<div className="basis-full mx-5 bg-white px-5">
+				<div className="basis-full ml-5 bg-white px-5">
 					<div className="flex items-center !justify-between">
 						<div>
 							<h5 className="py-5 font-semibold text-xl text-[#110229]">
@@ -186,7 +186,7 @@ const Profile = () => {
 							</h5>
 						</div>
 						<div>
-							<Link href={"/user-dashboard/account-setting/reset-password"}>
+							<Link href={"/provider-dashboard/account-setting/reset-password"}>
 								<Button
 									text="Reset Password"
 									customClass="bg-white  rounded-lg  text-sm font-semibold text-primary border border-primary  !w-fit px-2 !h-10"
