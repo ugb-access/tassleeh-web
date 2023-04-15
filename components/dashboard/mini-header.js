@@ -23,7 +23,7 @@ const MiniHeader = ({
 					: "flex"
 			} justify-between pb-6 items-center sm:mt-0 mt-2`}
 		>
-			<div className="flex">
+			<div className="flex items-center">
 				{showIcon && (
 					<IoIosArrowRoundBack
 						onClick={() => router.back()}

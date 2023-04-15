@@ -11,20 +11,22 @@ const CategoriesCard = ({ item, tryNow, text }) => {
 					</div>
 				</div>
 				<div className="lg:w-[60%]">
-					<div className=" mt-6 lg:mt-0 !max-h-[190px] !min-h-[190px]">
-						<h1 className="text-xl font-bold text-[#2F2C4A] md:text-left text-center">{item?.title}</h1>
-						<p className="mt-2 sm:leading-8 text-[#656464] md:text-left	 text-justify leading-[25px] ">
+					<div className=" mt-6 lg:mt-0">
+						<h1 className="text-xl font-bold text-[#2F2C4A] md:text-left text-center">
+							{item?.title}
+						</h1>
+						<p className="mt-2 sm:leading-8 text-[#656464] md:text-left  w-full  md:h-40  overflow-hidden text-justify leading-[25px] ">
 							{item?.description}
 						</p>
 					</div>
 					<div>
 						<Link
 							href={tryNow}
-							className="flex justify-center lg:justify-start "
+							className="flex justify-center lg:justify-start mt-5"
 						>
 							<Button
 								customClass={
-									"md:mt-7 border border-primary text-secondary px-5 !w-fit !h-[35px] rounded-lg"
+									"md:mt-7 border border-primary text-secondary px-5 py-2 !w-fit  rounded-lg"
 								}
 								text={text}
 							/>

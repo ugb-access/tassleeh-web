@@ -91,7 +91,7 @@ const ResetPassword = () => {
 				<div>
 					<ProfileSidebar image={accountImage}></ProfileSidebar>
 				</div>
-				<div className="basis-full bg-white px-5 mx-7">
+				<div className="basis-full bg-white px-3 lg:mx-7">
 					<h5 className="py-5 font-semibold text-xl text-[#110229]">
 						Change Password
 					</h5>
@@ -150,7 +150,7 @@ const ResetPassword = () => {
 							<Button
 								// onClick={ChangePassword}
 								text="CONFIRM"
-								customClass="tracking-wider bg-primary rounded-md  text-sm font-semibold text-white !w-28 !h-12"
+								customClass="tracking-wider bg-primary rounded-md text-sm rounded-xl font-semibold text-white !w-28 !h-12"
 							/>
 						</Link>
 					</div>

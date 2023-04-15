@@ -339,7 +339,7 @@ const Chat = ({
 								placeholder="Search..."
 								value={searchKey}
 								onChange={onSearch}
-								className="rounded-full py-2"
+								className="rounded-full !w-full border !border-none outline-none"
 							/>
 						</div>
 

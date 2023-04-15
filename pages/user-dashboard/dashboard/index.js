@@ -47,13 +47,13 @@ const Dashboard = () => {
 			icon: "/images/card2.png",
 			title: "Electronics",
 			description:
-				"TASSLEEH is well aware that electrical chores can easily pile up on your to-do list, hence we bring to you the best electrician services. We provide you with the best solution and a range of repairing services.",
+				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
 		},
 		{
 			icon: "/images/card3.png",
 			title: "Home",
 			description:
-				"We perform high quality, guaranteed service you can trust at a fair price. We provide superior customer service. Our team of highly skilled, licensed, certified and trained staff focuses on our customers.",
+				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
 		},
 		{
 			icon: "/images/card4.png",

@@ -170,7 +170,7 @@ const Profile = () => {
 	return (
 		<>
 			<div className="flex lg:flex-nowrap flex-wrap justify-center ">
-				<div>
+				<div className="">
 					<ProfileSidebar
 						// image={image}
 						getCheckImage={(e) => setCheckImage(e)}
@@ -178,7 +178,7 @@ const Profile = () => {
 						// data={data}
 					></ProfileSidebar>
 				</div>
-				<div className="basis-full ml-5 bg-white px-5">
+				<div className="basis-full lg:ml-5 bg-white px-5">
 					<div className="flex items-center !justify-between">
 						<div>
 							<h5 className="py-5 font-semibold text-xl text-[#110229]">

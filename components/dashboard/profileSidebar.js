@@ -36,7 +36,7 @@ const ProfileSidebar = ({ img, getImage, getCheckImage, image, data }) => {
 	// 	fecthAuthAdmin();
 	// }, [image, data]);
 	return (
-		<div className="!w-64 lg:!h-[550px] bg-white">
+		<div className="w-full md:!w-64 lg:!h-[550px] lg:bg-white">
 			<div className="relative flex justify-center py-5">
 				<img
 					src="/images/proDummy.png"

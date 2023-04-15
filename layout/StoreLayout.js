@@ -88,7 +88,7 @@ const StoreLayout = ({ children }) => {
 						</div>
 						<div className="basis-full bg-[#F5F5F5] sm:flex sm:flex-col min-h-screen sm:pr-4 lg:pr-0">
 							<div
-								className={`pt-2 px-10 sm:py-5 ${
+								className={`pt-2 px-5 sm:py-5 ${
 									router.asPath.includes("/messages") && "!px-5"
 								}`}
 							>

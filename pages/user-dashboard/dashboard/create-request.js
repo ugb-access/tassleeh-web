@@ -19,7 +19,7 @@ const CreateRequest = () => {
 			<div className="flex">
 				<MiniHeader headerText={"Create Request"} showIcon />
 			</div>
-			<div className="bg-white  p-6 rounded-lg">
+			<div className="bg-white p-3 md:p-6 rounded-lg">
 				<div className="lg:w-[60%]">
 					<div className="">
 						<TextInput

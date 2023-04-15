@@ -620,9 +620,8 @@ img.msg-img {
 	overflow-x: hidden !important;
 	overflow-y: scroll;
 	width: 100%;
-	min-height: 39.5rem;
-	max-height: fit-content;
-	/* margin-bottom: 6%; */
+	height: 39.5rem;
+	/* max-height: fit-content; */
 }
 
 p.chat-msg {
@@ -866,7 +865,6 @@ p.chat-msg {
 		flex-direction: column;
 		overflow: scroll;
 		width: 100%;
-		height: 39.5rem;
-		/* border: 1px solid red; */
+		height: 90vh;
 	}
 }
