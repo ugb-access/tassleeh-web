@@ -404,7 +404,7 @@ const Chat = ({
 					</div>
 					{/* <div className="straight-line"></div> */}
 					{!!open ? (
-						<div className="block md:hidden bg-white z-50 h-[100vh] w-screen fixed left-0 top-0 ">
+						<div className="block lg:hidden bg-white z-50 h-[100vh] w-screen fixed left-0 top-0 ">
 							{!!selectedUser ? (
 								<div className="">
 									<div className="">
