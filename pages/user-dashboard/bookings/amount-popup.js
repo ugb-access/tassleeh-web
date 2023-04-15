@@ -11,12 +11,12 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 			<div>
 				<div
 					onClick={() => setShowPopup(false)}
-					className="fixed h-[100vh] top-0 left-0 right-0 bottom-0 w-screen bg-[#111217] opacity-[0.5] cursor-pointer"
+					className="fixed h-[100vh] top-0 left-0 right-0 z-50 bottom-0 w-screen bg-[#111217] opacity-[0.5] cursor-pointer"
 				></div>
-				<div className="fixed !top-0 !left-0 !right-0  !bottom-0 pt-0.5 pb-2 px-3 m-auto w-[100%] md:w-[35%]  h-fit  bg-white z-50 rounded-lg">
+				<div className="fixed !top-0 !left-0 !right-0  !bottom-0 pt-0.5 pb-2 px-3 m-auto w-[95%] sm:w-[80%] md:w-[35%] h-fit bg-white z-50 rounded-lg">
 					<div className="header0 ">
 						{showCreditPopup === 1 ? (
-							<div>
+							<div className="">
 								<div className="flex justify-between items-center">
 									<h1 className="text-[#272B41] font-bold text-base">
 										Pay to your mechanic

@@ -43,21 +43,21 @@ const MiniHeader = ({
 							text="Current Requests"
 							customClass={`${
 								type === "Pending" && "bg-primary text-white"
-							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold whitespace-nowrap text-primary w-fit h-8 sm:!h-10`}
+							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold whitespace-nowrap text-primary h-8 sm:!h-10`}
 						/>
 						<Button
 							onClick={completedClick}
 							text="Completed Requests"
 							customClass={`${
 								type === "Completed" && "bg-primary text-white"
-							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold whitespace-nowrap text-primary w-fit h-8 sm:!h-10`}
+							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold whitespace-nowrap text-primary h-8 sm:!h-10`}
 						/>
 						<Button
 							onClick={cancelledClick}
 							text="Cancelled Requests"
 							customClass={`${
 								type === "Cancelled" && "bg-primary text-white"
-							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold text-primary w-fit whitespace-nowrap h-8 sm:!h-10`}
+							} border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold text-primary whitespace-nowrap h-8 sm:!h-10`}
 						/>
 					</div>
 				)}
