@@ -109,6 +109,14 @@ const Header = () => {
 											/>
 										</div>
 									</Link>
+									<Link href={"/provider-dashboard/dashboard"}>
+										<div>
+											<Button
+												text="Get Started"
+												customClass="bg-primary rounded-full p-2 text-sm font-semibold text-white !w-28 !h-12"
+											/>
+										</div>
+									</Link>
 								</div>
 								{/* {!validToken && (
 									<Link href={"/signup"}>
