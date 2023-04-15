@@ -415,7 +415,7 @@ const Chat = ({
 														<div onClick={() => setOpen(false)}>
 															<BiArrowBack />
 														</div>
-														<p className="font-medium text=[#495057]">
+														<p className="font-medium text=[#495057] whitespace-nowrap">
 															{selectedUser?.userName || selectedUser?.email}
 														</p>
 													</div>
@@ -438,7 +438,7 @@ const Chat = ({
 													<Button
 														text={"+ Create Request"}
 														customClass={
-															"md:w-full  whitespace-nowrap text-primary font-semibold text-base"
+															"md:w-full whitespace-nowrap text-primary font-semibold sm:text-base text-sm"
 														}
 													/>
 												</div>

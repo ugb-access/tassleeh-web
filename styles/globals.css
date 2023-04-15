@@ -675,13 +675,13 @@ p.chat-msg {
 	}
 
 	p.name-chat {
-		font-size: 10px;
+		font-size: 14px;
 		color: #404040;
 		margin-bottom: 0rem;
 	}
 
 	p.chat-msg {
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 	button.chat-btn {
