@@ -2,8 +2,8 @@
 import React from "react";
 // import Header from "../../../layout/DashboardHeader";
 // import DashboardBusiness from "../../../components/dashboard/business-index";
-import { useState, useEffect } from "react";
-import { businessDashboardCards } from "../../../services/auth-service";
+// import { useState, useEffect } from "react";
+// import { businessDashboardCards } from "../../../services/auth-service";
 // import { ImSpinner9 } from "react-icons/im";
 import CategoriesCard from "../../../components/dashboard/categoriescard";
 import MiniHeader from "../../../components/dashboard/mini-header";
@@ -68,12 +68,12 @@ const Dashboard = () => {
 	];
 	return (
 		<div>
-			<MiniHeader headerText={"Home"} showRequestButton />
+			<MiniHeader headerText={"Home"} />
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-3 pb-3">
 				{categoriesData.map((item, index) => {
 					return (
 						<CategoriesCard
-							tryNow={"/provider-dashboard/dashboard/category-details"}
+							tryNow={"/provider-dashboard/dashboard/requests-detail"}
 							key={index}
 							text={"Send Request"}
 							item={item}
