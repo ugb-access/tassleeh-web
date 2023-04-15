@@ -50,7 +50,7 @@ const RequestsDetail = () => {
 			<div>
 				<div className="">
 					{filterData?.map((item, index) => {
-						return <BookingDetail key={index} item={item} />;
+						return <BookingDetail showAmount key={index} item={item} />;
 					})}
 				</div>
 				<RequestDescription
