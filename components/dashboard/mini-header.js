@@ -17,7 +17,10 @@ const MiniHeader = ({
 	return (
 		<div
 			className={`${
-				router.asPath.includes("/user-dashboard/bookings") ? "md:flex" : "flex"
+				router.asPath.includes("/user-dashboard/bookings") ||
+				router.asPath.includes("/provider-dashboard/bookings")
+					? "md:flex"
+					: "flex"
 			} justify-between pb-6 items-center sm:mt-0 mt-2`}
 		>
 			<div className="flex">

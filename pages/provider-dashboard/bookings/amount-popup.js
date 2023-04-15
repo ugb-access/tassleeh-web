@@ -5,7 +5,7 @@ import Button from "../../../components/Button";
 // import { HiCreditCard } from "react-icons/hi";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-const AmountPopup = ({ setShowPopup, showPopup }) => {
+const ServiceAmountPopup = ({ setShowPopup, showPopup }) => {
 	const [showCreditPopup, setShowCreditPopup] = useState(1);
 	return (
 		<>
@@ -87,4 +87,4 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 	);
 };
 
-export default AmountPopup;
+export default ServiceAmountPopup;

@@ -6,7 +6,8 @@ import RequestDescription from "../../../components/common/RequestDescription";
 import DateTime from "../../../components/dashboard/request-datetime";
 import Button from "../../../components/Button";
 import Link from "next/link";
-import AmountPopup from "./amount-popup";
+// import AmountPopup from "./amount-popup";
+import ServiceAmountPopup from "./amount-popup";
 const BookingDetailData = [
 	{
 		icon: "/images/booking.png",
@@ -110,7 +111,7 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 					customClass="border !w-32 !h-9 bg-[#F33C3C] text-sm text-white rounded-2xl"
 				/>
 			</div>
-			{showPopup && <AmountPopup setShowPopup={setShowPopup} />}
+			{showPopup && <ServiceAmountPopup setShowPopup={setShowPopup} />}
 		</>
 	);
 };

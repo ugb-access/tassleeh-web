@@ -150,8 +150,6 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 					</div>
 				</div>
 			</div>
-
-			{showPopup && <AmountPopup setShowPopup={setShowPopup} />}
 		</>
 	);
 };
