@@ -47,19 +47,19 @@ const Dashboard = () => {
 			icon: "/images/card2.png",
 			title: "Electronics",
 			description:
-				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
 			icon: "/images/card3.png",
 			title: "Home",
 			description:
-				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 		{
 			icon: "/images/card4.png",
 			title: "Accessories",
 			description:
-				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
+				"Our auto mechanics are highly skilled with rich experience in the field. They are available to serve your needs in almost all areas. We believe in Strong values, Quality of services, and satisfaction of our clients.",
 		},
 	];
 	return (

@@ -86,7 +86,7 @@ const Header = ({
 	}, []);
 	return (
 		<div className="">
-			<div className="flex justify-between items-center pl-4 md:px-10 header0 pt-2 pb-2">
+			<div className="flex justify-between items-center pl-4 md:px-5 header0 pt-2 pb-2">
 				<div>
 					<img className="h-10 md:h-full" src="/images/logo-main.png" alt="" />
 				</div>
@@ -123,14 +123,14 @@ const Header = ({
 								<div>
 									<div className="absolute sm:top-[60px] top-[34px] sm:right-[-70px] left-0 md:left-[30px] w-32 pt-2 pb-4 pl-2 shadow-lg z-50 bg-[#fff]">
 										{/* <Link href={profileLink}> */}
-											<div className="flex items-center">
-												<div className="side-bar-icon-sel !text-primary">
-													<HiOutlineUser />
-												</div>
-												<p className="font-semibold ml-2 text-sm !text-primary">
-													Profile
-												</p>
+										<div className="flex items-center">
+											<div className="side-bar-icon-sel !text-primary">
+												<HiOutlineUser />
 											</div>
+											<p className="font-semibold ml-2 text-sm !text-primary">
+												Profile
+											</p>
+										</div>
 										{/* </Link> */}
 										<hr className="mt-3 pb-2 " />
 										<div
@@ -152,7 +152,9 @@ const Header = ({
 								</div>
 							) : null}
 							<div className="pl-4 sm:pr-0 pr-4">
-								<p className="text-[#404040] md:text-base text-sm">Andrew</p>
+								<p className="text-[#404040] md:text-base text-sm">
+									Andrew Smith{" "}
+								</p>
 								<p className="md:text-sm text-xs text-[#aeaeae]">Normal User</p>
 							</div>
 						</div>

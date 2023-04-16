@@ -45,7 +45,7 @@ const ProfileSidebar = ({ img, getImage, getCheckImage, image, data }) => {
 				<div className="absolute bottom-8 left-[150px] cursor-pointer">
 					<img
 						src="/images/profileicon.png"
-						className="cursor-pointer"
+						className="cursor-pointer h-8"
 						alt=""
 					/>
 					<div className="absolute top-0 left-0 right-0 bottom-0 cursor-pointer opacity-0">
