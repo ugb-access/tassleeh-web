@@ -337,7 +337,7 @@ const Chat = ({
 								placeholder="Search..."
 								value={searchKey}
 								onChange={onSearch}
-								className="rounded-full py-2"
+								className="rounded-full border border-none py-2"
 							/>
 						</div>
 
@@ -409,11 +409,11 @@ const Chat = ({
 										<div className="flex  justify-between px-5 py-[14px]">
 											<div className="flex gap-5 items-center">
 												<div>
-													<div className="flex items-center gap-1">
+													<div className="flex items-center gap-2">
 														<div onClick={() => setOpen(false)}>
 															<BiArrowBack />
 														</div>
-														<p className="font-medium text=[#495057]">
+														<p className="font-medium text-sm whitespace-nowrap text=[#495057]">
 															{selectedUser?.userName || selectedUser?.email}
 														</p>
 													</div>
@@ -436,12 +436,12 @@ const Chat = ({
 													<Button
 														text={"+ Create Request"}
 														customClass={
-															"md:w-full  whitespace-nowrap text-primary font-semibold text-base"
+															"md:w-full  whitespace-nowrap text-primary font-semibold text-xs sm:text-base"
 														}
 													/>
 												</div>
 												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
-													<img src="/images/shape.png" alt="" />
+													<img src="/images/searchmessico.png" alt="" />
 												</div>
 												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
 													<img src="/images/messhead (2).png" alt="" />
@@ -547,7 +547,7 @@ const Chat = ({
 								<div className="flex  justify-between px-5 py-[14px]">
 									<div className="flex gap-5 items-center">
 										<div>
-											<p className="font-medium text=[#495057]">
+											<p className="font-medium text=[#495057] whitespace-nowrap">
 												{selectedUser?.userName || selectedUser?.email}
 											</p>
 											<div className="flex items-center text-[#74788D] gap-2">
@@ -569,12 +569,12 @@ const Chat = ({
 											<Button
 												text={"+ Create Request"}
 												customClass={
-													"w-full whitespace-nowrap text-primary font-semibold text-base"
+													"w-full whitespace-nowrap text-primary font-semibold !text-base"
 												}
 											/>
 										</div>
-										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
-											<img src="/images/shape.png" alt="" />
+										<div className="bg-[#EFF2F7] p-3 rounded-full w-full">
+											<img src="/images/searchmessico.png" alt="" />
 										</div>
 										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
 											<img src="/images/messhead (2).png" alt="" />

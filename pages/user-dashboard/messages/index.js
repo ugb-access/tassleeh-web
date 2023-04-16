@@ -443,7 +443,7 @@ const Chat = ({
 													/>
 												</div>
 												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
-													<img src="/images/shape.png" alt="" />
+													<img src="/images/searchmessico.png" alt="" />
 												</div>
 												<div className="bg-[#EFF2F7] p-2 rounded-full w-full">
 													<img src="/images/messhead (2).png" alt="" />
@@ -576,7 +576,7 @@ const Chat = ({
 											/>
 										</div>
 										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
-											<img src="/images/shape.png" alt="" />
+											<img src="/images/searchmessico.png" alt="" />
 										</div>
 										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
 											<img src="/images/messhead (2).png" alt="" />

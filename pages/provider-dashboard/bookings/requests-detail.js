@@ -8,6 +8,7 @@ import Button from "../../../components/Button";
 import Link from "next/link";
 // import AmountPopup from "./amount-popup";
 import ServiceAmountPopup from "./amount-popup";
+import { useRouter } from "next/router";
 const BookingDetailData = [
 	{
 		icon: "/images/booking.png",
@@ -31,6 +32,7 @@ const Data = [
 ];
 
 const RequestsDetail = () => {
+	const router = useRouter();
 	const [type, setType] = useState("Pending");
 	const [filterData, setFilterData] = useState([]);
 	const [showPopup, setShowPopup] = useState(false);
@@ -99,14 +101,14 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 					</div>
 				</div>
 			</div>
-			<div className="flex justify-center items-center gap-3 mt-5">
+			<div className="flex justify-center items-center gap-3 mt-5 pb-5">
 				<Button
 					onClick={() => setShowPopup(true)}
 					text="Start Work"
 					customClass="border !w-24 !h-9 bg-[#34A853] text-sm text-white rounded-2xl"
 				/>
 				<Button
-					// onClick={currentClick}
+					onClick={() => router.back()}
 					text="Cancel Request"
 					customClass="border !w-32 !h-9 bg-[#F33C3C] text-sm text-white rounded-2xl"
 				/>

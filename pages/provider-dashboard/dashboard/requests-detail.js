@@ -73,9 +73,19 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 			<div className="mt-6">
 				<DateTime address={"7152 Winding Way Dr.Woodside, NY 11377"} />
 			</div>
-			<div className="header0 px-6 py-4 bg-[#ffffff] mt-6">
-				<div className="bg-white  p-6 rounded-lg flex justify-between">
-					<div className="lg:w-[60%]">
+			<div className="header0 py-4 bg-[#ffffff] mt-6">
+				<div className="bg-white  p-6 rounded-lg md:flex justify-between">
+					<div className="h-fit md:order-2 mb-2 flex w-full justify-end">
+						<Link href={"/provider-dashboard/messages"}>
+							<Button
+								customClass={
+									" rounded-2xl px-5  text-sm font-semibold text-primary border border-primary !w-fit !h-10 md:!h-12"
+								}
+								text={"Message"}
+							/>
+						</Link>
+					</div>
+					<div className="md:w-[60%] md:order-1 basis-full">
 						<div>
 							<TextInput
 								customClass={"border-1 !bg-white rounded-lg !h-10"}
@@ -137,16 +147,6 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 								}
 							/>
 						</div>
-					</div>
-					<div className="h-fit">
-						<Link href={"/provider-dashboard/messages"}>
-							<Button
-								customClass={
-									" rounded-2xl px-5  text-sm font-semibold text-primary border border-primary !w-fit !h-12"
-								}
-								text={"Message"}
-							/>
-						</Link>
 					</div>
 				</div>
 			</div>

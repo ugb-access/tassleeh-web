@@ -21,16 +21,19 @@ const MiniHeader = ({
 				router.asPath.includes("/provider-dashboard/bookings")
 					? "md:flex"
 					: "flex"
-			} justify-between pb-6 items-center sm:mt-0 mt-2`}
+			} justify-between gap-2 pb-4 items-center sm:mt-0 mt-2`}
 		>
-			<div className="flex lg:items-center">
+			<div className="flex gap-2 items-center">
 				{showIcon && (
-					<IoIosArrowRoundBack
+					<img
 						onClick={() => router.back()}
-						className="text-2xl text-primary cursor-pointer"
+						className="h-3 cursor-pointer"
+						src="/images/back-icon.png"
+						alt="back"
 					/>
 				)}
-				<div className="text-xl font-semibold mb-4 md:mb-0">{headerText}</div>
+
+				<div className="sm:text-lg md:text-xl font-semibold">{headerText}</div>
 			</div>
 			<div>
 				{showRequestButton && (

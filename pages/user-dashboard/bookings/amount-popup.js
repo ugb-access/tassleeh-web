@@ -13,8 +13,8 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 					onClick={() => setShowPopup(false)}
 					className="fixed h-[100vh] top-0 left-0 right-0 z-50 bottom-0 w-screen bg-[#111217] opacity-[0.5] cursor-pointer"
 				></div>
-				<div className="fixed !top-0 !left-0 !right-0  !bottom-0 pt-0.5 pb-2 px-3 m-auto w-[95%] sm:w-[80%] md:w-[35%] h-fit bg-white z-50 rounded-lg">
-					<div className="header0 ">
+				<div className="fixed !top-0 !left-0 !right-0  !bottom-0 pt-0.5 pb-2 px-3 m-auto w-[95%] sm:w-[80%] md:w-[55%] lg:w-[35%] h-fit bg-white z-50 rounded-lg">
+					<div className=" ">
 						{showCreditPopup === 1 ? (
 							<div className="">
 								<div className="flex justify-between items-center">
@@ -23,6 +23,7 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 									</h1>
 									<img
 										src="/images/cross3.png"
+										className="p-1 h-10"
 										alt=""
 										onClick={() => setShowPopup(false)}
 									/>
@@ -189,7 +190,7 @@ const AmountPopup = ({ setShowPopup, showPopup }) => {
 								</div>
 								<div className="flex justify-center py-3">
 									<Button
-										// onClick={() => setShowCreditPopup(3)}
+										onClick={() => setShowPopup(false)}
 										text="Submit"
 										customClass=" rounded-lg bg-primary text-sm font-semibold text-white !w-[90px] !h-10"
 									/>

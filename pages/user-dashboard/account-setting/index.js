@@ -15,6 +15,7 @@ import PlacesAutocomplete, {
 import TextInput from "../../../components/TextInput";
 import Head from "next/head";
 import Link from "next/link";
+import MiniHeader from "../../../components/dashboard/mini-header";
 const Profile = () => {
 	// const [checkImage, setCheckImage] = useState("");
 	// const [spinner, setSpinner] = useState(true);
@@ -169,6 +170,7 @@ const Profile = () => {
 	// };
 	return (
 		<>
+			<MiniHeader headerText={"Settings"} />
 			<div className="flex lg:flex-nowrap flex-wrap justify-center ">
 				<div className="">
 					<ProfileSidebar

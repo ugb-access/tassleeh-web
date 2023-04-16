@@ -73,7 +73,7 @@ const ServiceAmountPopup = ({ setShowPopup, showPopup }) => {
 								</div>
 								<div className="flex justify-center py-3">
 									<Button
-										// onClick={() => setShowCreditPopup(3)}
+										onClick={() => setShowPopup(false)}
 										text="Submit"
 										customClass=" rounded-lg bg-primary text-sm font-semibold text-white !w-[90px] !h-10"
 									/>

@@ -46,7 +46,7 @@ const MechanicProfile = () => {
 	return (
 		<div>
 			<div className="flex ">
-				<MiniHeader headerText={"Mechanic Profile"} showIcon />
+				<MiniHeader headerText={"Mechanic Profile"} showIcon={true} />
 			</div>
 			<div>
 				{data?.map((item, index) => {

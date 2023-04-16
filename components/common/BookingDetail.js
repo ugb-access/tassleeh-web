@@ -4,7 +4,11 @@ const BookingDetail = ({ item, showAmount }) => {
 	return (
 		<div className="header0 flex justify-between items-center mb-7 bg-[#ffffff] py-6 px-4">
 			<div className="flex gap-3 items-center">
-				<img src={item?.icon} alt="" />
+				<img
+					className="w-16 h-20 md:h-auto md:w-auto"
+					src={item?.icon}
+					alt=""
+				/>
 				<div className="flex-col ">
 					<div>
 						<h1 className="font-bold">

@@ -15,6 +15,7 @@ import PlacesAutocomplete, {
 import TextInput from "../../../components/TextInput";
 import Head from "next/head";
 import Link from "next/link";
+import MiniHeader from "../../../components/dashboard/mini-header";
 const Profile = () => {
 	// const [checkImage, setCheckImage] = useState("");
 	// const [spinner, setSpinner] = useState(true);
@@ -169,6 +170,7 @@ const Profile = () => {
 	// };
 	return (
 		<>
+			<MiniHeader headerText={"Settings"} />
 			<div className="flex lg:flex-nowrap flex-wrap justify-center ">
 				<div className="">
 					<ProfileSidebar
@@ -194,7 +196,7 @@ const Profile = () => {
 							</Link>
 						</div>
 					</div>
-					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-7  pt-3">
+					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-2 md:pb-7  pt-3">
 						<input
 							type=""
 							id=""
@@ -214,7 +216,7 @@ const Profile = () => {
 							required
 						/>
 					</div>
-					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-7  pt-3">
+					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-2 md:pb-7  pt-3">
 						<input
 							type=""
 							id=""
@@ -234,7 +236,7 @@ const Profile = () => {
 							required
 						/>
 					</div>
-					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-7  pt-3">
+					<div className="flex lg:flex-nowrap flex-wrap items-end gap-5 pb-2 md:pb-7  pt-3">
 						<input
 							type=""
 							id=""

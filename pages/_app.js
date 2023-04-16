@@ -13,16 +13,19 @@ import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import store, { persister } from "../store";
 import { PersistGate } from "redux-persist/integration/react";
-// import Script from "next/script";
 const MyApp = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
+				<link
+					className="rounded-full"
+					rel="shortcut icon"
+					href="/favicon/favicon.ico"
+				/>
 				{typeof google == "undefined" ? (
-					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx01A_5SQM7WPAZov08WwWtp_fBOWcBBY&libraries=places"></script>
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTeuajYJW22KJe7Ae-tOq_10n0D52CP_0&libraries=places"></script>
 				) : null}
 			</Head>
-			{/* <Script src="https://third-party-script.js"></Script> */}
 			<Provider store={store}>
 				<PersistGate loading={null} persistor={persister}>
 					<StoreLayout pageProps={pageProps}>

@@ -24,7 +24,7 @@ const data = [
 const ProfileList = () => {
 	return (
 		<div>
-			<MiniHeader headerText={"Mechanics"} />
+			<MiniHeader headerText={"Mechanics"} showIcon />
 			<div className="grid gap-5 lg:grid-cols-4 md:grid-cols-2 pb-5 lg:gap-y-0 md:gap-y-10">
 				{data?.map((item, index) => {
 					return <ProfileListCard key={index} item={item} />;

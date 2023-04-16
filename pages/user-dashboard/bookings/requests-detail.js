@@ -7,6 +7,7 @@ import DateTime from "../../../components/dashboard/request-datetime";
 import Button from "../../../components/Button";
 import Link from "next/link";
 import AmountPopup from "./amount-popup";
+import { useRouter } from "next/router";
 const BookingDetailData = [
 	{
 		icon: "/images/booking.png",
@@ -30,6 +31,7 @@ const Data = [
 ];
 
 const RequestsDetail = () => {
+	const router = useRouter();
 	const [type, setType] = useState("Pending");
 	const [filterData, setFilterData] = useState([]);
 	const [showPopup, setShowPopup] = useState(false);
@@ -64,11 +66,13 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 			<div className="header0 px-6 py-4 bg-[#ffffff] mt-6">
 				<div className="flex justify-between">
 					<h1 className="text-[#2F2C4A] font-semibold">Mechanic Details</h1>
-					<Button
-						// onClick={currentClick}
-						text="Message"
-						customClass=" border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold text-primary w-20 sm:!w-32 h-8 sm:!h-10 whitespace-nowrap"
-					/>
+					<Link href={"/user-dashboard/messages"}>
+						<Button
+							// onClick={currentClick}
+							text="Message"
+							customClass=" border border-primary hover:bg-primary hover:text-white rounded-2xl p-2 text-sm font-semibold text-primary w-20 sm:!w-32 h-8 sm:!h-10 whitespace-nowrap"
+						/>
+					</Link>
 				</div>
 				<div className="flex items-center gap-4">
 					<div>
@@ -96,21 +100,19 @@ include inspecting the vehicle's mechanical components and its engine, diagnosin
 					</div>
 				</div>
 			</div>
-			<div className="flex justify-center items-center gap-3 mt-5">
-					<Button
-						onClick={() => setShowPopup(true)}
-						text="Start Work"
-						customClass="border !w-24 !h-9 bg-[#34A853] text-sm text-white rounded-2xl"
-					/>
+			<div className="flex justify-center items-center gap-3 mt-5 mb-5 md:mb-0 pb-5">
 				<Button
-					// onClick={currentClick}
+					onClick={() => setShowPopup(true)}
+					text="Start Work"
+					customClass="border !w-fit px-5 py-2 bg-[#34A853] text-sm text-white rounded-2xl"
+				/>
+				<Button
+					onClick={() => router.back()}
 					text="Cancel Request"
-					customClass="border !w-32 !h-8 bg-[#F33C3C] text-sm text-white rounded-2xl"
+					customClass="border px-5 !w-fit py-2 bg-[#F33C3C] text-sm text-white rounded-2xl"
 				/>
 			</div>
-			{showPopup && (
-				<AmountPopup setShowPopup={setShowPopup}/>
-			)}
+			{showPopup && <AmountPopup setShowPopup={setShowPopup} />}
 		</>
 	);
 };

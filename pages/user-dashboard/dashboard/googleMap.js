@@ -5,6 +5,7 @@ import {
 	Marker,
 	InfoWindow,
 } from "@react-google-maps/api";
+import Link from "next/link";
 
 const containerStyle = {
 	width: "100%",
@@ -15,7 +16,7 @@ const containerStyle = {
 // 	lat: 33.6844,
 // 	lng: 73.0479,
 // };
-const LoadMap = () => {
+const LoadMap = ({ mapLink }) => {
 	const [map, setMap] = useState(null);
 	const [center, setCenter] = useState({
 		lat: 33.6844,
@@ -23,7 +24,7 @@ const LoadMap = () => {
 	});
 	const [toggleInfoWindow, setToggleInfoWindow] = useState(true);
 	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
+		googleMapsApiKey: "AIzaSyCTeuajYJW22KJe7Ae-tOq_10n0D52CP_0",
 		id: "google-map-script",
 	});
 	// const onLoad = useCallback(function callback(map) {
@@ -68,26 +69,28 @@ const LoadMap = () => {
 									}}
 								/>
 								{toggleInfoWindow === i && (
-									<InfoWindow
-										className="mb-10"
-										style={{ margin: "10" }}
-										onCloseClick={() => setToggleInfoWindow(-1)}
-										position={p}
-									>
-										<div className="flex gap-4 items-center cursor-pointer">
-											<div>
-												<img src="/images/map-pic.png" alt="" />
-											</div>
-											<div>
-												<div className="font-semibold text-[#404040]">
-													Andrew Smith
+									<Link href={mapLink}>
+										<InfoWindow
+											className="mb-10"
+											style={{ margin: "10" }}
+											onCloseClick={() => setToggleInfoWindow(-1)}
+											position={p}
+										>
+											<div className="flex gap-4 items-center cursor-pointer">
+												<div>
+													<img src="/images/map-pic.png" alt="" />
 												</div>
-												<div className="text-[#AEAEAE] mt-1">
-													20 minutes away
+												<div>
+													<div className="font-semibold text-[#404040]">
+														Andrew Smith
+													</div>
+													<div className="text-[#AEAEAE] mt-1">
+														20 minutes away
+													</div>
 												</div>
 											</div>
-										</div>
-									</InfoWindow>
+										</InfoWindow>
+									</Link>
 								)}
 							</>
 						);

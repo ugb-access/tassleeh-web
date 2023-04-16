@@ -63,13 +63,13 @@ const Dashboard = () => {
 			icon: "/images/card4.png",
 			title: "Cars - Mechanic Required",
 			description:
-				"The aim and priority of TASSLEEH is to to add value to our consumers' lives by providing best accessories. This is why we provide amazing services just for your satisfaction.",
+				"We need auto mechanic who is highly skilled with rich experience in the field. We believe in Strong values, Quality of services, and satisfaction of our clients. We need best mechanic who will provide best service.",
 		},
 	];
 	return (
 		<div>
 			<MiniHeader headerText={"Home"} />
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-3 pb-3">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6  pb-3">
 				{categoriesData.map((item, index) => {
 					return (
 						<CategoriesCard
