@@ -91,7 +91,7 @@ const ResetPassword = () => {
 				<div>
 					<ProfileSidebar image={accountImage}></ProfileSidebar>
 				</div>
-				<div className="basis-full bg-white px-5 mx-7">
+				<div className="basis-full bg-white px-5 lg:ml-7">
 					<h5 className="py-5 font-semibold text-xl text-[#110229]">
 						Change Password
 					</h5>
