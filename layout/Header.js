@@ -185,15 +185,15 @@ const Header = () => {
 														Contact Us
 													</p>
 												</Link>
-												{!validToken && (
+												{/* {!validToken && ( */}
 													<Link onClick={() => setOpen(false)} href={"/signin"}>
 														<p className="text-[#0000004D] text-md font-bold border-t-2">
 															LOGIN
 														</p>
 													</Link>
-												)}
+												{/* )} */}
 
-												{validToken && (
+												{/* {validToken && (
 													<Link
 														onClick={() => {
 															setOpen(false);
@@ -208,8 +208,8 @@ const Header = () => {
 															DASHBOARD
 														</p>
 													</Link>
-												)}
-												{validToken && (
+												)} */}
+												{/* {validToken && ( */}
 													<Link
 														onClick={() => {
 															localStorage.removeItem("user");
@@ -222,7 +222,7 @@ const Header = () => {
 															LOG OUT
 														</p>
 													</Link>
-												)}
+												{/* )} */}
 											</div>
 										</div>
 										<div
