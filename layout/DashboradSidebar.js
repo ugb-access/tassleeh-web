@@ -13,19 +13,19 @@ const Sidebar = ({ dashSideData }) => {
 	};
 
 	return (
-		<div className="">
-			<div className="!sticky sm:static h-screen sm:h-full w-[16%] sm:w-full z-50 sm:z-0 top-2">
+		<div className="!h-full">
+			<div className="!sticky h-screen sm:h-full w-[16%] sm:w-full z-50 sm:z-0 top-[50px]">
 				<div
-					className={`main-div-sidebar md:sticky absolute  !w-full sm:!w-full sm:bg-white sm:z-0 z-30 sm:block ${openSidebar} md:!w-56 lg:!w-56`}
+					className={`main-div-sidebar md:sticky absolute bg-[#d3eaf2] md:!bg-white !w-full sm:!w-full sm:bg-white sm:z-0 z-30 sm:block ${openSidebar} h-full md:!w-56 lg:!w-56`}
 				>
-					<div className="ico-menu border-0 bg-purple-100 sm:hidden right-[-16px] absolute z-40 w-full flex justify-end ">
+					<div className="ico-menu border-0 bg-[#d3eaf2] w-[50px] md:hidden right-[-16px] absolute z-40  flex justify-end ">
 						<HiMenu
 							className="text-2xl text-primary"
 							onClick={handleOpenSidebar}
 						/>
 					</div>
 
-					<div className="">
+					<div className="bg-[#d3eaf2] md:!bg-white">
 						{dashSideData.map((items, index) => {
 							return (
 								<SidebarLink

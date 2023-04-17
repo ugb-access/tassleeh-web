@@ -63,7 +63,7 @@ const userLink = [
 		barText: "Messages",
 	},
 	{
-		barIink: "/user-dashboard/account-setting/",
+		barIink: "/user-dashboard/account-setting",
 		barIcon: <AiOutlineSetting />,
 		barText: "Settings",
 	},
