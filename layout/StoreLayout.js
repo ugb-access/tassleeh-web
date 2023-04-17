@@ -82,11 +82,11 @@ const StoreLayout = ({ children }) => {
 					<div className="z-50 bg-white sticky top-0 left-0 right-0">
 						<DashboardHeader />
 					</div>
-					<div className="sm:flex">
-						<div className="z-40 bg-white sticky top-0 left-0 right-0">
+					<div className="sm:flex max-h-[695px] overflow-hidden">
+						<div className="z-40 bg-white max-h-[200px]">
 							<Sidebar dashSideData={userLink} />
 						</div>
-						<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0">
+						<div className="basis-full max-h-[88vh] bg-[#F5F5F5] flex sm:flex sm:flex-col overflow-x-hidden sm:pr-0 lg:pr-0">
 							<div
 								className={`pt-4 px-5 pb-2 ${
 									router.asPath.includes("/messages") && "!px-5"
