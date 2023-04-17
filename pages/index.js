@@ -502,8 +502,8 @@ const Home = () => {
 
 			{/* ---------------------------Dowload-APP--------------------------- */}
 			<section className="flex justify-around items-center flex-wrap bg-[#f4f9ff] mt-20 sm:pt-0 pt-10">
-				<div className="">
-					<div className="pl-6">
+				<div className="pl-8">
+					<div className="">
 						<p className="text-lg text-primary font-semibold ">
 							Download Our Mobile Application
 						</p>
@@ -515,23 +515,27 @@ const Home = () => {
 							We provide best services. Start your with us now...
 						</p>
 					</div>
-					<div className="flex items-center sm:justify-start justify-center">
+					<div className="flex items-center sm:justify-start justify-center gap-6 mt-4">
 						<Link
-							href={"https://play.google.com/store/games?hl=en&gl=US"}
+							href={"https://www.apple.com/app-store/"}
 							target="_blank"
 						>
-							<img
-								className="sm:h-full h-20"
-								src="/images/app.png"
-								alt="android store"
-							/>
+							<div className="flex justify-center gap-2 rounded-md bg-white items-center border-white shadow-md border py-2 px-1.5">
+								<img className="h-10" src="/images/apple-logo.png" alt="" />
+								<div>
+									<p className="text-xs">Dowload on the</p>
+									<p className="text-sm text-black font-semibold">App Store</p>
+								</div>
+							</div>
 						</Link>
-						<Link href={"https://www.apple.com/app-store/"} target="_blank">
-							<img
-								className="sm:h-full h-10"
-								src="/images/android.png"
-								alt="app store"
-							/>
+						<Link href={"https://play.google.com/store/games?hl=en&gl=US/"} target="_blank">
+						<div className="flex justify-center gap-2 rounded-md bg-[#29284e] text-white items-center border-white shadow-md border py-2.5 px-2">
+								<img className="h-9" src="/images/play-store.png.png" alt="" />
+								<div>
+									<p className="text-xs">Dowload on the</p>
+									<p className="text-sm font-semibold">Play Store</p>
+								</div>
+							</div>
 						</Link>
 					</div>
 				</div>
