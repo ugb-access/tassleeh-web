@@ -291,10 +291,10 @@ const Home = () => {
 							<img src="/images/Arr.png" alt="" />
 						</div>
 						<div className="mt-24">
-							<h1 className="md:text-6xl sm:text-4xl text-2xl text-[#0A093D] text-center font-bold">
+							<h1 className="md:text-6xl sm:text-4xl text-2xl  text-[#0A093D] text-center font-bold">
 								We Provide <span className="text-[#03A0CB]">Best</span> Services
 							</h1>
-							<p className="text-[#656464] md:text-lg sm:text-base text-sm text-center pt-4">
+							<p className="text-[#656464] md:text-lg sm:text-base text-sm text-center sm:px-0 px-2 pt-4">
 								TASSLEEH provides best services for your cars, electronics,
 								home, and accessories.
 							</p>
@@ -466,7 +466,7 @@ const Home = () => {
 			</section>
 
 			{/* ----------------------------Popular------------------------------- */}
-			<section className="flex justify-center flex-wrap mt-24">
+			<section className="flex justify-center flex-wrap sm:mt-24">
 				<div className=" pt-2 px-5 lg:w-2/5 mt-12">
 					<p className=" text-primary font-medium sm:text-lg my-2">About Us</p>
 					<h1 className="text-xl sm:text-4xl font-bold text-[#0a093d] my-5 sm:w-80 md:w-full lg:w-80">

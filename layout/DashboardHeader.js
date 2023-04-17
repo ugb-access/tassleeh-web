@@ -121,7 +121,7 @@ const Header = ({
 					</div> */}
 							{open ? (
 								<div>
-									<div className="absolute sm:top-[60px] top-[34px] sm:right-[-70px] left-0 md:left-[30px] w-32 pt-2 pb-4 pl-2 shadow-lg z-50 bg-[#fff]">
+									<div className="absolute sm:top-[60px] top-[44px] sm:right-[-70px] left-4 md:left-[30px] w-32 pt-2 pb-4 pl-2 shadow-lg z-50 bg-[#fff]">
 										{/* <Link href={profileLink}> */}
 										<div className="flex items-center">
 											<div className="side-bar-icon-sel !text-primary">

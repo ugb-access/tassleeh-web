@@ -96,9 +96,7 @@ const Footer = () => {
 					</div>
 					{/* <hr className="mt-6 mb-6" /> */}
 					<div className="col-2">
-						<p
-							className="hover:opacity-70 cursor-pointer text-[#000000] opacity-80 text-base font-semibold mb-3"
-						>
+						<p className="hover:opacity-70 cursor-pointer text-[#000000] opacity-80 text-base font-semibold mb-3">
 							Get in Touch
 						</p>
 						<div className="">
@@ -225,13 +223,13 @@ const Footer = () => {
 			<section className="bg-primary lg:w-full">
 				<div className="copyright py-4 sm:px-14 flex !items-center px-2 justify-between">
 					<div>
-						<a
+						<Link
 							className=" text-white text-center sm:text-sm text-xs whitespace-nowrap"
 							href="https://www.afssquare.com/"
 							target={"_blank"}
 						>
 							TASSLEEH developed by AFS Square © 2023
-						</a>
+						</Link>
 					</div>
 					<img
 						onClick={goToBtn}
