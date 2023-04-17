@@ -86,9 +86,9 @@ const StoreLayout = ({ children }) => {
 						<div className="z-40 bg-white sticky top-0 left-0 right-0">
 							<Sidebar dashSideData={userLink} />
 						</div>
-						<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col md:max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0">
+						<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0">
 							<div
-								className={`pt-2 px-5 sm:py-5 ${
+								className={`pt-4 px-5 pb-2 ${
 									router.asPath.includes("/messages") && "!px-5"
 								}`}
 							>
@@ -108,7 +108,7 @@ const StoreLayout = ({ children }) => {
 								<div className="">
 									<Sidebar dashSideData={serviceLinks} />
 								</div>
-								<div className="basis-full bg-[#F5F5F5] sm:flex sm:flex-col min-h-screen">
+								<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0">
 									<div
 										className={`pt-2 px-5 sm:py-5 ${
 											router.asPath.includes("/messages") && "!px-5"

@@ -14,7 +14,7 @@ const SidebarLink = ({ sideLink, sideText, sideIcon }) => {
 						{sideIcon}
 					</div>
 					<p
-						className={`icon-para-sel mt-1 ${
+						className={`icon-para-sel ${
 							router.asPath.includes(sideLink) && "!text-primary !font-bold"
 						} `}
 					>
