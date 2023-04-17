@@ -86,7 +86,7 @@ const Header = ({
 	}, []);
 	return (
 		<div className="">
-			<div className="flex justify-between items-center px-5 header0 pt-2 pb-2">
+			<div className=" flex justify-between items-center px-5 header0 pt-2 pb-2">
 				<div className="md:pl-4">
 					<img className="h-10 md:h-full" src="/images/logo-main.png" alt="" />
 				</div>
@@ -127,9 +127,11 @@ const Header = ({
 											<div className="side-bar-icon-sel !text-primary">
 												<HiOutlineUser />
 											</div>
-											<p className="font-semibold ml-2 text-sm !text-primary">
-												Profile
-											</p>
+											<Link href={"/user-dashboard/dashboard/mechanic-profile"}>
+												<p className="font-semibold ml-2 text-sm !text-primary">
+													Profile
+												</p>
+											</Link>
 										</div>
 										{/* </Link> */}
 										<hr className="mt-3 pb-2 " />
@@ -155,7 +157,11 @@ const Header = ({
 								<p className="text-[#404040] md:text-base text-sm">
 									Andrew Smith{" "}
 								</p>
-								<p className="md:text-sm text-xs text-[#aeaeae]">Normal User</p>
+								<p className="md:text-sm text-xs text-[#aeaeae]">
+									{router.asPath.includes("provider-dashboard")
+										? "Service-provider"
+										: "Normal user"}
+								</p>
 							</div>
 						</div>
 					</div>

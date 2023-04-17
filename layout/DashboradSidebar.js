@@ -14,7 +14,7 @@ const Sidebar = ({ dashSideData }) => {
 
 	return (
 		<div className="">
-			<div className="fixed sm:static h-screen sm:h-full w-[16%] sm:w-full z-50 sm:z-0 top-2">
+			<div className="!sticky sm:static sm:h-full w-[16%] sm:w-full z-50 sm:z-0 top-2">
 				<div
 					className={`main-div-sidebar absolute sm:static !w-full sm:!w-full sm:bg-white bg-purple-100 sm:z-0 z-30 sm:block ${openSidebar} md:!w-56 lg:!w-56`}
 				>

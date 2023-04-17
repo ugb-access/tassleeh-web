@@ -6,16 +6,16 @@ import { useRouter } from "next/router";
 import { HiMenu } from "react-icons/hi";
 
 const Header = () => {
-	const [validToken, setValidtoken] = useState(null);
-	const fetchLocalSt = () => {
-		const gettingToken = localStorage.getItem("user");
-		// console.log(validToken);
-		const UserType = JSON.parse(gettingToken);
-		setValidtoken(UserType);
-	};
-	useEffect(() => {
-		fetchLocalSt();
-	}, []);
+	// const [validToken, setValidtoken] = useState(null);
+	// const fetchLocalSt = () => {
+	// 	const gettingToken = localStorage.getItem("user");
+	// 	// console.log(validToken);
+	// 	const UserType = JSON.parse(gettingToken);
+	// 	setValidtoken(UserType);
+	// };
+	// useEffect(() => {
+	// 	fetchLocalSt();
+	// }, []);
 	// console.log(validToken,"hahsam")
 
 	const router = useRouter();
@@ -81,7 +81,7 @@ const Header = () => {
 											BLOGS
 										</p>
 									</Link> */}
-									{!validToken && (
+									{/* {!validToken && ( */}
 										<Link href={"/signin"}>
 											<p
 												className={`text-[#656464] text-lg font-semibold mx-6 hover:text-primary  ${
@@ -91,7 +91,7 @@ const Header = () => {
 												Login
 											</p>
 										</Link>
-									)}
+									{/* // )} */}
 								</div>
 							</div>
 
@@ -99,9 +99,9 @@ const Header = () => {
 								<div className="hidden gap-8 md:flex items-center">
 									<input
 										placeholder="Search here..."
-										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40 "
+										className="h-[2rem] border text-gray-900 text-sm rounded-2xl block placeholder:text-xs pl-2 md:w-40"
 									/>
-									<Link href={"/user-dashboard/dashboard"}>
+									<Link href={"/signin"}>
 										<div>
 											<Button
 												text="Get Started"
@@ -109,14 +109,14 @@ const Header = () => {
 											/>
 										</div>
 									</Link>
-									<Link href={"/provider-dashboard/dashboard"}>
+									{/* <Link href={"/provider-dashboard/dashboard"}>
 										<div>
 											<Button
 												text="Get Started"
 												customClass="bg-primary rounded-full p-2 text-sm font-semibold text-white !w-28 !h-12"
 											/>
 										</div>
-									</Link>
+									</Link> */}
 								</div>
 								{/* {!validToken && (
 									<Link href={"/signup"}>
@@ -139,7 +139,7 @@ const Header = () => {
                     />
                   </Link>
                 )} */}
-								{validToken?.type === "user" && (
+								{/* {validToken?.type === "user" && (
 									<Link href={"/employee/dashboard"}>
 										<Button
 											text="Dashboard"
@@ -154,7 +154,7 @@ const Header = () => {
 											customClass={`hidden md:block text-white font-bold md:text-sm border-solid bg-primary rounded-md w-[100px] h-[30px] md:h-[30px] md:mr-4`}
 										/>
 									</Link>
-								)}
+								)} */}
 
 								<HiMenu
 									onClick={() => setOpen(!open)}

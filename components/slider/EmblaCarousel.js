@@ -61,7 +61,7 @@ const EmblaCarousel = ({ slides, options }) => {
 					<div className="embla__container">
 						{slides.map((item, index) => (
 							<div className="embla__slide" key={index}>
-								<div className="absolute top-16 left-32">
+								<div className="absolute top-10 left-16">
 									<Link href="/">
 										<img src="/images/logo-main.png" alt="" />
 									</Link>
@@ -71,12 +71,12 @@ const EmblaCarousel = ({ slides, options }) => {
 									src={item.img}
 									alt="Your alt text"
 								/>
-								<div className="absolute left-32 top-36 justify-center flex flex-col items-center mx-auto">
+								<div className="absolute lg:left-0 left-8 right-6 lg:right-0 top-36 justify-center flex flex-col items-center mx-auto">
 									<h2 className="text-white py-2 text-4xl font-semibold whitespace-nowrap">
 										{/* {item.title}{" "} */}
 										{/* <span className="ml-1">{item?.black}</span> */}
 									</h2>
-									<p className="text-[#0a093d] text-justify text-xl  lg:text-3xl font-bold py-2 w-[580px]">
+									<p className="text-[#0a093d] text-justify text-base lg:text-3xl font-bold py-2 lg:w-[580px]">
 										{/* {item.description} */}
 										<p>Our motive is to provide <span className="text-primary">best services</span> to our customers under one platform.</p>
 									</p>

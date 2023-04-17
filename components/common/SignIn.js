@@ -318,22 +318,30 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 											type="text"
 											placeholder="Email"
 											labelText={"Email"}
-											labelStyle={"mt-8 mb-2"}
+											labelStyle={"mt-6 mb-2"}
 										/>
 									</div>
-									<div className="">
+									<div className="relative">
 										<TextInput
 											// onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="password"
+											id="password"
+											customClass=" mt-1 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
 											placeholder="Password"
 											labelText={"Password"}
-											labelStyle={"mt-12 mb-2"}
+											labelStyle={""}
 										/>
-									</div>
-									<div>
-										<p>Forgot Password?</p>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute top-12 right-3"
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute top-12 right-3"
+											/>
+										)}
 									</div>
 								</div>
 							)}
@@ -348,22 +356,30 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 												type="text"
 												placeholder="Email"
 												labelText={"Email"}
-												labelStyle={"mt-8 mb-2"}
+												labelStyle={"mt-6 mb-2"}
 											/>
 										</div>
-										<div className="">
+										<div className="relative">
 											<TextInput
 												// onChange={(e) => handleChange(e)}
-												id="fullName"
-												customClass="relative py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-												type="password"
+												id="password"
+												customClass=" mt-1 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+												type={showPass ? "text" : "password"}
 												placeholder="Password"
 												labelText={"Password"}
-												labelStyle={"mt-12 mb-2"}
+												labelStyle={""}
 											/>
-										</div>
-										<div>
-											<p>Forgot Password?</p>
+											{showPass ? (
+												<AiOutlineEye
+													onClick={() => setShowPass(false)}
+													className="absolute top-12 right-3"
+												/>
+											) : (
+												<AiOutlineEyeInvisible
+													onClick={() => setShowPass(true)}
+													className="absolute top-12 right-3"
+												/>
+											)}
 										</div>
 									</div>
 								</div>
@@ -387,7 +403,7 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 								</label>
 							</div> */}
 							<Link href="/forgotpassword">
-								<div className="flex justify-end pt-3">
+								<div className="flex justify-end">
 									<p className="text-primary">Forgot Password?</p>
 								</div>
 							</Link>
@@ -396,7 +412,12 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 									// id="disabled"
 									// type="submit"
 									text="Login"
-									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-32 !h-12"
+									customClass=" bg-primary rounded-xl p-2 text-sm font-semibold text-white !w-32 !h-10"
+									onClick={() =>
+										router.push(
+											`/${show == 1 ? "user" : "provider"}-dashboard/dashboard`
+										)
+									}
 									img={
 										<svg
 											id="loadingmail"

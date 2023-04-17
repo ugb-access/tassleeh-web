@@ -41,11 +41,11 @@ const SetNewPassword = () => {
 										type="password"
 										placeholder="Confirm New Password"
 										labelText={"Confirm New Password"}
-										labelStyle={"mt-12 mb-2"}
+										labelStyle={""}
 									/>
 								</div>
 								<Link href={"/signin"}>
-									<div className="pt-20 flex justify-center">
+									<div className="pt-6 flex justify-center">
 										<Button
 											id="disabled"
 											type="submit"

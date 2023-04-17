@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { getUnReadCount } from "../../../services/helper";
 import MessageCard from "./MessageCard";
 import RecipientCard from "./RecipientCard";
-import socket from "../../../services/socket";
+// import socket from "../../../services/socket";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 // import { AVATAR } from "../../../services/images";
@@ -116,11 +116,11 @@ const Chat = ({
 		);
 	}, []);
 	useEffect(() => {
-		senderID && socket.emit("getAllMessages", { sID: senderID, rID: uid });
+		// senderID && socket.emit("getAllMessages", { sID: senderID, rID: uid });
 	}, [senderID]);
 
 	useEffect(() => {
-		channelID && _readMessages(channelID);
+		// channelID && _readMessages(channelID);
 	}, [channelID]);
 
 	const handleRecipients = () => {
@@ -230,16 +230,16 @@ const Chat = ({
 
 		if (socket.connected) {
 			if (!!channelID) {
-				socket.emit("message", messageObj);
+				// socket.emit("message", messageObj);
 			} else {
 				let res = await addRecipientMethod({ user1: senderID, user2: uid });
 
 				if (res?.success) {
 					setChannelID(res.cid);
-					socket.emit("message", {
-						...messageObj,
-						channel: res.cid,
-					});
+					// socket.emit("message", {
+					// 	...messageObj,
+					// 	channel: res.cid,
+					// });
 				} else {
 					alert("An error occurred");
 				}

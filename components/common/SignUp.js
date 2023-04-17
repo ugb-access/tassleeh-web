@@ -373,49 +373,60 @@ const SignUp = ({
 										<TextInput
 											onChange={(e) => handleChange(e)}
 											id="phone"
-											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											customClass="relative mt-1 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type="text"
 											placeholder="Mobile Number"
 											labelText={"Mobile Number"}
-											labelStyle={"mt-8 mb-2"}
+											labelStyle={""}
 										/>
 									</div>
 									<div className="">
 										<TextInput
 											onChange={(e) => handleChange(e)}
 											id="fullName"
-											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											customClass="relative mt-1 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type="text"
 											placeholder="Email"
 											labelText={"Email"}
-											labelStyle={"mt-8 mb-2"}
-										/>
-									</div>
-									<div className="">
-										<TextInput
-											// onChange={(e) => handleChange(e)}
-											id="userName"
-											customClass="relative mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="password"
-											placeholder="Password"
-											labelText={"Password"}
-											labelStyle={"mt-8 mb-2"}
+											labelStyle={""}
 										/>
 									</div>
 									<div className="relative">
 										<TextInput
 											// onChange={(e) => handleChange(e)}
 											id="password"
-											customClass=" mt-2 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											customClass=" mt-1 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type={showPass ? "text" : "password"}
-											placeholder="Confirm Password"
-											labelText={"Confirm Password"}
-											labelStyle={"mt-8"}
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={""}
 										/>
 										{showPass ? (
 											<AiOutlineEye
 												onClick={() => setShowPass(false)}
-												className="absolute right-0 "
+												className="absolute top-12 right-3"
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute top-12 right-3"
+											/>
+										)}
+									</div>
+									<div className="relative">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="password"
+											customClass=" mt-1 mb-6 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
+											placeholder="Confirm Password"
+											labelText={"Confirm Password"}
+											labelStyle={""}
+										/>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute top-12 right-3"
 											/>
 										) : (
 											<AiOutlineEyeInvisible
@@ -436,10 +447,10 @@ const SignUp = ({
 											type="text"
 											placeholder="Full Name"
 											labelText={"Full Name"}
-											labelStyle={"mt-2 mb-2"}
+											labelStyle={"mt-2"}
 										/>
 									</div>
-									<div className="mt-8">
+									<div className="">
 										<label className="">
 											Country
 											<select
@@ -463,7 +474,7 @@ const SignUp = ({
 											type="number"
 											placeholder="Mobile"
 											labelText={"Mobile"}
-											labelStyle={"mt-2 mb-2"}
+											labelStyle={"mt-5"}
 										/>
 									</div>
 									<div className="">
@@ -474,10 +485,10 @@ const SignUp = ({
 											type="email"
 											placeholder="Email"
 											labelText={"Email"}
-											labelStyle={"mt-8 mb-2"}
+											labelStyle={" mb-2"}
 										/>
 									</div>
-									<div className="mt-8">
+									<div className="">
 										<label className="">
 											Work Category
 											<select
@@ -493,41 +504,52 @@ const SignUp = ({
 											</select>
 										</label>
 									</div>
-									<div className="">
-										<TextInput
-											onChange={(e) => handleChange(e)}
-											id="fullName"
-											customClass=" py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
-											type="password"
-											placeholder="Password"
-											labelText={"Password"}
-											labelStyle={"mt-3 mb-2"}
-										/>
-									</div>
-									<div className="relative">
+									<div className="relative mt-3">
 										<TextInput
 											// onChange={(e) => handleChange(e)}
 											id="password"
 											customClass=" mt-2 py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
 											type={showPass ? "text" : "password"}
-											placeholder="Confirm Password"
-											labelText={"Confirm Password"}
-											labelStyle={"mt-10"}
+											placeholder="Password"
+											labelText={"Password"}
+											labelStyle={""}
 										/>
 										{showPass ? (
 											<AiOutlineEye
 												onClick={() => setShowPass(false)}
-												className="absolute right-0 "
+												className="absolute top-[48px] right-3"
 											/>
 										) : (
 											<AiOutlineEyeInvisible
 												onClick={() => setShowPass(true)}
-												className="absolute top-12 right-3"
+												className="absolute top-[48px] right-3"
+											/>
+										)}
+									</div>
+									<div className="relative">
+										<TextInput
+											// onChange={(e) => handleChange(e)}
+											id="password"
+											customClass="py-2 rounded-sm border-2 border-solid border-[#F1F1F1] bg-[#ffffff] px-2 outline-none w-full placeholder:text-xs lg:placeholder:text-sm"
+											type={showPass ? "text" : "password"}
+											placeholder="Confirm Password"
+											labelText={"Confirm Password"}
+											labelStyle={""}
+										/>
+										{showPass ? (
+											<AiOutlineEye
+												onClick={() => setShowPass(false)}
+												className="absolute top-[48px] right-3"
+											/>
+										) : (
+											<AiOutlineEyeInvisible
+												onClick={() => setShowPass(true)}
+												className="absolute top-[48px] right-3"
 											/>
 										)}
 									</div>
 									<div className="">
-										<div className="mt-14 my-5">
+										<div className="mt-4 my-5">
 											<span className="font-bold text-[#0a093d]">
 												Upload Experience Letter
 											</span>
@@ -589,14 +611,12 @@ const SignUp = ({
 								</div>
 							)}
 
-							<div
-								className={`flex items-center ${show === 2 ? "mt-3" : "mt-9"}`}
-							>
+							<div className={`flex items-center ${show === 2 ? "mt-3" : ""}`}>
 								<input
 									onChange={(e) => isSetCheck(e.target.checked)}
 									id="isActive"
 									type="checkbox"
-									className="w-4 !mr-2 h-4 text-blue-600 bg-gray-100 rounded border-gray-300"
+									className="w-4 !mr-2 !mb-0.5 h-4 text-blue-600 bg-gray-100 rounded border-gray-300"
 								/>
 								<label className=" text-xs lg:text-sm font-medium whitespace-nowrap !overflow-hidden text-gray-500">
 									I agree to TASSLEEH {""}
