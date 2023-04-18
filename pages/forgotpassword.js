@@ -112,7 +112,7 @@ const ForgotPassword = () => {
 					})
 					.catch((err) => {
 						setSpinner(false);
-						toast.error(err?.message ? err?.message : "Something went wrong");
+						// toast.error(err?.message ? err?.message : "Something went wrong");
 					});
 			}
 		}
@@ -159,7 +159,7 @@ const ForgotPassword = () => {
 				}
 			})
 			.catch((err) => {
-				toast.error(err?.message);
+				// toast.error(err?.message);
 				setSpinner(false);
 			});
 	};

@@ -2,7 +2,6 @@ import Button from "../Button";
 import Link from "next/link";
 import TextInput from "../TextInput";
 import React, { useState } from "react";
-// import { signupUser } from "../../services/auth-service";
 import Slider from "../slider/slider";
 import {
 	signupUserCheck,
@@ -110,7 +109,7 @@ const SignUp = ({
 						document.getElementById("disabled").disabled = false;
 						document.getElementById("disabled").style.cursor = "pointer";
 						setSpinner(false);
-						toast.error(res?.data?.message);
+						// toast.error(res?.data?.message);
 					} else {
 						document.getElementById("loadingmail").style.display = "none";
 						document.getElementById("disabled").disabled = false;
@@ -135,7 +134,7 @@ const SignUp = ({
 				})
 				.catch((err) => {
 					setSpinner(false);
-					toast.error(err?.message ? err?.message : "Something went wrong");
+					// toast.error(err?.message ? err?.message : "Something went wrong");
 				});
 		}
 	};
@@ -182,7 +181,7 @@ const SignUp = ({
 					}
 				}
 			} else {
-				toast.error("post job image cannot be empty");
+				// toast.error("post job image cannot be empty");
 				setSpinner(false);
 			}
 		}
@@ -216,7 +215,7 @@ const SignUp = ({
 					.then((res) => {
 						// console.log(res, "userchekc");
 						if (res?.data?.userExist) {
-							toast.error(res?.data?.message);
+							// toast.error(res?.data?.message);
 							router.push("/signin");
 						} else {
 							localStorage.setItem("userData", JSON.stringify(userData));
@@ -224,7 +223,8 @@ const SignUp = ({
 						}
 					})
 					.catch((error) => {
-						toast.error(error?.message);
+						console.log('error: ', error);
+						// toast.error(error?.message);
 					});
 			})
 			.catch((err) => {
@@ -302,7 +302,7 @@ const SignUp = ({
 					}
 				})
 				.catch((err) => {
-					toast.error(err?.message);
+					// toast.error(err?.message);
 				});
 		}
 	};

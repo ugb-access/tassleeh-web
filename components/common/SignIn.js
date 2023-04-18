@@ -173,12 +173,12 @@ const SignIn = ({ placeholdert1, placeholdert2 }) => {
 							}
 						})
 						.catch((err) => {
-							toast.error(err?.message);
+							// toast.error(err?.message);
 						});
 				}
 			})
 			.catch((err) => {
-				toast.error(err?.message);
+				// toast.error(err?.message);
 			});
 	};
 	// google sign in
