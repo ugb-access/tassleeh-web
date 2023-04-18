@@ -34,6 +34,7 @@ import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { useRef } from "react";
 import HomeServiceCard from "../components/common/HomeServiceCard";
+import { MAP_PROPS } from "../services/constants";
 
 const Home = () => {
 	const [spinner, setSpinner] = useState(false);
@@ -52,10 +53,7 @@ const Home = () => {
 	// const [cardData, SetCardData] = useState();
 	const [cardData, setCardData] = useState([]);
 	const [filterData, setFilterData] = useState([]);
-	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
-		id: "google-map-script",
-	});
+	const { isLoaded } = useJsApiLoader(MAP_PROPS);
 	const [geoLocation, setGeoLocation] = useState({
 		lat: 0,
 		long: 0,
@@ -529,7 +527,7 @@ const Home = () => {
 							</div>
 						</Link>
 						<Link href={"https://play.google.com/store/games?hl=en&gl=US/"} target="_blank">
-						<div className="flex justify-center gap-2 rounded-md bg-[#29284e] text-white items-center border-white shadow-md border py-2.5 px-2">
+							<div className="flex justify-center gap-2 rounded-md bg-[#29284e] text-white items-center border-white shadow-md border py-2.5 px-2">
 								<img className="h-9" src="/images/play-store.png.png" alt="" />
 								<div>
 									<p className="text-xs">Dowload on the</p>

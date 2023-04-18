@@ -867,8 +867,6 @@ input[type="checkbox"] {
     height: 17px;
     border: 1.5px solid #292d32;
     border-radius: 6px;
-    /* background-image: url(/src/assets/Vector.png);
-background-repeat: no-repeat; */
     justify-content: center;
     display: flex;
     align-items: center;

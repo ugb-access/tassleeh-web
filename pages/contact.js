@@ -13,6 +13,7 @@ import {
 import { customerCareAdd, getJobsByLatLng } from "../services/auth-service";
 import { toast } from "react-toastify";
 import { ImSpinner9 } from "react-icons/im";
+import { MAP_PROPS } from "../services/constants";
 const center = { lat: 48.8584, lng: 2.2945 };
 
 const Contact = () => {
@@ -47,10 +48,7 @@ const Contact = () => {
 		setData(userData);
 	}, []);
 
-	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: "AIzaSyDZpy-p-5laOeZQcRD_FZSTc0MITID2zKo",
-		id: "google-map-script",
-	});
+	const { isLoaded } = useJsApiLoader(MAP_PROPS);
 	const handleValidation = () => {
 		if (customerCare?.name === "") {
 			setSpinner(false);

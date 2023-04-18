@@ -6,6 +6,7 @@ import {
 	InfoWindow,
 } from "@react-google-maps/api";
 import Link from "next/link";
+import { MAP_PROPS } from "../../../services/constants";
 
 const containerStyle = {
 	width: "100%",
@@ -23,10 +24,7 @@ const LoadMap = ({ mapLink }) => {
 		lng: 73.0479,
 	});
 	const [toggleInfoWindow, setToggleInfoWindow] = useState(true);
-	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: "AIzaSyCTeuajYJW22KJe7Ae-tOq_10n0D52CP_0",
-		id: "google-map-script",
-	});
+	const { isLoaded } = useJsApiLoader(MAP_PROPS);
 	// const onLoad = useCallback(function callback(map) {
 	// 	const bounds = new window.google.maps.LatLngBounds(center);
 	// 	map.fitBounds(bounds);
