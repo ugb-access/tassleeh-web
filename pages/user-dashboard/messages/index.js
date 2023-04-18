@@ -283,9 +283,9 @@ const Chat = ({
 		cid && setChannelID(cid);
 	};
 
-	const state = {};
+	// const state = {};
 
-	const { totalHeight = "100vh", searchKey } = state;
+	// const { totalHeight = "100vh", searchKey } = state;
 
 	return (
 		<React.Fragment>
@@ -298,7 +298,8 @@ const Chat = ({
 					<p className="text-2xl text-[#2F2C4A] font-bold mb-3">Messages</p>
 				</div>
 				<div className="chat-main-div" style={{ display: "flex" }}>
-					<div className={`left-side pr-5 h-[${totalHeight}]`}>
+					{/* <div className={`left-side pr-5 h-[${totalHeight}]`}> */}
+					<div className={`left-side pr-5`}>
 						<div className="flex  justify-between">
 							<div className="flex gap-5 items-center">
 								<div>

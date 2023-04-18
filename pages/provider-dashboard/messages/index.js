@@ -614,7 +614,7 @@ const Chat = ({
 								/>
 							</div>
 							<div>
-								<div className="send-div flex gap-5">
+								<div className="send-div flex gap-5 shadowMessageBox">
 									<input
 										className="send-input"
 										onKeyDown={(e) => {

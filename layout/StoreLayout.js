@@ -108,9 +108,9 @@ const StoreLayout = ({ children }) => {
 								<div className="">
 									<Sidebar dashSideData={serviceLinks} />
 								</div>
-								<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0">
+								<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0 heightCalc">
 									<div
-										className={`pt-2 px-5 sm:py-5 ${
+										className={`pt-2 px-5 sm:pt-5 ${
 											router.asPath.includes("/messages") && "!px-5"
 										}`}
 									>

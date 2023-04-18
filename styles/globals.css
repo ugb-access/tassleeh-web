@@ -6,6 +6,10 @@
 	text-align: center;
 	font-weight: 400;
 }
+.heightCalc {
+	max-height: calc(100vh - 75px);
+	border: 1px solid black;
+}
 .swal-footer {
 	display: flex;
 	justify-content: center;
@@ -502,28 +506,33 @@ p.coverLeng {
 .left-side {
 	/* border-right: 1px solid #aaa; */
 	border-bottom: none;
+	height: calc(100vh - 160px);
 	/* padding: 10px; */
 	/* margin-right: 10px; */
-	height: 53rem !important;
+	/* height: 53rem !important; */
 }
 
 .recipients-main-div {
 	/* overflow: scroll; */
 	/* background-color: #fcfcff !important; */
 }
-
+.shadowMessageBox {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .right-side {
 	display: flex;
 	background-color: white;
 	flex-direction: column;
 	position: relative;
-	height: 100%;
+	/* height: 100%; */
+	max-height: calc(100vh - 140px);
+	border: 1px solid red;
 	width: 100%;
 }
 
-.chat-main-div {
+/* .chat-main-div {
 	height: 53rem !important;
-}
+} */
 
 .chat-header-active {
 	display: flex;
@@ -549,8 +558,9 @@ p.active-email {
 	display: flex;
 	align-items: center;
 	position: absolute;
-	bottom: -30px;
-	width: 100%;
+	bottom: 0px;
+	width: 98%;
+	border-radius: 15px;
 	justify-content: space-between;
 	background: white;
 	height: 70px;
@@ -620,7 +630,7 @@ img.msg-img {
 	overflow-x: hidden !important;
 	overflow-y: scroll;
 	width: 100%;
-	height: 80vh;
+	/* max-height: calc(100% - 350px); */
 	/* max-height: fit-content; */
 }
 
@@ -741,7 +751,7 @@ p.chat-msg {
 		border-bottom: none;
 		padding: 3px;
 		margin-right: 3px;
-		height: 34rem !important;
+		/* height: 34rem !important; */
 	}
 
 	.recipients-main-div {
