@@ -8,7 +8,7 @@
 }
 .heightCalc {
 	max-height: calc(100vh - 75px);
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 .swal-footer {
 	display: flex;
@@ -527,7 +527,7 @@ p.coverLeng {
 	position: relative;
 	/* height: 100%; */
 	max-height: calc(100vh - 130px);
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	width: 100%;
 }
 
@@ -632,7 +632,7 @@ img.msg-img {
 	overflow-y: scroll;
 	width: 100%;
 	max-height: calc(100vh - 290px);
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 }
 
 p.chat-msg {
@@ -646,7 +646,7 @@ p.chat-msg {
 }
 /* ------------------- Media Query ------------------------------ */
 
-@media only screen and (max-width: 1024px) and (min-width: 300px) {
+@media only screen and (max-width: 900px) and (min-width: 300px) {
 	img.recipient-img {
 		object-fit: cover;
 		/* width: 10px; */
@@ -874,6 +874,7 @@ p.chat-msg {
 		flex-direction: column;
 		overflow: scroll;
 		width: 100%;
-		height: 74vh;
+		height: 100vh;
+		max-height: 100vh;
 	}
 }

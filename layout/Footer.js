@@ -51,10 +51,10 @@ const Footer = () => {
 							alt="Logo"
 						/>
 						<p className="mb-3 md:w-[300px] leading-9 hover:opacity-70">
-							The little concerns of independence are resolved by VEMA. Let go,
+							The little concerns of independence are resolved by TASSLEEH. Let go,
 							we genuinely have everything under control!cinity.
 						</p>
-						<div className="social-media-icons flex items-center mb-3">
+						<div className="social-media-icons gap-2 flex items-center mb-3">
 							<Link
 								target="_blank"
 								href="https://www.facebook.com/ukjoblocator?mibextid=LQQJ4d"

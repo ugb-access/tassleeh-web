@@ -59,5 +59,4 @@ const RecipientCard = ({ selectedUser, item, onSelect, online, bg }) => {
 		</button>
 	);
 };
-
 export default RecipientCard;

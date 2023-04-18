@@ -95,7 +95,7 @@ const Header = ({
 						<div className="md:flex	 hidden items-center border px-3 py-1.5 rounded-2xl">
 							<input
 								className="placeholder:text-sm"
-								type=""
+								type="text"
 								placeholder="Search here"
 							/>
 							<img className="h-5" src="/images/search.png" alt="" />

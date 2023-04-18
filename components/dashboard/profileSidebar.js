@@ -53,6 +53,7 @@ const ProfileSidebar = ({ img, getImage, getCheckImage, image, data }) => {
 							// onChange={imageHandler}
 							className="w-[40px] cursor-pointer"
 							type="file"
+							accept="image/*"
 						/>
 					</div>
 				</div>

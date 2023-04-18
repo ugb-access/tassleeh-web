@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { getUnReadCount } from "../../../services/helper";
 import MessageCard from "./MessageCard";
 import RecipientCard from "./RecipientCard";
-// import socket from "../../../services/socket";
+import socket from "../../../services/socket";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 // import { AVATAR } from "../../../services/images";
@@ -16,49 +16,8 @@ import middleware from "../../../store/middleware";
 // import { AiOutlineSearch } from "react-icons/ai";
 // import { useLocation } from "react-router-dom";
 
-// import "../../css/Chat.css";
 // import Header from "../../Componenets/Header";
 const mes = [
-	{
-		sender: {
-			_id: "1",
-			userName: "Zain Ali Here",
-			email: "alilohar20@gmail.com",
-		},
-		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
-		lastMessage: { message: "This was the last message " },
-		message: "hy there",
-	},
-	{
-		sender: {
-			_id: "1",
-			userName: "Zain Ali Here",
-			email: "alilohar20@gmail.com",
-		},
-		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
-		lastMessage: { message: "This was the last message " },
-		message: "hy there",
-	},
-	{
-		sender: {
-			_id: "1",
-			userName: "Zain Ali Here",
-			email: "alilohar20@gmail.com",
-		},
-		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
-		lastMessage: { message: "This was the last message " },
-		message: "hy there",
-	},
-	{
-		sender: {
-			_id: "1",
-			userName: "Zain Ali Here",
-			email: "alilohar20@gmail.com",
-		},
-		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
-		lastMessage: { message: "This was the last message " },
-		message: "hy there",
-	},
 	{
 		sender: {
 			_id: "1",
@@ -79,7 +38,6 @@ const Chat = ({
 }) => {
 	let scrollRef = "";
 	const uid = user?._id;
-
 	// const location = useLocation();
 	const [channelID, setChannelID] = useState(false);
 	const [senderID, setSenderID] = useState("");
@@ -102,81 +60,6 @@ const Chat = ({
 			to: { _id: 1, userName: "zain is here", email: "alilohar20@gmail.com" },
 			lastMessage: { message: "This was the last message " },
 			unread: 10,
-		},
-		{
-			sender: {
-				_id: "2",
-				userName: "Hasham tanveer ",
-				email: "hashamtanveer140@gmail.com",
-				avatar: "/images/mess-profile.png",
-			},
-			to: {
-				_id: 1,
-				userName: "Hasham ",
-				email: "hashamtanveer140@gmail.com",
-			},
-			lastMessage: { message: "This was the last message " },
-			unread: 7,
-		},
-		{
-			sender: {
-				_id: "2",
-				userName: "Hasham tanveer ",
-				email: "hashamtanveer140@gmail.com",
-				avatar: "/images/mess-profile.png",
-			},
-			to: {
-				_id: 1,
-				userName: "Hasham ",
-				email: "hashamtanveer140@gmail.com",
-			},
-			lastMessage: { message: "This was the last message " },
-			unread: 7,
-		},
-		{
-			sender: {
-				_id: "2",
-				userName: "Hasham tanveer ",
-				email: "hashamtanveer140@gmail.com",
-				avatar: "/images/mess-profile.png",
-			},
-			to: {
-				_id: 1,
-				userName: "Hasham ",
-				email: "hashamtanveer140@gmail.com",
-			},
-			lastMessage: { message: "This was the last message " },
-			unread: 7,
-		},
-		{
-			sender: {
-				_id: "2",
-				userName: "Hasham tanveer ",
-				email: "hashamtanveer140@gmail.com",
-				avatar: "/images/mess-profile.png",
-			},
-			to: {
-				_id: 1,
-				userName: "Hasham ",
-				email: "hashamtanveer140@gmail.com",
-			},
-			lastMessage: { message: "This was the last message " },
-			unread: 7,
-		},
-		{
-			sender: {
-				_id: "2",
-				userName: "Hasham tanveer ",
-				email: "hashamtanveer140@gmail.com",
-				avatar: "/images/mess-profile.png",
-			},
-			to: {
-				_id: 1,
-				userName: "Hasham ",
-				email: "hashamtanveer140@gmail.com",
-			},
-			lastMessage: { message: "This was the last message " },
-			unread: 7,
 		},
 		{
 			sender: {
@@ -231,11 +114,11 @@ const Chat = ({
 		);
 	}, []);
 	useEffect(() => {
-		// senderID && socket.emit("getAllMessages", { sID: senderID, rID: uid });
+		senderID && socket.emit("getAllMessages", { sID: senderID, rID: uid });
 	}, [senderID]);
 
 	useEffect(() => {
-		// channelID && _readMessages(channelID);
+		channelID && _readMessages(channelID);
 	}, [channelID]);
 
 	const handleRecipients = () => {
@@ -332,6 +215,7 @@ const Chat = ({
 	}
 
 	const sendMessage = async () => {
+		return;
 		if (!message) {
 			return toast.warn("write something");
 		}
@@ -345,16 +229,16 @@ const Chat = ({
 
 		if (socket.connected) {
 			if (!!channelID) {
-				// socket.emit("message", messageObj);
+				socket.emit("message", messageObj);
 			} else {
 				let res = await addRecipientMethod({ user1: senderID, user2: uid });
 
 				if (res?.success) {
 					setChannelID(res.cid);
-					// socket.emit("message", {
-					// 	...messageObj,
-					// 	channel: res.cid,
-					// });
+					socket.emit("message", {
+						...messageObj,
+						channel: res.cid,
+					});
 				} else {
 					alert("An error occurred");
 				}
@@ -398,9 +282,9 @@ const Chat = ({
 		cid && setChannelID(cid);
 	};
 
-	// const state = {};
+	const state = {};
 
-	// const { totalHeight = "100vh", searchKey } = state;
+	const { totalHeight = "100vh", searchKey } = state;
 
 	return (
 		<React.Fragment>
@@ -413,8 +297,7 @@ const Chat = ({
 					<p className="text-2xl text-[#2F2C4A] font-bold mb-3">Messages</p>
 				</div>
 				<div className="chat-main-div" style={{ display: "flex" }}>
-					{/* <div className={`left-side pr-5 h-[${totalHeight}]`}> */}
-					<div className={`left-side pr-5`}>
+					<div className={`left-side pr-5 h-[${totalHeight}]`}>
 						<div className="flex  justify-between">
 							<div className="flex gap-5 items-center">
 								<div>
@@ -453,9 +336,9 @@ const Chat = ({
 							<input
 								type="text"
 								placeholder="Search..."
-								// value={searchKey}
+								value={searchKey}
 								onChange={onSearch}
-								className="rounded-full !w-full border !border-none outline-none"
+								className="rounded-full border border-none py-2"
 							/>
 						</div>
 
@@ -520,18 +403,18 @@ const Chat = ({
 					</div>
 					{/* <div className="straight-line"></div> */}
 					{!!open ? (
-						<div className="block lg:hidden bg-white z-50 h-[100vh] w-screen fixed left-0 top-0 ">
+						<div className="block md:hidden bg-white z-50 h-[100vh] w-screen fixed left-0 top-0 ">
 							{!!selectedUser ? (
 								<div className="">
 									<div className="">
 										<div className="flex  justify-between px-5 py-[14px]">
 											<div className="flex gap-5 items-center">
 												<div>
-													<div className="flex items-center gap-1">
+													<div className="flex items-center gap-2">
 														<div onClick={() => setOpen(false)}>
 															<BiArrowBack />
 														</div>
-														<p className="font-medium text=[#495057] whitespace-nowrap">
+														<p className="font-medium text-sm whitespace-nowrap text=[#495057]">
 															{selectedUser?.userName || selectedUser?.email}
 														</p>
 													</div>
@@ -554,7 +437,7 @@ const Chat = ({
 													<Button
 														text={"+ Create Request"}
 														customClass={
-															"md:w-full whitespace-nowrap text-primary font-semibold sm:text-base text-sm"
+															"md:w-full  whitespace-nowrap text-primary font-semibold text-xs sm:text-base"
 														}
 													/>
 												</div>
@@ -665,7 +548,7 @@ const Chat = ({
 								<div className="flex  justify-between px-5 py-[14px]">
 									<div className="flex gap-5 items-center">
 										<div>
-											<p className="font-medium text=[#495057]">
+											<p className="font-medium text=[#495057] whitespace-nowrap">
 												{selectedUser?.userName || selectedUser?.email}
 											</p>
 											<div className="flex items-center text-[#74788D] gap-2">
@@ -687,11 +570,11 @@ const Chat = ({
 											<Button
 												text={"+ Create Request"}
 												customClass={
-													"w-full whitespace-nowrap text-primary font-semibold text-base"
+													"w-full whitespace-nowrap text-primary font-semibold !text-base"
 												}
 											/>
 										</div>
-										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
+										<div className="bg-[#EFF2F7] p-3 rounded-full w-full">
 											<img src="/images/searchmessico.png" alt="" />
 										</div>
 										<div className="bg-[#EFF2F7] p-5 rounded-full w-full">
@@ -732,7 +615,7 @@ const Chat = ({
 								/>
 							</div>
 							<div>
-								<div className="send-div flex gap-5">
+								<div className="send-div flex gap-5 ">
 									<input
 										className="send-input"
 										onKeyDown={(e) => {

@@ -5,7 +5,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 const MessageCard = ({ message, isUser, avatar, userName }) => {
 	return (
 		<div
-			className="msg-top"
+			className="msg-top !mb-14 md:mb-0"
 			style={{
 				flexDirection: isUser ? "row-reverse" : "row",
 				alignSelf: isUser ? "flex-end" : "flex-start",

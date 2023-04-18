@@ -36,7 +36,7 @@ const serviceLinks = [
 		barText: "Messages",
 	},
 	{
-		barIink: "/provider-dashboard/account-setting/",
+		barIink: "/provider-dashboard/account-setting",
 		barIcon: <AiOutlineSetting />,
 		barText: "Settings",
 	},
@@ -46,7 +46,7 @@ const serviceLinks = [
 		barText: "Logout",
 	},
 ];
-const userLink = [
+const userLinks = [
 	{
 		barIink: "/user-dashboard/dashboard",
 		barIcon: <AiFillHome />,
@@ -79,16 +79,16 @@ const StoreLayout = ({ children }) => {
 		<div className="">
 			{router.pathname.startsWith("/user-dashboard") ? (
 				<div className="h-screen">
-					<div className="z-50 bg-white sticky top-0 left-0 right-0">
+					<div className="">
 						<DashboardHeader />
 					</div>
 					<div className="sm:flex flex heightCalc h-screen">
-						<div className="z-40 bg-white md:max-h-[200px]">
-							<Sidebar dashSideData={userLink} />
+						<div className="">
+							<Sidebar dashSideData={userLinks} />
 						</div>
-						<div className="basis-full bg-[#F5F5F5] flex !flex-col sm:flex sm:flex-col md:overflow-x-hidden sm:pr-0 lg:pr-0 heightCalc">
+						<div className="basis-full bg-[#F5F5F5] flex sm:flex sm:flex-col max-h-[88vh] overflow-x-hidden sm:pr-0 lg:pr-0 heightCalc">
 							<div
-								className={`pt-4 px-5 pb-2 ${
+								className={`pt-2 px-5 sm:pt-5 ${
 									router.asPath.includes("/messages") && "!px-5"
 								}`}
 							>
