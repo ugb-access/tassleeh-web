@@ -29,6 +29,46 @@ const mes = [
 		lastMessage: { message: "This was the last message " },
 		message: "hy there",
 	},
+	{
+		sender: {
+			_id: "1",
+			userName: "Zain Ali Here",
+			email: "alilohar20@gmail.com",
+		},
+		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
+		lastMessage: { message: "This was the last message " },
+		message: "hy there",
+	},
+	{
+		sender: {
+			_id: "1",
+			userName: "Zain Ali Here",
+			email: "alilohar20@gmail.com",
+		},
+		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
+		lastMessage: { message: "This was the last message " },
+		message: "hy there",
+	},
+	{
+		sender: {
+			_id: "1",
+			userName: "Zain Ali Here",
+			email: "alilohar20@gmail.com",
+		},
+		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
+		lastMessage: { message: "This was the last message " },
+		message: "hy there",
+	},
+	{
+		sender: {
+			_id: "1",
+			userName: "Zain Ali Here",
+			email: "alilohar20@gmail.com",
+		},
+		to: { _id: 1, userName: "Hasham is here", email: "alilohar20@gmail.com" },
+		lastMessage: { message: "This was the last message " },
+		message: "hy there",
+	},
 ];
 const Chat = ({
 	user,
@@ -62,6 +102,81 @@ const Chat = ({
 			to: { _id: 1, userName: "zain is here", email: "alilohar20@gmail.com" },
 			lastMessage: { message: "This was the last message " },
 			unread: 10,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
 		},
 		{
 			sender: {
@@ -338,7 +453,7 @@ const Chat = ({
 							<input
 								type="text"
 								placeholder="Search..."
-								value={searchKey}
+								// value={searchKey}
 								onChange={onSearch}
 								className="rounded-full !w-full border !border-none outline-none"
 							/>

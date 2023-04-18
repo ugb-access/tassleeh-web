@@ -76,6 +76,156 @@ const Chat = ({
 			lastMessage: { message: "This was the last message " },
 			unread: 7,
 		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
+		{
+			sender: {
+				_id: "2",
+				userName: "Hasham tanveer ",
+				email: "hashamtanveer140@gmail.com",
+				avatar: "/images/mess-profile.png",
+			},
+			to: {
+				_id: 1,
+				userName: "Hasham ",
+				email: "hashamtanveer140@gmail.com",
+			},
+			lastMessage: { message: "This was the last message " },
+			unread: 7,
+		},
 	]);
 
 	useEffect(() => {
@@ -614,7 +764,7 @@ const Chat = ({
 								/>
 							</div>
 							<div>
-								<div className="send-div flex gap-5 shadowMessageBox">
+								<div className="send-div flex gap-5 ">
 									<input
 										className="send-input"
 										onKeyDown={(e) => {

@@ -408,7 +408,7 @@ img.recipient-img {
 
 .hand {
 	display: flex;
-	width: 20rem;
+	width: 28rem;
 }
 
 .top-hand {
@@ -506,7 +506,8 @@ p.coverLeng {
 .left-side {
 	/* border-right: 1px solid #aaa; */
 	border-bottom: none;
-	height: calc(100vh - 160px);
+	overflow-y: scroll;
+	height: calc(100vh - 135px);
 	/* padding: 10px; */
 	/* margin-right: 10px; */
 	/* height: 53rem !important; */
@@ -525,7 +526,7 @@ p.coverLeng {
 	flex-direction: column;
 	position: relative;
 	/* height: 100%; */
-	max-height: calc(100vh - 140px);
+	max-height: calc(100vh - 130px);
 	border: 1px solid red;
 	width: 100%;
 }
@@ -630,8 +631,8 @@ img.msg-img {
 	overflow-x: hidden !important;
 	overflow-y: scroll;
 	width: 100%;
-	/* max-height: calc(100% - 350px); */
-	/* max-height: fit-content; */
+	max-height: calc(100vh - 290px);
+	border: 1px solid blue;
 }
 
 p.chat-msg {
