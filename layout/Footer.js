@@ -35,7 +35,7 @@ const Footer = () => {
 				})
 
 				.catch((err) => {
-					toast.error(err);
+					// toast.error(err);
 					// setSpinner(false);
 				});
 		}

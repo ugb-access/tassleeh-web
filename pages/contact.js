@@ -101,7 +101,7 @@ const Contact = () => {
 				})
 				.catch((err) => {
 					setSpinner(false);
-					toast.error("Something went wrong");
+					// toast.error("Something went wrong");
 				});
 		}
 		// }
@@ -119,7 +119,7 @@ const Contact = () => {
 			})
 			.catch((err) => {
 				setSpinner(false);
-				toast.error(err?.message);
+				// toast.error(err?.message);
 			});
 	};
 	useEffect(() => {

@@ -99,7 +99,7 @@ const Home = () => {
 			})
 			.catch((err) => {
 				setSpinner(false);
-				toast.error(err?.message);
+				// toast.error(err?.message);
 			});
 	};
 	const getWebsiteStas = () => {
@@ -112,7 +112,7 @@ const Home = () => {
 			})
 			.catch((err) => {
 				console.log(err);
-				toast.error(err?.message);
+				// toast.error(err?.message);
 				setSpinner(false);
 			});
 	};
@@ -149,7 +149,7 @@ const Home = () => {
 				})
 				.catch((err) => {
 					console.log(err, "err");
-					toast.error(err?.message);
+					// toast.error(err?.message);
 					setSpinner(false);
 				});
 		} else if (searchValue && searchLatLong) {
@@ -171,7 +171,7 @@ const Home = () => {
 				.catch((err) => {
 					console.log(err, "err");
 					setSpinner(false);
-					toast.error(err?.message);
+					// toast.error(err?.message);
 				});
 		} else {
 			let res = cardData?.filter((item, index) =>

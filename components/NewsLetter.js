@@ -85,7 +85,7 @@ const NewsLetter = () => {
 							/>
 							<div className="flex justify-center">
 								<Button
-									onClick={handleSubmit}
+									// onClick={handleSubmit}
 									customClass="font-normal text-base w-36 mt-10 !h-10 rounded-full bg-primary text-white"
 									text="Contact Now"
 								/>
@@ -123,7 +123,7 @@ const NewsLetter = () => {
 						/>
 						<Button
 							text="Subscribe"
-							onClick={handleSubmit}
+							// onClick={handleSubmit}
 							customClass="font-normal text-base !w-28 !h-10 py-2 rounded-full bg-primary whitespace-nowrap text-white"
 						/>
 					</div>
