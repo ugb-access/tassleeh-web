@@ -10,14 +10,14 @@ const SidebarLink = ({ sideLink, sideText, sideIcon }) => {
 				<div className={`text-icon  w-full `}>
 					<div
 						className={`side-bar-icon-sel ${
-							router.asPath === sideLink && "!text-primary"
+							router.asPath.includes(sideLink) && "!text-primary"
 						} `}
 					>
 						{sideIcon}
 					</div>
 					<p
 						className={`icon-para-sel ${
-							router.asPath === sideLink && "!text-primary !font-bold"
+							router.asPath.includes(sideLink) && "!text-primary !font-bold"
 						} `}
 					>
 						{sideText}
