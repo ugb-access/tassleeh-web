@@ -580,7 +580,7 @@ const Chat = ({
 										<div className="bg-[#EFF2F7] p-4 rounded-full w-full">
 											<img src="/images/messhead (2).png" alt="" />
 										</div>
-										<div className="bg-[#EFF2F7] p-4   w-full rounded-full ">
+										<div className="bg-[#EFF2F7] p-4 py-6  w-full rounded-full ">
 											<img src="/images/messhead (1).png" alt="" />
 										</div>
 									</div>
