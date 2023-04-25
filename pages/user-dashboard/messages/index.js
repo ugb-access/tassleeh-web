@@ -330,7 +330,7 @@ const Chat = ({
 							{/* <AiOutlineSearch className="h-8 w-5 mx-2 cursor-pointer hover:text-primary" /> */}
 							<img
 								className="h-5 mx-2 cursor-pointer"
-								src="/images/shape.png"
+								src="/images/search5.png"
 								alt="search"
 							/>
 							<input
